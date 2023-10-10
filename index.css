@@ -1,0 +1,52 @@
+/*=== GOOGLE FONTS  ===*/
+
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Montserrat&display=swap");
+
+/*=== VARIABLES CSS  ===*/
+:root {
+  --header-height: 3rem;
+
+  /*=== Colors ===*/
+
+  --title: rgb(27, 26, 26);
+  --text: rgb(82, 81, 81);
+  --text-light: rgb(154, 148, 148);
+  --container: rgb(218, 212, 212);
+  --container-alter: rgb(239, 230, 230);
+  --body: rgb(233, 225, 225);
+
+  /*=== Font & Typography ===*/
+  --body-font: "Montserrat", sans-serif;
+  --h1: 1.5rem;
+  --h2: 1.25rem;
+  --h3: 1rem;
+  --normal: 0.938rem;
+  --small: 0.875rem;
+  --smaller: 0.813rem;
+
+  /*=== Font weight ===*/
+  --medium: 500;
+  --semi-bold: 600;
+
+  /*=== Margenes ===*/
+  --mb1: 0.5rem;
+  --mb2: 1rem;
+  --mvb3: 1.5rem;
+
+  /*=== Z-index ===*/
+  --tooltip: 10;
+  --fixed: 100;
+}
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+}
