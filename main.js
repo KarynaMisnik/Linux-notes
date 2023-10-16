@@ -11,7 +11,7 @@ window.onload = function () {
         format: "a4",
         orientation: "portrait",
         fontSize: "12",
-        lineHeight: "1.15",
+        lineHeight: "1.10",
       },
     };
     html2pdf().from(resume).set(opt).save();

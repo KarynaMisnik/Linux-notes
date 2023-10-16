@@ -19,9 +19,9 @@
 
   /*=== Font & Typography ===*/
   --body-font: "Montserrat", sans-serif;
-  --h1: 1.5rem;
-  --h2: 1.25rem;
-  --h3: 1rem;
+  --h1: 1.3rem;
+  --h2: 1rem;
+  --h3: 0.5rem;
   --bigger: 1.2rem;
   --normal: 0.938rem;
   --small: 0.875rem;
@@ -56,6 +56,11 @@ body {
 
 p {
   color: var(--p-color);
+  font-size: var(--normal);
+}
+
+h1 {
+  font-size: var(--h1);
 }
 
 h2,
@@ -65,10 +70,12 @@ h3 {
 
 h2 {
   color: var(--h2-color);
+  font-size: var(--h2);
 }
 
 h3 {
   color: var(--h3-color);
+  font-size: var(--h3);
 }
 h4 {
   color: var(--h4-color);
@@ -106,6 +113,7 @@ img {
 /* Apply basic styles to the container */
 .layout-wrapper {
   display: flex;
+  padding: 1rem 1rem;
 }
 
 /* Style the left section (narrower) */
@@ -184,7 +192,6 @@ i {
 }
 
 .social-container,
-.profile-container,
 .education-container,
 .skills-container,
 .experience-container,
@@ -192,11 +199,16 @@ i {
   margin: 0 0 var(--m2) 0;
 }
 
+.social-container,
+.experience-container {
+  margin: var(--m2) 0 0 0;
+}
+
 .profile-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: var(--m2) 0 var(--m2) 0;
+  margin: var(--m2) var(--m2);
 }
 
 .profile-section {
@@ -219,9 +231,11 @@ i {
 /* belongs to left side */
 
 .languages-list {
-  columns: 2;
-  -webkit-columns: 2;
-  -moz-columns: 2;
+  display: flex;
+}
+
+.languages-list > p {
+  margin: 0 var(--m2) 0 0;
 }
 
 .skills-list {
