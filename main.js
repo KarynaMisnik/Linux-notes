@@ -8,10 +8,9 @@ window.onload = function () {
       html2canvas: { scale: 2 },
       jsPDF: {
         unit: "in",
-        format: "a4",
+        format: [8.27, 11.69],
         orientation: "portrait",
         fontSize: "12",
-        lineHeight: "1.10",
       },
     };
     html2pdf().from(resume).set(opt).save();
