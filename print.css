@@ -1,17 +1,16 @@
 h1 {
-  font-size: 14pt;
+  font-size: 13pt;
 }
 
 h2 {
-  font-size: 13pt;
+  font-size: 12pt;
 }
 h3 {
-  font-size: 12pt;
+  font-size: 11pt;
 }
 
 p {
   font-size: 10pt;
-  text-align: justify;
 }
 
 .left-section,

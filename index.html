@@ -3,17 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Converts into pdf -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"></script>
+    <!-- link to a file -->
     <script src="main.js"></script>
     <!---- Boxicons icons ---->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- link to additional css file to adjust properties for printing -->
     <link rel="stylesheet" href="print.css" type="text/css" media="print">
+    <!-- link to main styles -->
     <link rel="stylesheet" href="index.css" type="text/css" media="all">
     <title>My Resume</title>
 </head>
 <body>
 <button class="button download" id="download"><i class='bx bxs-download'></i>Download Resume</button>
-<div class="resume" id="resume">
+<div class="resume" id="resume"> <!-- div to wrap the resume to convert into pdf -->
 <div class="img-container">
     <img src=".\assets\job-seeker.png" alt="Job seeker photo">
     <div class="img-description">
@@ -42,31 +46,31 @@
                 <h1 class="title social-section">SOCIAL</h1>
                 <ul>
                     <li>
-                        <i class='bx bxl-linkedin'></i> @example
+                        <a><i class='bx bxl-linkedin'></i> @example</a>
                     </li>
                     <li>
-                        <i class='bx bxl-github'></i> @example
+                        <a><i class='bx bxl-github'></i> @example</a>
                     </li>
                 </ul>
-                </div>
+                </div><!-- Socials section ends -->
 
                 <div class="education-container">
                     <h1 class="title education-section">EDUCATION</h1>
                 
                     <div class="education-content">
                 
-                        <div>
+                        <div class="education-content-item item1">
                             <h2>SOFTWARE DEVELOPER</h2>
                             <h4>University name</h4>
                             <p>2010-2015</p>
                         </div>
                 
-                        <div>
+                        <div class="education-content-item item2">
                             <h2>SOFTWARE DEVELOPER</h2>
                             <h4>University name</h4>
                             <p>2010-2015</p>
                         </div>
-                        <div>
+                        <div class="education-content-item item3">
                             <h2>SOFTWARE DEVELOPER</h2>
                             <h4>University name</h4>
                             <p>2010-2015</p>
@@ -82,17 +86,17 @@
         <li>Language 3</li>
         <li>Language 4</li>
         </ul>
-    </div>
+    </div><!-- Languages section ends -->
 
-</div>
+</div><!-- Left Resume section ends -->
         
     <div class="right-section">
         <div class="experience-container">
             <h1 class="title experience-section">WORK EXPERIENCE</h1>
         <div class="experience-content">
         
-            <div class="item-content item1">
-                <div class="item-container">
+            <div class="experience-item-content item1">
+                <div class="experience-item-container">
                     <div class="work-info">
                 <p class="work-period"> 2010 - 2015</p>
                 </div>
@@ -105,9 +109,9 @@
                 </div>
                 </div>
             </div>
-            <div class="item-content item2">
+            <div class="experience-item-content item2">
                 
-                    <div class="item-container">
+                    <div class="experience-item-container">
                         <div class="work-info">
                         <p class="work-period"> 2010 - 2015</p>
                         </div>
@@ -123,9 +127,9 @@
                             </div>
             </div>
            
-            <div class="item-content item3">
+            <div class="experience-item-content item3">
                 
-                    <div class="item-container">
+                    <div class="experience-item-container">
                         <div class="work-info">
                         <p class="work-period"> 2010 - 2015</p>
                         </div>
@@ -141,12 +145,10 @@
             </div>
         
         </div>
-        
-      
 
 </div>
 
-    </div>
+    </div><!-- Work Experience section ends -->
         <div class="skills-container">
             <h1 class="title skills-section">SKILLS</h1>
             <ul class="skills-list">
@@ -159,10 +161,10 @@
                 <li>Skill 7</li>
                 <li>Skill 8</li>
             </ul>
-        </div>
-        </div>
-</div>
-</div>
+        </div><!-- Skills section ends -->
+        </div><!-- Right Resume section ends -->
+</div><!-- Layout wrapper ends -->
+</div><!-- The whole Resume ends -->
 
 </body>
 </html>
