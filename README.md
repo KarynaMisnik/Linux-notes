@@ -25,6 +25,7 @@ A comprehensive guide and resource hub for understanding Linux as an Operating S
   - [Directory](#directory)
   - [Advanced Navigation](#advanced-navigation)
   - [File Management](#file-management)
+  - [Text processing](#text-processing)
 
 # Introduction
 
