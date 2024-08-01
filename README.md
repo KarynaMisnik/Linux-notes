@@ -900,3 +900,13 @@ New files will default to:
 Because umask subtracts bits from 666 for files and 777 for directories.
 
 ### Redirects and pipes
+
+<code>></code> – Redirect Output (Overwrite)
+
+Redirects the standard output (stdout) of a command to a file, overwriting its contents.
+
+```bash
+echo "Hello World" > output.txt
+```
+
+Creates (or overwrites) <code>output.txt</code> with <code>"Hello World"</code>.
