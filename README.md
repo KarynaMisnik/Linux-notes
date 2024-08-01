@@ -26,6 +26,7 @@ A comprehensive guide and resource hub for understanding Linux as an Operating S
   - [Advanced Navigation](#advanced-navigation)
   - [File Management](#file-management)
   - [Text processing](#text-processing)
+  - [Permissions](#permissions)
 
 # Introduction
 
@@ -803,7 +804,7 @@ awk '$3 > 100 {print $1, $3}' data.txt
 
 Prints the first and third columns only if the third column is greater than 100.
 
-### 🔐 Permissions Commands
+### 🔐 Permissions
 
 🐧 <code>chmod</code> — Change file or directory permissions
 
