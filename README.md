@@ -920,3 +920,13 @@ echo "New line" >> output.txt
 ```
 
 Adds <code>"New line"</code> to the end of <code>output.txt</code> without removing existing content.
+
+🐧 <code><</code> – Redirect Input
+
+Takes input from a file instead of the keyboard.
+
+```bash
+wc -l < file.txt
+```
+
+Counts lines in file.txt by feeding its content as input to wc.
