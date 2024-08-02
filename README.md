@@ -901,7 +901,7 @@ Because umask subtracts bits from 666 for files and 777 for directories.
 
 ### Redirects and pipes
 
-<code>></code> – Redirect Output (Overwrite)
+🐧 <code>></code> – Redirect Output (Overwrite)
 
 Redirects the standard output (stdout) of a command to a file, overwriting its contents.
 
@@ -910,3 +910,13 @@ echo "Hello World" > output.txt
 ```
 
 Creates (or overwrites) <code>output.txt</code> with <code>"Hello World"</code>.
+
+🐧 <code>>></code> – Redirect Output (Append)
+
+Appends the output to the end of a file instead of overwriting it.
+
+```bash
+echo "New line" >> output.txt
+```
+
+Adds <code>"New line"</code> to the end of <code>output.txt</code> without removing existing content.
