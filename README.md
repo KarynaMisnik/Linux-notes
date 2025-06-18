@@ -35,7 +35,8 @@ Popular Linux distributions include:
    <li>Kali Linux (security and penetration testing)</li>
    <li>Android (yes, it's based on the Linux kernel!)</li>
 </ul>
-    
+
+  Studying Linux is more than learning an OS — it’s about understanding how computers work at a deeper level.
 
 
 
