@@ -14,9 +14,29 @@ A comprehensive guide and resource hub for understanding Linux as an Operating S
 ## Menu
 
 * [Introduction](#introduction)
-  - [Topic](#topic)
+  - [What is Linux](#what-is-Linux)
   - [Topic](#topic)
 
 # Introduction
 
 **Linux** is a free and open-source operating system that powers everything from personal computers and smartphones to servers, supercomputers, routers, and embedded devices. At its core, Linux is known for its stability, security, flexibility, and developer-friendliness, making it a favorite among programmers, system administrators, and tech enthusiasts.
+
+### What is Linux
+
+Linux refers to the **kernel** — the central part of the operating system that directly interacts with the hardware and manages system resources like memory, CPU, devices, and processes.
+However, when people say "Linux," they often mean a Linux distribution (distro), which is the kernel plus essential tools, libraries, and a user interface — forming a complete operating system.
+
+Popular Linux distributions include:
+
+<ul>
+  <li>Ubuntu, Debian (user-friendly, general-purpose)</li>
+   <li>Fedora, Red Hat Enterprise Linux (enterprise environments)</li>
+   <li>Arch, Gentoo (customization-focused)</li>
+   <li>Kali Linux (security and penetration testing)</li>
+   <li>Android (yes, it's based on the Linux kernel!)</li>
+</ul>
+    
+
+
+
+
