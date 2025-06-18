@@ -16,3 +16,7 @@ A comprehensive guide and resource hub for understanding Linux as an Operating S
 * [Introduction](#introduction)
   - [Topic](#topic)
   - [Topic](#topic)
+
+# Introduction
+
+**Linux** is a free and open-source operating system that powers everything from personal computers and smartphones to servers, supercomputers, routers, and embedded devices. At its core, Linux is known for its stability, security, flexibility, and developer-friendliness, making it a favorite among programmers, system administrators, and tech enthusiasts.
