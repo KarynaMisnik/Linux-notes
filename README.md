@@ -43,7 +43,7 @@ Studying Linux is more than learning an OS — it’s about understanding how co
 
 # Study Plan
 
-# 🐧 Learning Linux: Study Roadmap
+### 🐧 Learning Linux: Study Roadmap
 
 This document outlines my learning path as I dive deeper into Linux to understand how it works from the ground up — both practically and theoretically.
 
