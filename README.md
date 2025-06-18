@@ -1,5 +1,8 @@
 # Linux Notes
 
+_“The Linux philosophy is 'laugh in the face of danger'. Oops. Wrong one. 'Do it yourself' – that's it.”_  
+— Linus Torvalds
+
 A comprehensive guide and resource hub for understanding Linux as an Operating System, tailored for academic study and exploration. Covers Linux architecture, system internals, command-line usage, shell scripting, and key concepts relevant for students and enthusiasts.
 
 <div>
@@ -10,12 +13,12 @@ A comprehensive guide and resource hub for understanding Linux as an Operating S
 <img src='https://img.shields.io/static/v1?style=for-the-badge&message=YouTube&color=FF0000&logo=YouTube&logoColor=FFFFFF&label=' />
 </div>
 
-
 ## Menu
 
 * [Introduction](#introduction)
   - [What is Linux](#what-is-Linux)
-  - [Topic](#topic)
+* [Study Plan](#study-plan)
+  
 
 # Introduction
 
@@ -36,7 +39,137 @@ Popular Linux distributions include:
    <li>Android (yes, it's based on the Linux kernel!)</li>
 </ul>
 
-  Studying Linux is more than learning an OS — it’s about understanding how computers work at a deeper level.
+Studying Linux is more than learning an OS — it’s about understanding how computers work at a deeper level.
+
+# Study Plan
+
+# 🐧 Learning Linux: Study Roadmap
+
+This document outlines my learning path as I dive deeper into Linux to understand how it works from the ground up — both practically and theoretically.
+
+---
+
+## ✅ Phase 1: Command Line Mastery
+
+**Objective:** Build confidence using the Linux terminal.
+
+### Topics to Learn:
+- Navigation: `cd`, `ls`, `pwd`, `find`, `locate`
+- File management: `cp`, `mv`, `rm`, `mkdir`, `touch`, `cat`, `less`
+- Text processing: `grep`, `sed`, `awk`
+- Permissions: `chmod`, `chown`, `umask`
+- Redirects and pipes: `>`, `>>`, `<`, `|`, `tee`
+- Disk usage: `du`, `df`, `mount`, `umount`
+- Package managers: `apt`, `dnf`, `pacman` (based on distro)
+
+🛠️ Practice: Solve OverTheWire Bandit challenges (<a href="https://overthewire.org/wargames/bandit/">Link</a>)
+
+---
+
+## ✅ Phase 2: System Architecture
+
+**Objective:** Understand how Linux is structured internally.
+
+### Topics to Learn:
+- User space vs Kernel space
+- System calls and kernel interfaces
+- Shells: `bash`, `zsh`, `sh`
+- Init systems: `systemd`, `init`, runlevels, targets
+- Understanding the boot process
+
+📘 Resource: *How Linux Works* by Brian Ward  
+🔗 Project idea: Build your own minimal Linux system with [Linux From Scratch](http://www.linuxfromscratch.org/)
+
+---
+
+## ✅ Phase 3: Process and Memory Management
+
+**Objective:** Learn how Linux handles programs and memory.
+
+### Topics to Learn:
+- Processes: `ps`, `top`, `htop`, `nice`, `kill`
+- Foreground/background jobs: `fg`, `bg`, `jobs`, `&`
+- Memory: `free`, `vmstat`, `/proc/meminfo`
+- Swapping and paging
+- Signals and inter-process communication (IPC)
+
+---
+
+## ✅ Phase 4: Filesystems and Storage
+
+**Objective:** Learn how Linux organizes, stores, and accesses data.
+
+### Topics to Learn:
+- Filesystem layout: `/etc`, `/usr`, `/home`, `/var`, `/dev`, `/proc`
+- Filesystem types: ext4, btrfs, xfs
+- Mounting and unmounting: `mount`, `umount`, `/etc/fstab`
+- Inodes and file metadata
+- Hard and symbolic links: `ln`, `stat`
+
+🔧 Exercise: Create and mount a virtual disk using `dd`, `mkfs`, and `mount`
+
+---
+
+## ✅ Phase 5: Shell Scripting & Automation
+
+**Objective:** Automate tasks and boost efficiency.
+
+### Topics to Learn:
+- Bash syntax: variables, conditionals, loops, functions
+- Input/output and arguments
+- Script debugging: `set -x`, `bash -x`
+- Cron jobs: `crontab -e`
+- Environment variables
+
+🛠️ Project idea: Write a backup script or a system monitor
+
+---
+
+## ✅ Phase 6: Networking & Security Basics
+
+**Objective:** Understand Linux in the context of communication and protection.
+
+### Topics to Learn:
+- IP and interfaces: `ip`, `ifconfig`, `ping`, `traceroute`
+- Ports and sockets: `netstat`, `ss`, `lsof`
+- User management: `adduser`, `passwd`, `usermod`, `groups`
+- File permissions and ownership
+- Firewalls: `iptables`, `ufw`, `firewalld`
+
+---
+
+## ✅ Phase 7: Logging & Troubleshooting
+
+**Objective:** Learn how to monitor and fix issues.
+
+### Topics to Learn:
+- System logs: `journalctl`, `/var/log/`
+- Boot logs: `dmesg`
+- Monitoring tools: `top`, `iotop`, `lsof`, `strace`
+- Log rotation: `logrotate`
+
+---
+
+## 📚 Bonus (Advanced Topics)
+
+- Kernel modules and custom compilation
+- Linux system programming (with C)
+- Using containers: Docker, Podman
+- Orchestration: Kubernetes (k3s or Minikube)
+- Configuration management: Ansible, Puppet
+
+---
+
+## 💡 Tips for Studying Linux
+- Use Linux as your daily OS (VM, WSL, or dual-boot)
+- Break your system — then fix it!
+- Keep a terminal cheat sheet
+- Document everything (like this repo!)
+- Join the community: r/linux, LinuxQuestions.org, etc.
+
+---
+
+
 
 
 
