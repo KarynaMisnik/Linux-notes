@@ -162,16 +162,6 @@ This document outlines my learning path as I dive deeper into Linux to understan
 
 ---
 
-## 💡 Tips for Studying Linux
-- Use Linux as your daily OS (VM, WSL, or dual-boot)
-- Break your system — then fix it!
-- Keep a terminal cheat sheet
-- Document everything (like this repo!)
-- Join the community: r/linux, LinuxQuestions.org, etc.
-
----
-
-
 # 🧭 Linux Commands 
 
 ### Basics
@@ -189,3 +179,6 @@ pwd
 
 Example output:
 
+```shell
+
+```
