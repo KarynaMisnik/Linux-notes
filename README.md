@@ -18,6 +18,8 @@ A comprehensive guide and resource hub for understanding Linux as an Operating S
 * [Introduction](#introduction)
   - [What is Linux](#what-is-Linux)
 * [Study Plan](#study-plan)
+* [Linux Commands](#linux-commands)
+  - [Basics](#basics)
   
 
 # Introduction
@@ -170,6 +172,11 @@ This document outlines my learning path as I dive deeper into Linux to understan
 ---
 
 
+# 🧭 Linux Commands 
+
+### Basics
+
+The command line lets you move around the filesystem, inspect directories, and execute actions. Here are the essential commands and concepts for navigating in Linux.
 
 
 
