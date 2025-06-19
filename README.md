@@ -180,5 +180,5 @@ pwd
 Example output:
 
 ```shell
-
+/home/yourusername/Documents
 ```
