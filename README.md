@@ -19,7 +19,7 @@ A comprehensive guide and resource hub for understanding Linux as an Operating S
   - [What is Linux](#what-is-Linux)
 * [Study Plan](#study-plan)
 * [Linux Commands](#linux-commands)
-  - [Basics](#basics)
+  - [Directory](#directory)
   
 
 # Introduction
@@ -162,9 +162,9 @@ This document outlines my learning path as I dive deeper into Linux to understan
 
 ---
 
-# 🧭 Linux Commands 
+# 🧭 Linux Commands(basics)
 
-### Basics
+### Directory 
 
 The command line lets you move around the filesystem, inspect directories, and execute actions. Here are the essential commands and concepts for navigating in Linux.
 
@@ -185,3 +185,11 @@ Example output:
 📂 2. List Files: <code>ls</code>
 
 Shows files and directories in the current directory.
+
+Useful options:
+
+<code>-l</code> (long format)
+
+<code>-a</code> (include hidden files)
+
+ <code>-h</code> (human-readable file sizes)
