@@ -179,5 +179,13 @@ This document outlines my learning path as I dive deeper into Linux to understan
 The command line lets you move around the filesystem, inspect directories, and execute actions. Here are the essential commands and concepts for navigating in Linux.
 
 
+📁 1. Current Directory: <code>pwd</code>
 
+Prints the present working directory — where you are in the filesystem.
+
+```shell
+pwd
+```
+
+Example output:
 
