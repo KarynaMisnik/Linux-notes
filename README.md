@@ -182,3 +182,6 @@ Example output:
 ```shell
 /home/yourusername/Documents
 ```
+📂 2. List Files: <code>ls</code>
+
+Shows files and directories in the current directory.
