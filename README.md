@@ -218,7 +218,15 @@ cd ~/Downloads
 cd /etc
 
 ```
+🗂️ 4. Tree-Like View (Optional): <code>tree</code>
 
+Shows a directory and its contents recursively (you may need to install it).
+
+```bash
+sudo apt install tree      # Debian/Ubuntu
+sudo dnf install tree      # Fedora/RHEL
+tree
+```
 
 
 
