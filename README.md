@@ -202,4 +202,41 @@ Changes your current working directory.
 ```bash
 cd /path/to/directory
 ```
+Shortcuts:
+
+  <code>cd ~</code> → go to your home directory
+
+  <code>cd ..</code> → go up one level
+
+  <code>cd -</code> → switch to previous directory
+
+Examples:
+
+```bash
+cd ..
+cd ~/Downloads
+cd /etc
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
