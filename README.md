@@ -18,7 +18,7 @@ A comprehensive guide and resource hub for understanding Linux as an Operating S
 * [Introduction](#introduction)
   - [What is Linux](#what-is-Linux)
 * [Study Plan](#study-plan)
-* [Linux Commands](#linux-commands)
+* [Linux Commands(basics)](#linux-commands-basics)
   - [Directory](#directory)
   
 
