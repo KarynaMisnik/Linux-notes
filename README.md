@@ -192,4 +192,8 @@ Useful options:
 
 <code>-a</code> (include hidden files)
 
+🚶‍♂️ 3. Change Directory: <code>cd</code>
+
+Changes your current working directory.
+
  <code>-h</code> (human-readable file sizes)
