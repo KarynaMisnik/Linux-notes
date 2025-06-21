@@ -228,9 +228,25 @@ sudo dnf install tree      # Fedora/RHEL
 tree
 ```
 
+🔍 5. Locate Files & Directories
+<code>find</code>: Search in real-time
 
+```bash
+find /path -name "filename"
+```
+<code>locate</code>: Search using an indexed database
 
+First update the database:
 
+```bash
+sudo updatedb
+```
+
+then:
+
+```bash
+locate filename
+```
 
 
 
