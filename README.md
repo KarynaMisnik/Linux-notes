@@ -278,6 +278,40 @@ dirs
 
 Shows all directories in your stack (used with <code>pushd/popd</code>).
 
+<code>ls</code> with sorting and filtering
+
+```bash
+ls -lt           # Sort by modification time
+ls -ltr          # Reverse order
+ls -lhS          # Sort by size, human-readable
+```
+💡 Combine with <code>head</code> or <code>tail</code> for top/bottom N files:
+
+```bash
+ls -lhS | head -n 5
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
