@@ -20,6 +20,7 @@ A comprehensive guide and resource hub for understanding Linux as an Operating S
 * [Study Plan](#study-plan)
 * [Linux Commands(basics)](#linux-commands-basics)
   - [Directory](#directory)
+  - [Advanced Navigation](#advanced-navigation)
   
 
 # Introduction
@@ -256,9 +257,18 @@ Relative path: based on current location, e.g.,
 ```bash
 ../docs
 ```
+#### Advanced Navigation
 
+<code>pushd</code> and <code>popd</code> — Directory Stack
 
+They let you jump between directories without losing your place.
 
+```bash
+pushd /etc       # Save current dir and go to /etc
+popd             # Go back to where you were
+```
+
+💡 Great for switching back and forth between two locations.
 
 
 
