@@ -270,9 +270,13 @@ popd             # Go back to where you were
 
 💡 Great for switching back and forth between two locations.
 
+<code>dirs</code> — View Directory Stack
 
+```bash
+dirs
+```
 
-
+Shows all directories in your stack (used with <code>pushd/popd</code>).
 
 
 
