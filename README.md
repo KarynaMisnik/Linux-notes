@@ -247,8 +247,15 @@ then:
 ```bash
 locate filename
 ```
+📌 6. Absolute vs Relative Paths
 
+Absolute path: starts from <code>/</code> (root), e.g., 
+```bash /home/user/docs```
 
+Relative path: based on current location, e.g., 
+```bash
+../docs
+```
 
 
 
