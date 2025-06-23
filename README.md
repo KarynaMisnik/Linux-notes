@@ -15,14 +15,13 @@ A comprehensive guide and resource hub for understanding Linux as an Operating S
 
 ## Menu
 
-* [Introduction](#introduction)
+- [Introduction](#introduction)
   - [What is Linux](#what-is-Linux)
-* [Study Plan](#study-plan)
-* [Linux Commands(basics)](#linux-commands-basics)
+- [Study Plan](#study-plan)
+- [Linux Commands(basics)](#linux-commands-basics)
   - [Directory](#directory)
   - [Advanced Navigation](#advanced-navigation)
   - []()
-  
 
 # Introduction
 
@@ -32,6 +31,7 @@ A comprehensive guide and resource hub for understanding Linux as an Operating S
 
 Linux refers to the **kernel** — the central part of the operating system that directly interacts with the hardware and manages system resources like memory, CPU, devices, and processes.
 However, when people say "Linux," they often mean a Linux distribution (distro), which is the kernel plus essential tools, libraries, and a user interface — forming a complete operating system.
+But to understand Linux we have to start from Unix.
 
 Popular Linux distributions include:
 
@@ -58,6 +58,7 @@ This document outlines my learning path as I dive deeper into Linux to understan
 **Objective:** Build confidence using the Linux terminal.
 
 ### Topics to Learn:
+
 - Navigation: `cd`, `ls`, `pwd`, `find`, `locate`
 - File management: `cp`, `mv`, `rm`, `mkdir`, `touch`, `cat`, `less`
 - Text processing: `grep`, `sed`, `awk`
@@ -75,13 +76,14 @@ This document outlines my learning path as I dive deeper into Linux to understan
 **Objective:** Understand how Linux is structured internally.
 
 ### Topics to Learn:
+
 - User space vs Kernel space
 - System calls and kernel interfaces
 - Shells: `bash`, `zsh`, `sh`
 - Init systems: `systemd`, `init`, runlevels, targets
 - Understanding the boot process
 
-📘 Resource: *How Linux Works* by Brian Ward  
+📘 Resource: _How Linux Works_ by Brian Ward  
 🔗 Project idea: Build your own minimal Linux system with [Linux From Scratch](http://www.linuxfromscratch.org/)
 
 ---
@@ -91,6 +93,7 @@ This document outlines my learning path as I dive deeper into Linux to understan
 **Objective:** Learn how Linux handles programs and memory.
 
 ### Topics to Learn:
+
 - Processes: `ps`, `top`, `htop`, `nice`, `kill`
 - Foreground/background jobs: `fg`, `bg`, `jobs`, `&`
 - Memory: `free`, `vmstat`, `/proc/meminfo`
@@ -104,6 +107,7 @@ This document outlines my learning path as I dive deeper into Linux to understan
 **Objective:** Learn how Linux organizes, stores, and accesses data.
 
 ### Topics to Learn:
+
 - Filesystem layout: `/etc`, `/usr`, `/home`, `/var`, `/dev`, `/proc`
 - Filesystem types: ext4, btrfs, xfs
 - Mounting and unmounting: `mount`, `umount`, `/etc/fstab`
@@ -119,6 +123,7 @@ This document outlines my learning path as I dive deeper into Linux to understan
 **Objective:** Automate tasks and boost efficiency.
 
 ### Topics to Learn:
+
 - Bash syntax: variables, conditionals, loops, functions
 - Input/output and arguments
 - Script debugging: `set -x`, `bash -x`
@@ -134,6 +139,7 @@ This document outlines my learning path as I dive deeper into Linux to understan
 **Objective:** Understand Linux in the context of communication and protection.
 
 ### Topics to Learn:
+
 - IP and interfaces: `ip`, `ifconfig`, `ping`, `traceroute`
 - Ports and sockets: `netstat`, `ss`, `lsof`
 - User management: `adduser`, `passwd`, `usermod`, `groups`
@@ -147,6 +153,7 @@ This document outlines my learning path as I dive deeper into Linux to understan
 **Objective:** Learn how to monitor and fix issues.
 
 ### Topics to Learn:
+
 - System logs: `journalctl`, `/var/log/`
 - Boot logs: `dmesg`
 - Monitoring tools: `top`, `iotop`, `lsof`, `strace`
@@ -166,10 +173,9 @@ This document outlines my learning path as I dive deeper into Linux to understan
 
 # 🧭 Linux Commands(basics)
 
-### Directory 
+### Directory
 
 The command line lets you move around the filesystem, inspect directories, and execute actions. Here are the essential commands and concepts for navigating in Linux.
-
 
 📁 1. Current Directory: <code>pwd</code>
 
@@ -184,6 +190,7 @@ Example output:
 ```shell
 /home/yourusername/Documents
 ```
+
 📂 2. List Files: <code>ls</code>
 
 Shows files and directories in the current directory.
@@ -196,7 +203,6 @@ Useful options:
 
 <code>-h</code> (human-readable file sizes)
 
-
 🚶‍♂️ 3. Change Directory: <code>cd</code>
 
 Changes your current working directory.
@@ -204,13 +210,14 @@ Changes your current working directory.
 ```bash
 cd /path/to/directory
 ```
+
 Shortcuts:
 
-  <code>cd ~</code> → go to your home directory
+<code>cd ~</code> → go to your home directory
 
-  <code>cd ..</code> → go up one level
+<code>cd ..</code> → go up one level
 
-  <code>cd -</code> → switch to previous directory
+<code>cd -</code> → switch to previous directory
 
 Examples:
 
@@ -220,6 +227,7 @@ cd ~/Downloads
 cd /etc
 
 ```
+
 🗂️ 4. Tree-Like View (Optional): <code>tree</code>
 
 Shows a directory and its contents recursively (you may need to install it).
@@ -236,6 +244,7 @@ tree
 ```bash
 find /path -name "filename"
 ```
+
 <code>locate</code>: Search using an indexed database
 
 First update the database:
@@ -249,15 +258,18 @@ then:
 ```bash
 locate filename
 ```
+
 📌 6. Absolute vs Relative Paths
 
-Absolute path: starts from <code>/</code> (root), e.g., 
-```bash /home/user/docs```
+Absolute path: starts from <code>/</code> (root), e.g.,
+`bash /home/user/docs`
 
-Relative path: based on current location, e.g., 
+Relative path: based on current location, e.g.,
+
 ```bash
 ../docs
 ```
+
 #### Advanced Navigation
 
 <code>pushd</code> and <code>popd</code> — Directory Stack
@@ -286,37 +298,9 @@ ls -lt           # Sort by modification time
 ls -ltr          # Reverse order
 ls -lhS          # Sort by size, human-readable
 ```
+
 💡 Combine with <code>head</code> or <code>tail</code> for top/bottom N files:
 
 ```bash
 ls -lhS | head -n 5
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
