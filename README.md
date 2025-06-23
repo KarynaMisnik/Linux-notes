@@ -17,6 +17,7 @@ A comprehensive guide and resource hub for understanding Linux as an Operating S
 
 - [Introduction](#introduction)
   - [What is Linux](#what-is-Linux)
+  - [History of Linux](#history-of-linux)
 - [Study Plan](#study-plan)
 - [Linux Commands(basics)](#linux-commands-basics)
   - [Directory](#directory)
@@ -44,6 +45,10 @@ Popular Linux distributions include:
 </ul>
 
 Studying Linux is more than learning an OS — it’s about understanding how computers work at a deeper level.
+
+#### History of Linux
+
+The history of Unix dates back to the **mid-1960s**, when the Massachusetts Institute of Technology (MIT), AT&T Bell Labs, and General Electric collaborated on an ambitious project called <a href="https://en.wikipedia.org/wiki/Multics">MULTICS</a> — the Multiplexed Information and Computing Service. The goal was to create a sophisticated, multi-user, time-sharing operating system.
 
 # Study Plan
 
