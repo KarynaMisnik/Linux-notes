@@ -75,6 +75,60 @@ A Linux distribution is a complete operating system built around the Linux kerne
 
 Distros are tailored for different purposes: general use, servers, security, embedded systems, minimal installations, etc.
 
+🧱 Core Components of Any Distro
+
+<table>
+  <thead>
+    <tr>
+      <th>Component</th>
+      <th>Description</th>
+      <th>Examples</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Kernel</td>
+      <td>The core of the OS, manages hardware and system resources.</td>
+      <td>Linux kernel</td>
+    </tr>
+    <tr>
+      <td>Init System</td>
+      <td>Manages system startup and services.</td>
+      <td>systemd, SysVinit, OpenRC</td>
+    </tr>
+    <tr>
+      <td>Package Manager</td>
+      <td>Installs, updates, and removes software packages.</td>
+      <td>apt, dnf, pacman, zypper</td>
+    </tr>
+    <tr>
+      <td>Shell</td>
+      <td>Command-line interface for interacting with the system.</td>
+      <td>bash, zsh, fish</td>
+    </tr>
+    <tr>
+      <td>Core Utilities</td>
+      <td>Essential command-line tools and libraries.</td>
+      <td>GNU coreutils, glibc</td>
+    </tr>
+    <tr>
+      <td>Desktop Environment</td>
+      <td>Graphical user interface (optional).</td>
+      <td>GNOME, KDE Plasma, XFCE</td>
+    </tr>
+    <tr>
+      <td>Applications</td>
+      <td>Pre-installed or available software for daily tasks.</td>
+      <td>Firefox, LibreOffice, GIMP</td>
+    </tr>
+    <tr>
+      <td>Documentation</td>
+      <td>Manuals and help files for users and admins.</td>
+      <td>man pages, info, distro wikis</td>
+    </tr>
+  </tbody>
+</table>
+
 # Study Plan
 
 ### 🐧 Learning Linux: Study Roadmap
