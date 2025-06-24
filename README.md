@@ -18,6 +18,7 @@ A comprehensive guide and resource hub for understanding Linux as an Operating S
 - [Introduction](#introduction)
   - [What is Linux](#what-is-Linux)
   - [History of Linux](#history-of-linux)
+  - [Linux distros](#linux-distros)
 - [Study Plan](#study-plan)
 - [Linux Commands(basics)](#linux-commands-basics)
   - [Directory](#directory)
@@ -65,6 +66,14 @@ By combining the Linux kernel with tools from the GNU Project (like compilers, s
 Since then, the Linux kernel has evolved into a massive, modular, and highly portable system, powering everything from servers and smartphones (like Android) to supercomputers and embedded devices.
 
 Today, it’s one of the largest and most actively developed open-source projects in the world.
+
+#### Linux distros
+
+🧷 What is a Linux Distribution (Distro)?
+
+A Linux distribution is a complete operating system built around the Linux kernel, bundled with a package manager, desktop environment, libraries, drivers, system utilities, and often a default init system (like systemd).
+
+Distros are tailored for different purposes: general use, servers, security, embedded systems, minimal installations, etc.
 
 # Study Plan
 
