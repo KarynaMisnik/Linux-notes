@@ -129,6 +129,58 @@ Distros are tailored for different purposes: general use, servers, security, emb
   </tbody>
 </table>
 
+🔢 Major Families of Linux Distros
+
+Understanding distro families helps you choose wisely and recognize compatibility.
+
+1. Debian-based
+
+   ✅ Popular: Ubuntu, Linux Mint, Pop!\_OS, Kali
+
+   🧰 Uses dpkg, apt for packages
+
+   🧠 Known for stability, vast repositories
+
+   🔧 Great for: general desktop use, servers, development
+
+2. Red Hat-based
+
+   ✅ Popular: Fedora, RHEL, CentOS Stream, AlmaLinux, Rocky Linux
+
+   🧰 Uses rpm, dnf or yum
+
+   🧠 Enterprise-focused, SELinux support, used in industry
+
+   🔧 Great for: enterprise servers, sysadmin training
+
+3. Arch-based
+
+   ✅ Popular: Arch Linux, Manjaro, EndeavourOS
+
+   🧰 Uses pacman
+
+   🧠 Rolling release, minimal, highly customizable
+
+   🔧 Great for: learning internals, DIY systems
+
+4. Gentoo-based
+
+   ✅ Gentoo, Calculate Linux
+
+   🧠 Source-based, compiled packages (emerge)
+
+   🔧 Ideal for: deep optimization, performance tuning
+
+5. Independent/Other
+
+   openSUSE (uses zypper, based on YaST tools)
+
+   Slackware (very Unix-like, minimal)
+
+   NixOS (declarative system config)
+
+   Alpine Linux (musl libc, minimal, used in containers)
+
 # Study Plan
 
 ### 🐧 Learning Linux: Study Roadmap
