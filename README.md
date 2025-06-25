@@ -19,6 +19,7 @@ A comprehensive guide and resource hub for understanding Linux as an Operating S
   - [What is Linux](#what-is-Linux)
   - [History of Linux](#history-of-linux)
   - [Linux distros](#linux-distros)
+  - [Linux System Architecture](#linux-system-architecture)
 - [Study Plan](#study-plan)
 - [Linux Commands(basics)](#linux-commands-basics)
   - [Directory](#directory)
@@ -180,6 +181,21 @@ Understanding distro families helps you choose wisely and recognize compatibilit
    NixOS (declarative system config)
 
    Alpine Linux (musl libc, minimal, used in containers)
+
+# 🏗️ Linux System Architecture
+
+---
+
+### 🧠 Explanation of Layers
+
+| Layer                     | Role                                                              |
+| ------------------------- | ----------------------------------------------------------------- |
+| **User Applications**     | Programs users interact with directly.                            |
+| **User Space Libraries**  | Standard libraries apps use to interact with the kernel.          |
+| **Kernel**                | Core of the OS, manages hardware, processes, memory, filesystems. |
+| **Drivers & VFS**         | Hardware abstraction, handles devices and filesystems uniformly.  |
+| **System Call Interface** | Entry point for apps to request services from the kernel.         |
+| **Hardware**              | Physical devices managed and accessed through the kernel.         |
 
 # Study Plan
 
