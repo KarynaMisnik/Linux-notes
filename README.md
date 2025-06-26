@@ -24,6 +24,7 @@ A comprehensive guide and resource hub for understanding Linux as an Operating S
 - [Linux Commands(basics)](#linux-commands-basics)
   - [Directory](#directory)
   - [Advanced Navigation](#advanced-navigation)
+  - [File Management](#file-management)
 
 # Introduction
 
@@ -624,3 +625,19 @@ find . -type f -name "*.bak" | xargs rm
 ```
 
 Deletes all <code>.bak</code> files in the current tree. Safer than a simple <code>rm -r</code>.
+
+#### 🗂️ File Management
+
+<code>cp</code> — Copy files and directories
+
+```bash
+cp file.txt backup.txt
+```
+
+Copies <code>file.txt</code> to <code>backup.txt</code>.
+
+```bash
+cp -r folder1 folder2
+```
+
+Copies the entire <code>folder1</code> directory into a new <code>folder2</code> directory.
