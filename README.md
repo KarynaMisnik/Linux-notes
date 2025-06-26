@@ -521,7 +521,7 @@ Relative path: based on current location, e.g.,
 
 #### Advanced Navigation
 
-<code>pushd</code> and <code>popd</code> — Directory Stack
+🐧 <code>pushd</code> and <code>popd</code> — Directory Stack
 
 They let you jump between directories without losing your place.
 
@@ -532,7 +532,7 @@ popd             # Go back to where you were
 
 💡 Great for switching back and forth between two locations.
 
-<code>dirs</code> — View Directory Stack
+🐧 <code>dirs</code> — View Directory Stack
 
 ```bash
 dirs
@@ -540,7 +540,7 @@ dirs
 
 Shows all directories in your stack (used with <code>pushd/popd</code>).
 
-<code>ls</code> with sorting and filtering
+🐧 <code>ls</code> with sorting and filtering
 
 ```bash
 ls -lt           # Sort by modification time
@@ -554,7 +554,7 @@ ls -lhS          # Sort by size, human-readable
 ls -lhS | head -n 5
 ```
 
-<code>readlink</code> and <code>realpath</code> — Resolve symlinks
+🐧 <code>readlink</code> and <code>realpath</code> — Resolve symlinks
 
 ```bash
 readlink -f somefile
@@ -563,7 +563,7 @@ realpath somefile
 
 Tells you the actual target of a symlink or canonical path.
 
-<code>namei</code> — Break down a path
+🐧 <code>namei</code> — Break down a path
 
 ```bash
 namei -l /etc/passwd
@@ -571,7 +571,7 @@ namei -l /etc/passwd
 
 Shows each part of a path and its permissions — helpful when debugging permission issues.
 
-<code>stat</code> — Detailed file metadata
+🐧 <code>stat</code> — Detailed file metadata
 
 ```bash
 stat filename
@@ -579,7 +579,7 @@ stat filename
 
 Shows size, owner, permissions, access/modify/change times, inode, etc.
 
-<code>find</code> with powerful filters
+🐧 <code>find</code> with powerful filters
 
 ```bash
 find . -type f -size +100M -name "*.mp4"
@@ -593,7 +593,7 @@ find /home -user yourname      # owned by a user
 find . -empty                  # find empty files and dirs
 ```
 
-<code>file</code> — Detect file type
+🐧 <code>file</code> — Detect file type
 
 ```bash
 file filename
@@ -601,7 +601,7 @@ file filename
 
 Helps identify actual file type, not just by extension.
 
-<code>basename</code> and <code>dirname</code> — Break up paths
+🐧 <code>basename</code> and <code>dirname</code> — Break up paths
 
 ```bash
 basename /etc/hosts   → "hosts"
@@ -610,14 +610,14 @@ dirname /etc/hosts    → "/etc"
 
 Useful in shell scripts when parsing file paths.
 
-<code>du</code> and <code>ncdu</code> — Disk usage
+🐧 <code>du</code> and <code>ncdu</code> — Disk usage
 
 ```bash
 du -sh *           # See size of items in current dir
 ncdu               # (must install) – interactive CLI disk usage explorer
 ```
 
-<code>xargs</code> + <code>find</code> — Power combos
+🐧 <code>xargs</code> + <code>find</code> — Power combos
 
 ```bash
 find . -type f -name "*.bak" | xargs rm
