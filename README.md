@@ -200,13 +200,17 @@ The Linux system architecture’s main levels are:
 
 **Examples:**
 
-- CPU
-- RAM
+- CPU(Central Processing Unit): performs calculations and controls operations
+- RAM: used to store data and programs.
 - Disk (HDD/SSD)
 - Network interfaces
 - GPUs, USB devices
 
 **Role:** Executes instructions, handles data transfer, I/O operations.
+
+Among all hardware, main memory is the most essential. It’s just a large area that holds 0s and 1s (binary data).
+
+The CPU reads instructions and data from memory, processes them, and then writes results back to memory. All data going to or from devices passes through main memory.
 
 ⚙️ 2. Kernel Layer (Kernel Space)
 
