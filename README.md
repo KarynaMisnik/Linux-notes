@@ -553,3 +553,74 @@ ls -lhS          # Sort by size, human-readable
 ```bash
 ls -lhS | head -n 5
 ```
+
+<code>readlink</code> and <code>realpath</code> — Resolve symlinks
+
+```bash
+readlink -f somefile
+realpath somefile
+```
+
+Tells you the actual target of a symlink or canonical path.
+
+<code>namei</code> — Break down a path
+
+```bash
+namei -l /etc/passwd
+```
+
+Shows each part of a path and its permissions — helpful when debugging permission issues.
+
+<code>stat</code> — Detailed file metadata
+
+```bash
+stat filename
+```
+
+Shows size, owner, permissions, access/modify/change times, inode, etc.
+
+<code>find</code> with powerful filters
+
+```bash
+find . -type f -size +100M -name "*.mp4"
+```
+
+Find all MP4 files larger than 100 MB.
+
+```bash
+find /var/log -mtime -3        # modified in last 3 days
+find /home -user yourname      # owned by a user
+find . -empty                  # find empty files and dirs
+```
+
+<code>file</code> — Detect file type
+
+```bash
+file filename
+```
+
+Helps identify actual file type, not just by extension.
+
+<code>basename</code> and <code>dirname</code> — Break up paths
+
+```bash
+basename /etc/hosts   → "hosts"
+dirname /etc/hosts    → "/etc"
+```
+
+Useful in shell scripts when parsing file paths.
+
+<code>du</code> and <code>ncdu</code> — Disk usage
+
+```bash
+du -sh *           # See size of items in current dir
+ncdu               # (must install) – interactive CLI disk usage explorer
+```
+
+<code>xargs</code> + <code>find</code> — Power combos
+
+```bash
+find . -type f -name "*.bak" | xargs rm
+```
+
+Deletes all <code>.bak</code> files in the current tree. Safer than a simple <code>rm -r</code>.
