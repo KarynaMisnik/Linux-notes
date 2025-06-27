@@ -24,7 +24,6 @@ A comprehensive guide and resource hub for understanding Linux as an Operating S
 - [Linux Commands(basics)](#linux-commands-basics)
   - [Directory](#directory)
   - [Advanced Navigation](#advanced-navigation)
-  - []()
 
 # Introduction
 
@@ -182,11 +181,9 @@ Understanding distro families helps you choose wisely and recognize compatibilit
 
    Alpine Linux (musl libc, minimal, used in containers)
 
-# 🏗️ Linux System Architecture
+#### 🏗️ Linux System Architecture
 
----
-
-### 🧠 Explanation of Layers
+The Linux system architecture’s main levels are:
 
 | Layer                     | Role                                                              |
 | ------------------------- | ----------------------------------------------------------------- |
@@ -196,6 +193,102 @@ Understanding distro families helps you choose wisely and recognize compatibilit
 | **Drivers & VFS**         | Hardware abstraction, handles devices and filesystems uniformly.  |
 | **System Call Interface** | Entry point for apps to request services from the kernel.         |
 | **Hardware**              | Physical devices managed and accessed through the kernel.         |
+
+🧱 1. Hardware Layer
+
+**What it is:** The physical components of the machine.
+
+**Examples:**
+
+- CPU
+- RAM
+- Disk (HDD/SSD)
+- Network interfaces
+- GPUs, USB devices
+
+**Role:** Executes instructions, handles data transfer, I/O operations.
+
+⚙️ 2. Kernel Layer (Kernel Space)
+
+**The core of the OS**, running in privileged mode and managing all system operations.
+
+Key Components:
+
+| Subsystem                     | Function                                                |
+| ----------------------------- | ------------------------------------------------------- |
+| **Process Scheduler**         | Handles multitasking by scheduling which process runs.  |
+| **Memory Manager**            | Manages physical and virtual memory.                    |
+| **Device Drivers**            | Interface between hardware and the OS.                  |
+| **VFS (Virtual File System)** | Abstracts filesystem operations (ext4, FAT, NTFS, etc). |
+| **Network Stack**             | Manages TCP/IP, sockets, and network communication.     |
+| **System Call Interface**     | Gateway for user apps to access kernel features.        |
+
+🧩 3. System Libraries (User Space)
+
+**What they are:** Shared libraries providing APIs used by applications to interact with the system.
+
+**Examples:**
+
+- `glibc` (C standard library)
+- `libssl`, `libcurl`, `libX11`
+
+**Role:**
+
+- Translate high-level functions (e.g., `open()`, `malloc()`) into system calls.
+- Provide abstraction and code reuse.
+
+💻 4. User Processes / Applications
+
+**What they are:** Programs run by users or the system.
+
+**Examples:**
+
+- CLI: `bash`, `ls`, `top`, `gcc`
+- GUI: Firefox, VS Code
+- Daemons: `cron`, `sshd`, `NetworkManager`
+
+**Role:** Interface with users and provide application functionality.
+
+🔐 5. Shell and CLI(Command-Line Interface)
+
+> Note: CLI - It's a text-based interface that allows users to interact with the operating system or
+> software by typing commands into a terminal or console.
+
+**Examples:** `bash`, `zsh`, `fish`
+
+**Role:**
+
+- Command-line interface to interact with the OS.
+- Runs scripts, automates tasks, executes commands.
+
+📦 6. Package Management Layer
+
+**Examples:**
+
+- Debian/Ubuntu: `apt`, `dpkg`
+- Fedora: `dnf`, `rpm`
+- Arch: `pacman`
+
+**Role:**
+
+- Install, remove, and manage software.
+- Resolve dependencies and maintain package metadata.
+
+🔁 Interaction Flow
+
+```text
+[ User Application ]
+        ↓
+[ System Libraries (glibc, etc.) ]
+        ↓
+[ System Call Interface ]
+        ↓
+[ Kernel Subsystems ]
+        ↓
+[ Device Drivers ]
+        ↓
+[ Physical Hardware ]
+```
 
 # Study Plan
 
