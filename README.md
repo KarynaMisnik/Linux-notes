@@ -628,7 +628,7 @@ Deletes all <code>.bak</code> files in the current tree. Safer than a simple <co
 
 #### 🗂️ File Management
 
-<code>cp</code> — Copy files and directories
+🐧 <code>cp</code> — Copy files and directories
 
 ```bash
 cp file.txt backup.txt
@@ -641,3 +641,17 @@ cp -r folder1 folder2
 ```
 
 Copies the entire <code>folder1</code> directory into a new <code>folder2</code> directory.
+
+🐧 <code>mv</code> — Move or rename files
+
+```bash
+mv file.txt /home/user/Documents/
+```
+
+Moves <code>file.txt</code> to the <code>Documents</code> folder.
+
+```bash
+mv oldname.txt newname.txt
+```
+
+Renames <code>oldname.txt</code> to <code>newname.txt</code>.
