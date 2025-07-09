@@ -705,3 +705,11 @@ Creates two empty files at once.
 ```bash
 cat file.txt
 ```
+
+Displays the content of <code>file.txt</code> in the terminal.
+
+```bash
+cat file1.txt file2.txt > combined.txt
+```
+
+Combines two files into <code>combined.txt</code>.
