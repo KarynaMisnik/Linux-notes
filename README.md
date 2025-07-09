@@ -699,3 +699,9 @@ touch file1.txt file2.txt
 ```
 
 Creates two empty files at once.
+
+🐧 <code>cat</code> — View or concatenate files
+
+```bash
+cat file.txt
+```
