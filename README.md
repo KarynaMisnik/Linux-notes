@@ -685,3 +685,17 @@ mkdir -p projects/python/scripts
 ```
 
 Creates nested directories, all at once.
+
+🐧 <code>touch</code> — Create empty files or update timestamps
+
+```bash
+touch newfile.txt
+```
+
+Creates an empty file named <code>newfile.txt</code> (or updates its timestamp if it exists).
+
+```bash
+touch file1.txt file2.txt
+```
+
+Creates two empty files at once.
