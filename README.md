@@ -671,3 +671,17 @@ rm -r old_folder/
 Deletes the directory <code>old_folder</code> and its contents.
 
 ⚠️ Be careful with rm — it doesn't ask for confirmation by default!
+
+🐧 <code>mkdir</code> — Make new directories
+
+```bash
+mkdir my_project
+```
+
+Creates a directory named <code>my_project</code>.
+
+```bash
+mkdir -p projects/python/scripts
+```
+
+Creates nested directories, all at once.
