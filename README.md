@@ -655,3 +655,19 @@ mv oldname.txt newname.txt
 ```
 
 Renames <code>oldname.txt</code> to <code>newname.txt</code>.
+
+🐧 <code>rm</code> — Remove files or directories
+
+```bash
+rm file.txt
+```
+
+Deletes <code>file.txt</code>.
+
+```bash
+rm -r old_folder/
+```
+
+Deletes the directory <code>old_folder</code> and its contents.
+
+⚠️ Be careful with rm — it doesn't ask for confirmation by default!
