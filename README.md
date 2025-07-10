@@ -713,3 +713,11 @@ cat file1.txt file2.txt > combined.txt
 ```
 
 Combines two files into <code>combined.txt</code>.
+
+🐧 <code>less</code> — View large files page by page
+
+```bash
+less bigfile.log
+```
+
+Opens <code>bigfile.log</code> in scrollable view mode (use ↑ ↓ / PgUp PgDn / q to quit).
