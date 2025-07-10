@@ -731,3 +731,21 @@ grep "error" logfile.txt
 ```
 
 Finds and prints all lines in <code>logfile.txt</code> that contain the word error.
+
+```bash
+grep -i "warning" logfile.txt
+```
+
+Like above, but case-insensitive (Warning, warning, etc.).
+
+```bash
+grep -r "TODO" src/
+```
+
+Recursively searches for <code>TODO</code> in all files under <code>src/</code>.
+
+```bash
+grep -n "main" program.c
+```
+
+Shows line numbers of lines containing <code>main</code> in <code>program.c</code>.
