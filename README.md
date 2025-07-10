@@ -763,3 +763,15 @@ sed 's/foo/bar/g' file.txt
 ```
 
 Replaces all occurrences of <code>foo</code> with <code>bar</code> on each line.
+
+```bash
+sed -i 's/localhost/127.0.0.1/g' config.conf
+```
+
+Edits <code>config.conf</code> in-place, replacing <code>localhost</code> with <code>127.0.0.1</code>.
+
+```bash
+sed -n '5,10p' file.txt
+```
+
+Prints only lines 5 to 10.
