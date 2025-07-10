@@ -749,3 +749,17 @@ grep -n "main" program.c
 ```
 
 Shows line numbers of lines containing <code>main</code> in <code>program.c</code>.
+
+🐧 <code>sed</code> — Stream editor (find/replace, transform text)
+
+```bash
+sed 's/foo/bar/' file.txt
+```
+
+Replaces first occurrence of <code>foo</code> with bar on each line of <code>file.txt</code>.
+
+```bash
+sed 's/foo/bar/g' file.txt
+```
+
+Replaces all occurrences of <code>foo</code> with <code>bar</code> on each line.
