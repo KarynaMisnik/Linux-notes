@@ -721,3 +721,13 @@ less bigfile.log
 ```
 
 Opens <code>bigfile.log</code> in scrollable view mode (use ↑ ↓ / PgUp PgDn / q to quit).
+
+📄 Text Processing Commands
+
+🐧 <code>grep</code> — Search for text patterns
+
+```bash
+grep "error" logfile.txt
+```
+
+Finds and prints all lines in <code>logfile.txt</code> that contain the word error.
