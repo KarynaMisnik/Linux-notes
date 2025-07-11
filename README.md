@@ -783,3 +783,7 @@ awk '{print $1}' file.txt
 ```
 
 Prints the first column of each line (columns are space/tab-delimited by default).
+
+```bash
+awk -F: '{print $1}' /etc/passwd
+```
