@@ -777,3 +777,7 @@ sed -n '5,10p' file.txt
 Prints only lines 5 to 10.
 
 🐧 <code>awk</code> — Field-based text processing
+
+```bash
+awk '{print $1}' file.txt
+```
