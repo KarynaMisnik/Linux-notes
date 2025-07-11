@@ -781,3 +781,5 @@ Prints only lines 5 to 10.
 ```bash
 awk '{print $1}' file.txt
 ```
+
+Prints the first column of each line (columns are space/tab-delimited by default).
