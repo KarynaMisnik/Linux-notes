@@ -789,3 +789,7 @@ awk -F: '{print $1}' /etc/passwd
 ```
 
 Prints the first field from each line of <code>/etc/passwd</code>, using <code>:</code> as the field separator.
+
+```bash
+awk '{sum += $2} END {print sum}' data.txt
+```
