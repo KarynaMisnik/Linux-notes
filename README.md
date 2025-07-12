@@ -787,3 +787,5 @@ Prints the first column of each line (columns are space/tab-delimited by default
 ```bash
 awk -F: '{print $1}' /etc/passwd
 ```
+
+Prints the first field from each line of <code>/etc/passwd</code>, using <code>:</code> as the field separator.
