@@ -793,3 +793,5 @@ Prints the first field from each line of <code>/etc/passwd</code>, using <code>:
 ```bash
 awk '{sum += $2} END {print sum}' data.txt
 ```
+
+Sums up all values in the second column of <code>data.txt</code>.
