@@ -795,3 +795,9 @@ awk '{sum += $2} END {print sum}' data.txt
 ```
 
 Sums up all values in the second column of <code>data.txt</code>.
+
+```bash
+awk '$3 > 100 {print $1, $3}' data.txt
+```
+
+Prints the first and third columns only if the third column is greater than 100.
