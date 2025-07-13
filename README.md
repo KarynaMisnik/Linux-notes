@@ -811,3 +811,18 @@ Set **read (r)**, **write (w)**, and **execute (x)** permissions for user, group
 ```bash
 chmod u+x script.sh
 ```
+
+Adds execute <code>(x)</code> permission to the user (owner) on <code>script.sh</code>.
+
+```bash
+chmod go-w file.txt
+```
+
+Removes <code>write (w)</code> permission for group and others.
+
+```bash
+chmod u=rwx,g=rx,o= file.txt
+```
+
+Sets:
+user = rwx, group = rx, others = none.
