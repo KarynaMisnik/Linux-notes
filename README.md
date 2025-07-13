@@ -722,7 +722,7 @@ less bigfile.log
 
 Opens <code>bigfile.log</code> in scrollable view mode (use ↑ ↓ / PgUp PgDn / q to quit).
 
-📄 Text Processing Commands
+### 📄 Text Processing Commands
 
 🐧 <code>grep</code> — Search for text patterns
 
@@ -801,3 +801,13 @@ awk '$3 > 100 {print $1, $3}' data.txt
 ```
 
 Prints the first and third columns only if the third column is greater than 100.
+
+### 🔐 Permissions Commands
+
+🐧 <code>chmod</code> — Change file or directory permissions
+
+Set **read (r)**, **write (w)**, and **execute (x)** permissions for user, group, others.
+
+```bash
+chmod u+x script.sh
+```
