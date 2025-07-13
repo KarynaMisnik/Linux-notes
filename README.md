@@ -850,3 +850,29 @@ chmod 644 file.txt
 
 Sets:
 user=rw-, group=r--, others=r--
+
+🐧 <code>chown</code> — Change owner and/or group of a file
+
+```bash
+chown alice file.txt
+```
+
+Changes owner of <code>file.txt</code> to user alice.
+
+```bash
+chown alice:developers file.txt
+```
+
+Changes owner to <code>alice</code> and group to <code>developers</code>.
+
+```bash
+chown :developers file.txt
+```
+
+Changes only <code>group</code> to <code>developers</code>.
+
+```bash
+chown -R alice: /home/alice/
+```
+
+Recursively changes owner of all files in <code>/home/alice/</code> to <code>alice</code>.
