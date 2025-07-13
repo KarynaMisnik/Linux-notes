@@ -826,3 +826,27 @@ chmod u=rwx,g=rx,o= file.txt
 
 Sets:
 user = rwx, group = rx, others = none.
+
+**Octal (numeric) mode**
+
+| Octal | Permission |
+| ----- | ---------- |
+| 7     | rwx        |
+| 6     | rw-        |
+| 5     | r-x        |
+| 4     | r--        |
+| 0     | ---        |
+
+```bash
+chmod 755 script.sh
+```
+
+Sets:
+user=rwx, group=rx, others=rx
+
+```bash
+chmod 644 file.txt
+```
+
+Sets:
+user=rw-, group=r--, others=r--
