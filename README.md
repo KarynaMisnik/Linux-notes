@@ -880,3 +880,9 @@ Recursively changes owner of all files in <code>/home/alice/</code> to <code>ali
 🐧 <code>umask</code> — Set default permissions for new files and directories
 
 <code>umask</code> defines which permission bits to turn off by default.
+
+```bash
+umask
+```
+
+Outputs e.g. 0022 (default for many distros)
