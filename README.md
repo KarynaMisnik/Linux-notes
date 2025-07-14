@@ -890,3 +890,8 @@ Outputs e.g. 0022 (default for many distros)
 ```bash
 umask 0027
 ```
+
+New files will default to:
+<code>rw-r-----</code> (640) for files
+<code>rwxr-x---</code> (750) for directories
+Because umask subtracts bits from 666 for files and 777 for directories.
