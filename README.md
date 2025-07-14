@@ -886,3 +886,7 @@ umask
 ```
 
 Outputs e.g. 0022 (default for many distros)
+
+```bash
+umask 0027
+```
