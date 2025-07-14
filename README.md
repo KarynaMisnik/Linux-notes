@@ -876,3 +876,7 @@ chown -R alice: /home/alice/
 ```
 
 Recursively changes owner of all files in <code>/home/alice/</code> to <code>alice</code>.
+
+🐧 <code>umask</code> — Set default permissions for new files and directories
+
+<code>umask</code> defines which permission bits to turn off by default.
