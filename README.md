@@ -946,3 +946,11 @@ dmesg | less
 ```
 
 Sends kernel log output into <code>less</code> for scrollable viewing.
+
+🐧 <code>tee</code> – Output to Screen and File
+
+Reads from standard input and writes both to the screen and a file.
+
+```bash
+echo "Log entry" | tee log.txt
+```
