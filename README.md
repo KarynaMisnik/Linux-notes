@@ -930,3 +930,7 @@ wc -l < file.txt
 ```
 
 Counts lines in file.txt by feeding its content as input to wc.
+
+🐧 <code>|</code> – Pipe
+
+Sends the output of one command as input to another.
