@@ -940,3 +940,9 @@ ls -l | grep ".txt"
 ```
 
 Lists files in long format and filters only <code>.txt</code> files.
+
+```bash
+dmesg | less
+```
+
+Sends kernel log output into <code>less</code> for scrollable viewing.
