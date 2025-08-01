@@ -934,3 +934,9 @@ Counts lines in file.txt by feeding its content as input to wc.
 🐧 <code>|</code> – Pipe
 
 Sends the output of one command as input to another.
+
+```bash
+ls -l | grep ".txt"
+```
+
+Lists files in long format and filters only <code>.txt</code> files.
