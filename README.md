@@ -975,3 +975,11 @@ cat access.log | grep "ERROR" | tee errors.log
 Filters only lines with <code>"ERROR"</code> and saves them to <code>errors.log</code>, while displaying them live.
 
 ### Disk usage
+
+🐧 <code>du</code> — Disk Usage
+
+Shows the disk space used by files and directories.
+
+```bash
+du
+```
