@@ -954,3 +954,11 @@ Reads from standard input and writes both to the screen and a file.
 ```bash
 echo "Log entry" | tee log.txt
 ```
+
+Displays <code>Log entry</code> on the screen and saves it to <code>log.txt</code>.
+
+```bash
+echo "Another entry" | tee -a log.txt
+```
+
+Appends to <code>log.txt</code> (<code>-a</code> means append) while still showing it.
