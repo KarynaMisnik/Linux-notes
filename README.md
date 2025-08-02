@@ -962,3 +962,13 @@ echo "Another entry" | tee -a log.txt
 ```
 
 Appends to <code>log.txt</code> (<code>-a</code> means append) while still showing it.
+
+🐧 Usage Together
+
+Redirects and pipes are often combined:
+
+```bash
+cat access.log | grep "ERROR" | tee errors.log
+```
+
+Filters only lines with <code>"ERROR"</code> and saves them to <code>errors.log</code>, while displaying them live.
