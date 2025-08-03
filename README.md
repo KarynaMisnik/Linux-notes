@@ -991,3 +991,9 @@ du -h
 ```
 
 Human-readable format (KB, MB, GB).
+
+```bash
+du -sh /var/log
+```
+
+Shows total size of <code>/var/log</code> directory in a human-readable format.
