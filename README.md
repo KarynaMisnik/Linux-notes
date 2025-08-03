@@ -1003,3 +1003,11 @@ du -ah --max-depth=1
 ```
 
 Displays size of all files/directories at one level deep.
+
+🐧 <code>df</code> — Disk Free Space
+
+Reports available and used space on mounted filesystems.
+
+```bash
+df
+```
