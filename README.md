@@ -983,3 +983,11 @@ Shows the disk space used by files and directories.
 ```bash
 du
 ```
+
+Displays disk usage of the current directory and its subdirectories.
+
+```bash
+du -h
+```
+
+Human-readable format (KB, MB, GB).
