@@ -997,3 +997,9 @@ du -sh /var/log
 ```
 
 Shows total size of <code>/var/log</code> directory in a human-readable format.
+
+```bash
+du -ah --max-depth=1
+```
+
+Displays size of all files/directories at one level deep.
