@@ -1011,3 +1011,17 @@ Reports available and used space on mounted filesystems.
 ```bash
 df
 ```
+
+Displays disk usage in blocks.
+
+```bash
+df -h
+```
+
+Human-readable format (more common).
+
+```bash
+df -T
+```
+
+Shows filesystem type (e.g., ext4, xfs).
