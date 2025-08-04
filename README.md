@@ -1025,3 +1025,13 @@ df -T
 ```
 
 Shows filesystem type (e.g., ext4, xfs).
+
+🐧 <code>mount</code> — Mount Filesystems
+
+Mounts a filesystem (e.g., external drive, ISO, partition) to a directory.
+
+```bash
+sudo mount /dev/sdb1 /mnt
+```
+
+Mounts the partition <code>/dev/sdb1</code> to <code>/mnt</code>.
