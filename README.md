@@ -1035,3 +1035,9 @@ sudo mount /dev/sdb1 /mnt
 ```
 
 Mounts the partition <code>/dev/sdb1</code> to <code>/mnt</code>.
+
+```bash
+mount | grep sdb1
+```
+
+Checks if <code>/dev/sdb1</code> is mounted.
