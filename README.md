@@ -1047,3 +1047,19 @@ sudo mount -o ro /dev/sr0 /mnt/cdrom
 ```
 
 Mounts a device as read-only.
+
+🐧 <code>umount</code> — Unmount Filesystems
+
+Unmounts a previously mounted filesystem.
+
+```bash
+sudo umount /mnt
+```
+
+Unmounts the device mounted at <code>/mnt</code>.
+
+```bash
+sudo umount /dev/sdb1
+```
+
+Unmounts by specifying the device instead of the directory.
