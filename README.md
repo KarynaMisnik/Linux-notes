@@ -1041,3 +1041,9 @@ mount | grep sdb1
 ```
 
 Checks if <code>/dev/sdb1</code> is mounted.
+
+```bash
+sudo mount -o ro /dev/sr0 /mnt/cdrom
+```
+
+Mounts a device as read-only.
