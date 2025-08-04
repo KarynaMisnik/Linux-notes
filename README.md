@@ -1063,3 +1063,29 @@ sudo umount /dev/sdb1
 ```
 
 Unmounts by specifying the device instead of the directory.
+
+Typical Workflow
+
+1. Check connected devices:
+
+```bash
+lsblk
+```
+
+2. Mount a device:
+
+```bash
+sudo mount /dev/sdb1 /mnt
+```
+
+3. Check disk usage:
+
+```bash
+df -h /mnt
+```
+
+4. Unmount when done:
+
+```bash
+sudo umount /mnt
+```
