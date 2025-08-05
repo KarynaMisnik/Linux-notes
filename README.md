@@ -1104,3 +1104,9 @@ sudo apt update
 ```
 
 Updates the package list (metadata from repositories).
+
+```bash
+sudo apt upgrade
+```
+
+Upgrades all installed packages to their latest versions.
