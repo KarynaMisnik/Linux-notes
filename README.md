@@ -1092,3 +1092,15 @@ sudo umount /mnt
 ```
 
 ### Package managers
+
+Package managers are tools that help you install, update, remove, and manage software packages on your system. Different distributions use different package managers.
+
+🐧 APT (Advanced Package Tool)
+
+> Note: Used by: Debian, Ubuntu, Linux Mint
+
+```bash
+sudo apt update
+```
+
+Updates the package list (metadata from repositories).
