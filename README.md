@@ -1116,3 +1116,15 @@ sudo apt install vim
 ```
 
 Installs the <code>vim</code> package.
+
+```bash
+sudo apt remove vim
+```
+
+Removes the <code>vim</code> package (config files may remain).
+
+```bash
+sudo apt purge vim
+```
+
+Removes the <code>vim</code> package and its configuration files.
