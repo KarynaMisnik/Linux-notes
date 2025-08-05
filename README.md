@@ -1110,3 +1110,9 @@ sudo apt upgrade
 ```
 
 Upgrades all installed packages to their latest versions.
+
+```bash
+sudo apt install vim
+```
+
+Installs the <code>vim</code> package.
