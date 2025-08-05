@@ -1128,3 +1128,9 @@ sudo apt purge vim
 ```
 
 Removes the <code>vim</code> package and its configuration files.
+
+```bash
+apt search nginx
+```
+
+Searches for the <code>nginx</code> package.
