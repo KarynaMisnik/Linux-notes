@@ -1150,3 +1150,21 @@ sudo dnf update
 ```
 
 Updates all packages.
+
+```bash
+sudo dnf install git
+```
+
+Installs the <code>git</code> package.
+
+```bash
+sudo dnf remove git
+```
+
+Removes the <code>git</code> package.
+
+```bash
+dnf search httpd
+```
+
+Searches for the <code>httpd</code> package.
