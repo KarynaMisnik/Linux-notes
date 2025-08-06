@@ -1144,3 +1144,9 @@ sudo dnf check-update
 ```
 
 Checks for available updates.
+
+```bash
+sudo dnf update
+```
+
+Updates all packages.
