@@ -1134,3 +1134,7 @@ apt search nginx
 ```
 
 Searches for the <code>nginx</code> package.
+
+🐧 DNF (Dandified YUM)
+
+> Note: Used by: Fedora, Red Hat Enterprise Linux (RHEL), CentOS (8+)
