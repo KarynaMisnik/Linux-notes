@@ -1184,3 +1184,9 @@ sudo pacman -S neofetch
 ```
 
 Installs the <code>neofetch</code> package.
+
+```bash
+sudo pacman -R neofetch
+```
+
+Removes the <code>neofetch</code> package.
