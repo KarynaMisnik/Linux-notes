@@ -1202,3 +1202,21 @@ pacman -Qi neofetch
 ```
 
 Shows detailed information about the <code>neofetch</code> package.
+
+Summary
+
+APT → Debian-based systems (e.g., Ubuntu, Mint)
+
+DNF → Red Hat/Fedora family
+
+Pacman → Arch-based systems
+
+All three handle:
+
+Updating package lists
+
+Installing/removing software
+
+Upgrading systems
+
+Searching repositories
