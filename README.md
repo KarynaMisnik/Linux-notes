@@ -1168,3 +1168,13 @@ dnf search httpd
 ```
 
 Searches for the <code>httpd</code> package.
+
+🐧 Pacman
+
+> Note: Used by: Arch Linux, Manjaro
+
+```bash
+sudo pacman -Syu
+```
+
+Synchronizes packages and updates the system.
