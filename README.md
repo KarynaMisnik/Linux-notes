@@ -1178,3 +1178,9 @@ sudo pacman -Syu
 ```
 
 Synchronizes packages and updates the system.
+
+```bash
+sudo pacman -S neofetch
+```
+
+Installs the <code>neofetch</code> package.
