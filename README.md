@@ -1190,3 +1190,15 @@ sudo pacman -R neofetch
 ```
 
 Removes the <code>neofetch</code> package.
+
+```bash
+pacman -Ss firefox
+```
+
+Searches for <code>firefox</code> in repositories.
+
+```bash
+pacman -Qi neofetch
+```
+
+Shows detailed information about the <code>neofetch</code> package.
