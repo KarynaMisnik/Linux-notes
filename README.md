@@ -1205,18 +1205,18 @@ Shows detailed information about the <code>neofetch</code> package.
 
 Summary
 
-APT → Debian-based systems (e.g., Ubuntu, Mint)
+📍 APT → Debian-based systems (e.g., Ubuntu, Mint)
 
-DNF → Red Hat/Fedora family
+📍 DNF → Red Hat/Fedora family
 
-Pacman → Arch-based systems
+📍 Pacman → Arch-based systems
 
 All three handle:
 
-Updating package lists
+✅ Updating package lists
 
-Installing/removing software
+✅ Installing/removing software
 
-Upgrading systems
+✅ Upgrading systems
 
-Searching repositories
+✅ Searching repositories
