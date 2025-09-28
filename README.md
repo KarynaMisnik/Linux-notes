@@ -34,19 +34,17 @@ A comprehensive guide and resource hub for understanding Linux as an Operating S
 
 # History of Operating Systems
 
-1️⃣ First Generation (**1940s – early 1950s**) – <ins>Vacuum Tubes</ins>
+1️⃣ First Generation (1940s – early 1950s) – <ins>Vacuum Tubes</ins>
 
-**Hardware:** Vacuum tube computers, punched cards for input, no disks.
+**Hardware:** Plugboards and switches
 
-**OS:** There were no operating systems. Programs were written in machine code.
+**OS:** no operating systems.
 
-<ins>Characteristics:</ins>
+Programmers configured the machine by manually wiring plugboards or flipping switches.
 
-🔹 Each program had to manage all hardware directly.
+Input/output was done with paper tape or very primitive punched cards, but those carried data, not really “programs” in the modern sense.
 
-🔹 Very slow and error-prone.
-
-🔹 Manual intervention required to load programs and manage I/O.
+<ins>Characteristic:</ins> Programs were hard-wired into the machine.
 
 **Example:** ENIAC (1945), UNIVAC I (1951) – purely batch processing by humans.
 
