@@ -16,6 +16,7 @@ A comprehensive guide and resource hub for understanding Linux as an Operating S
 ## Menu
 
 - [History of Operating Systems](#history-of-operating-systems)
+- [Review Questions](#review-questions)
 - [Introduction of Linux](#introduction)
   - [What is Linux](#what-is-Linux)
   - [History of Linux](#history-of-linux)
@@ -137,6 +138,50 @@ macOS
 Linux distributions (Ubuntu, Fedora)
 
 Android, iOS (for mobile platforms)
+
+## Review Questions
+
+❓ For what reason an OS is a resource manager?
+
+> Modern OS are multi-tasking. Applications have to share some resources/hardware.
+
+🔹 An Operating System (OS) manages the computer’s resources: CPU, memory, storage, I/O devices, etc.
+
+I🔹 n a multi-tasking environment, multiple programs run **concurrently**.
+
+🔹 The OS allocates resources fairly, prevents conflicts, and ensures each application can access the hardware safely.
+
+This is why we call the OS a resource manager.
+
+❓ What is POSIX?
+
+POSIX (Portable Operating System Interface) is a set of standards defined by IEEE.
+
+<ins>Its goal:</ins> make programs portable across different UNIX-like operating systems.
+
+POSIX defines:
+
+🔹 APIs (system calls)
+
+🔹 Command-line shells and utilities
+
+🔹 File system behavior, process control, signals, etc.
+
+> POSIX is the IEEE standard that defines a portable UNIX interface.
+
+❓ Which kernel is running in Android OS?
+
+Android OS is based on the **Linux kernel**, although the user space and application framework are customized by Google.
+
+The Linux kernel in Android handles:
+
+🔹 Process and memory management
+
+🔹 File system access
+
+🔹 Hardware drivers and device control
+
+🔹 Networking
 
 # Introduction of Linux
 
