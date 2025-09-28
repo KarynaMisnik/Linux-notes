@@ -46,21 +46,19 @@ Input/output was done with paper tape or very primitive punched cards, but those
 
 <ins>Characteristic:</ins> Programs were hard-wired into the machine.
 
-**Example:** ENIAC (1945), UNIVAC I (1951) – purely batch processing by humans.
+**Examples:** ENIAC (1945), UNIVAC I (1951) – purely batch processing by humans.
 
-2️⃣ Second Generation (**1950s – early 1960s**) – <ins>Transistors</ins>
+2️⃣ Second Generation (**mid-1950s – 1960s**) – <ins>Transistors</ins>
 
-**Hardware:** Transistor-based computers, magnetic tape for storage.
+**Hardware:** Code was punched into cards, which were fed into a card reader.
 
-**OS:** Batch processing systems appeared.
+**OS:** The OS (actually a simple “monitor program”) read jobs from punch cards one by one → batch processing. This eliminated the need to rewire the computer for every program.
 
-<ins>Characteristics:</ins>
+Programming method: Punch cards for batch processing
 
-🔹 Programs were grouped in batches, processed one after another.
+Programs were written in assembly language or early high-level languages (FORTRAN, COBOL).
 
-🔹 Introduction of resident monitor programs to handle I/O automatically.
-
-🔹 Basic job sequencing – the OS could load the next program without human intervention.
+<ins>Characteristic:</ins> Punch cards allowed more flexible and automated program input.
 
 **Examples:** IBM 7090 series, IBM 1401 with early monitor programs.
 
