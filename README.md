@@ -17,6 +17,7 @@ A comprehensive guide and resource hub for understanding Linux as an Operating S
 
 - [History of Operating Systems](#history-of-operating-systems)
   - [Multithreaded and Multicore Chips](#multithreaded-and-multicore-chips)
+- [Operating System Variants](#operating-system-variants)
 - [Review Questions](#review-questions)
 - [Computer Hardware](#computer-hardware)
 - [Introduction of Linux](#introduction)
@@ -238,6 +239,75 @@ As CPUs and memory became faster, single-bus architectures became a bottleneck, 
 Legacy PCI devices connect through separate hub processors, forming a tree of buses. Modern systems use multiple buses: DDR3 for memory, PCIe for graphics, DMI for hubs, USB for peripherals, and SATA for disks. Each CPU core has dedicated and shared caches, adding additional bus traffic. USB allows hot-pluggable connections of slower I/O devices, with speeds increasing from 12 Mbps (USB 1.0) to 5 Gbps (USB 3.0).
 
 SCSI buses provide high-performance connections for disks and other bandwidth-heavy devices, mainly in servers and workstations (up to 640 MB/s). The OS must detect and configure peripherals, a task simplified by Plug and Play, which automatically assigns interrupts and I/O addresses, replacing the old manual DIP-switch setup that often caused conflicts.
+
+#### Booting the Computer
+
+The boot process begins with the BIOS on the motherboard, which performs basic I/O, checks RAM and devices, and scans buses to detect peripherals. It then selects a boot device (from CMOS settings) and loads the bootloader from its first sector, which in turn loads the operating system. The OS then queries the BIOS for device configuration and loads necessary device drivers.
+After loading device drivers into the kernel, the operating system initializes tables, starts background processes, and launches the login program or GUI.
+
+## Operating System Variants
+
+#### Mainframe Operating Systems
+
+Mainframe operating systems handle massive I/O and multiple jobs simultaneously. They provide batch processing (non-interactive jobs), transaction processing (many small requests per second), and timesharing (multiple remote users). Examples include OS/390, though UNIX variants like Linux are increasingly replacing them.
+
+#### Server Operaring Systems
+
+Server operating systems run on powerful computers to serve multiple users over a network, providing services like printing, file sharing, and web hosting. Examples include Solaris, FreeBSD, Linux, and Windows Server 201x.
+
+#### Multiprocessor Operating Systems
+
+Multiprocessor and parallel systems connect multiple CPUs into a single system, requiring specialized operating systems for communication, connectivity, and consistency. Modern multicore personal computers also need OS support for multiple cores. Many popular OSes, including Windows and Linux, support multiprocessor environments.
+
+#### Personal Computer Operating Systems
+
+Personal computer operating systems focus on supporting a single user with multiprogramming, handling dozens of programs at once. They are widely used for tasks like word processing, spreadsheets, games, and Internet access. Examples include Linux, FreeBSD, Windows 7/8, and macOS.
+
+#### Handheld Operating Systems
+
+Handheld computers—including tablets, smartphones, and PDAs—feature multicore CPUs, sensors, and significant memory, running sophisticated operating systems. The market is dominated by Android and iOS, with a large ecosystem of third-party applications.
+
+#### Embedded Operating Systems
+
+Embedded systems run on the computers that control devices that are not gen-
+erally thought of as computers and which do not accept user-installed software.
+Typical examples are microwave ovens, TV sets, cars, DVD recorders, traditional
+phones, and MP3 players. The main property which distinguishes embedded sys-
+tems from handhelds is the certainty that no untrusted software will ever run on it.
+You cannot download new applications to your microwave oven—all the software
+is in ROM. This means that there is no need for protection between applications,
+leading to design simplification. Systems such as Embedded Linux, QNX and
+VxWorks are popular in this domain.
+
+#### Sensor-Node Operating Systems
+
+Networks of tiny sensor nodes are being deployed for numerous purposes.
+These nodes are tiny computers that communicate with each other and with a base
+station using wireless communication. Sensor networks are used to protect the
+perimeters of buildings, guard national borders, detect fires in forests, measure
+temperature and precipitation for weather forecasting, glean information about
+enemy movements on battlefields, and much more.
+The sensors are small battery-powered computers with built-in radios. They
+have limited power and must work for long periods of time unattended outdoors,
+frequently in environmentally harsh conditions. The network must be robust
+enough to tolerate failures of individual nodes, which happen with ever-increasing
+frequency as the batteries begin to run down.
+Each sensor node is a real computer, with a CPU, RAM, ROM, and one or
+more environmental sensors. It runs a small, but real operating system, usually one
+that is event driven, responding to external events or making measurements period-
+ically based on an internal clock. The operating system has to be small and simple
+because the nodes have little RAM and battery lifetime is a major issue. Also, as
+with embedded systems, all the programs are loaded in advance; users do not sud-
+denly start programs they downloaded from the Internet, which makes the design
+much simpler. TinyOS is a well-known operating system for a sensor node.
+
+#### Real-time Operating Systems
+
+Real-time operating systems (RTOS) prioritize meeting time-sensitive deadlines. Hard real-time systems guarantee actions occur at precise times (e.g., industrial process control, avionics), while soft real-time systems tolerate occasional deadline misses (e.g., digital audio, smartphones). RTOS may be implemented as tightly coupled libraries without full protection (e.g., eCos). Handheld, embedded, and real-time systems often overlap, with soft real-time aspects and preloaded software only.
+
+#### Smart Card Operating Systems
+
+Smart card operating systems run on tiny, credit-card-sized devices with severe CPU and memory constraints. Some handle a single function (e.g., payments), while others support Java applets, requiring multiprogramming, scheduling, and resource protection within a minimal OS.
 
 # Introduction of Linux
 
