@@ -231,6 +231,14 @@ A second I/O method uses interrupts. The driver starts the device and returns, a
 
 When an interrupt occurs, the CPU saves the program counter and PSW, switches to kernel mode, and uses the interrupt vector to find the device’s handler. The handler queries the device, completes the I/O, and returns control to the interrupted program. A third I/O method uses DMA (Direct Memory Access), allowing data transfer without CPU intervention; the DMA signals an interrupt when done. Interrupts can be temporarily disabled to handle timing conflicts, with the controller prioritizing multiple pending interrupts.
 
+#### Buses
+
+As CPUs and memory became faster, single-bus architectures became a bottleneck, leading to multiple buses (cache, memory, PCIe, PCI, USB, SATA, DMI) with different speeds and purposes. The PCIe bus is the main high-speed bus, using serial point-to-point connections instead of older shared parallel buses, supporting multiple lanes for parallel data transfer. PCIe is continually upgraded (e.g., 2.0 → 3.0 → 4.0) to match the speed of modern peripherals.
+
+Legacy PCI devices connect through separate hub processors, forming a tree of buses. Modern systems use multiple buses: DDR3 for memory, PCIe for graphics, DMI for hubs, USB for peripherals, and SATA for disks. Each CPU core has dedicated and shared caches, adding additional bus traffic. USB allows hot-pluggable connections of slower I/O devices, with speeds increasing from 12 Mbps (USB 1.0) to 5 Gbps (USB 3.0).
+
+SCSI buses provide high-performance connections for disks and other bandwidth-heavy devices, mainly in servers and workstations (up to 640 MB/s). The OS must detect and configure peripherals, a task simplified by Plug and Play, which automatically assigns interrupts and I/O addresses, replacing the old manual DIP-switch setup that often caused conflicts.
+
 # Introduction of Linux
 
 **Linux** is a free and open-source operating system that powers everything from personal computers and smartphones to servers, supercomputers, routers, and embedded devices. At its core, Linux is known for its stability, security, flexibility, and developer-friendliness, making it a favorite among programmers, system administrators, and tech enthusiasts.
