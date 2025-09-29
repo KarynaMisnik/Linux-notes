@@ -16,7 +16,9 @@ A comprehensive guide and resource hub for understanding Linux as an Operating S
 ## Menu
 
 - [History of Operating Systems](#history-of-operating-systems)
+  - [Multithreaded and Multicore Chips](#multithreaded-and-multicore-chips)
 - [Review Questions](#review-questions)
+- [Computer Hardware](#computer-hardware)
 - [Introduction of Linux](#introduction)
   - [What is Linux](#what-is-Linux)
   - [History of Linux](#history-of-linux)
@@ -182,6 +184,34 @@ The Linux kernel in Android handles:
 🔹 Hardware drivers and device control
 
 🔹 Networking
+
+## Computer Hardware
+
+The **CPU (Central Processing Unit)** is the “brain” of the computer, fetching and executing instructions in a cycle until a program finishes. Each CPU has its own instruction set (e.g., x86 vs. ARM), making them incompatible. To speed up execution, CPUs use registers to store variables, results, and instructions. Special registers, like the program counter, track the address of the next instruction.
+
+The **Program Status Word (PSW)** register stores condition codes, CPU priority, mode (user/kernel), and control bits, playing a key role in system calls and I/O. When switching tasks, the operating system must save and restore all registers. Modern CPUs use pipelining, allowing multiple instructions to be fetched, decoded, and executed simultaneously for better performance.
+
+A superscalar CPU has multiple execution units (e.g., integer, floating-point, Boolean) and can fetch and execute several instructions simultaneously, often out of order, with hardware ensuring correct results. CPUs also support two modes: kernel mode, with full hardware access (used by the OS), and user mode, with restricted access (used by applications or parts of embedded systems).
+
+User programs run in user mode, with restricted instructions (no I/O or memory protection). To access OS services, they make system calls via the TRAP instruction, which switches execution to kernel mode. The OS performs the request, then returns control to the program. Other traps may occur due to hardware exceptions (e.g., divide by zero, underflow), and the OS decides whether to terminate, ignore, or pass control back to the program.
+
+#### Multithreaded and Multicore Chips
+
+Moore’s law observes that transistor counts on chips double about every 18 months, though physical limits will eventually stop this trend. Extra transistors enable designs like superscalar CPUs and larger caches, but diminishing returns push further innovations. One major advance is multithreading (hyperthreading), which allows a CPU to keep the state of multiple threads and switch between them rapidly. While not true parallelism, it reduces idle time and improves efficiency.
+
+Multithreading makes each thread look like a separate CPU to the OS, which can lead to inefficient scheduling if threads share one CPU while others sit idle. Modern CPUs now use multicore designs, with many independent cores (some chips exceeding 60), requiring multiprocessor-capable operating systems. GPUs, with thousands of small cores, excel at parallel tasks (like graphics or encryption) but are poorly suited for general OS execution.
+
+#### Memory
+
+Memory must balance speed, size, and cost, so computers use a hierarchy. At the top are CPU registers—extremely fast but tiny (<1 KB). Below that is cache memory, which stores frequently used data in small, fast storage near the CPU. Accessing cache is quick (a few cycles), but a cache miss forces slower main memory access. Modern systems often use multiple cache levels (L1, L2, L3) with decreasing speed and increasing size.
+
+Caching improves performance whenever some data is used more often than others. Operating systems use it for files, path lookups, and even network addresses. Key design issues include: when to add items to the cache, where to place them, which items to evict, and where to store evicted items.
+
+In CPU caches, new items are typically added on a cache miss, with placement determined by memory address bits. Modified data is written back to its original memory location. Modern CPUs use multiple caches: small, very fast L1 caches (for instructions and data, ~16 KB each) and larger, slower L2 caches (several MB), which reduce memory access delays.
+
+On multicore chips, caches can be shared among cores (Intel) or private to each core (AMD), each approach having trade-offs in complexity and consistency. Main memory (RAM) is the primary storage for CPU requests not in cache, typically ranging from hundreds of MB to several GB. Some systems also include non-volatile memory like ROM, which retains data without power and is used for bootloaders or low-level device control.
+
+EEPROM and flash memory are non-volatile and rewritable, though slower than RAM, making them useful for firmware updates and portable devices. Flash is intermediate in speed between RAM and disk but wears out after many erase cycles. CMOS memory is volatile and powered by a small battery, storing system time, date, and configuration settings with minimal power consumption.
 
 # Introduction of Linux
 
