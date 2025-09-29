@@ -219,6 +219,18 @@ Magnetic disks (hard drives) are much cheaper and larger than RAM but far slower
 
 SSDs (Solid State Drives) store data in flash memory without moving parts, offering non-volatile storage like disks but faster access. Virtual memory allows programs larger than physical RAM by storing parts on disk and using RAM as a cache, with address translation handled by the MMU. Context switches in multiprogramming systems may require flushing caches and updating MMU mappings, which can be costly for performance.
 
+#### I/O Devices
+
+I/O devices consist of a controller and the device itself. The controller, often a small embedded computer, translates OS commands (e.g., read sector 11,206) into device-specific operations, handling complex details like disk geometry, bad sectors, and data assembly. The device presents a simple, standardized interface (e.g., SATA disks) so any compatible controller can operate it.
+
+Device drivers are software that allow the OS to communicate with controllers. Each controller requires a specific driver, usually running in kernel mode. Drivers can be installed by relinking the kernel, loading at boot, or dynamically while the system runs—the last method is common for hot-pluggable devices like USB and IEEE 1394.
+
+Device registers allow drivers to communicate with controllers, either mapped into the OS address space or accessed via a special I/O port space using IN/OUT instructions. I/O methods include busy waiting, where the driver polls the device until the operation completes, which ties up the CPU.
+
+A second I/O method uses interrupts. The driver starts the device and returns, allowing the OS to do other work. When the device finishes, it signals the interrupt controller, which notifies the CPU. The CPU reads the device number to identify which device completed the operation, enabling efficient multitasking without busy waiting.
+
+When an interrupt occurs, the CPU saves the program counter and PSW, switches to kernel mode, and uses the interrupt vector to find the device’s handler. The handler queries the device, completes the I/O, and returns control to the interrupted program. A third I/O method uses DMA (Direct Memory Access), allowing data transfer without CPU intervention; the DMA signals an interrupt when done. Interrupts can be temporarily disabled to handle timing conflicts, with the controller prioritizing multiple pending interrupts.
+
 # Introduction of Linux
 
 **Linux** is a free and open-source operating system that powers everything from personal computers and smartphones to servers, supercomputers, routers, and embedded devices. At its core, Linux is known for its stability, security, flexibility, and developer-friendliness, making it a favorite among programmers, system administrators, and tech enthusiasts.
