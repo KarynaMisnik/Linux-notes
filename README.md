@@ -213,6 +213,12 @@ On multicore chips, caches can be shared among cores (Intel) or private to each 
 
 EEPROM and flash memory are non-volatile and rewritable, though slower than RAM, making them useful for firmware updates and portable devices. Flash is intermediate in speed between RAM and disk but wears out after many erase cycles. CMOS memory is volatile and powered by a small battery, storing system time, date, and configuration settings with minimal power consumption.
 
+#### Disks
+
+Magnetic disks (hard drives) are much cheaper and larger than RAM but far slower. Data is stored on spinning platters in tracks and sectors, accessed by a mechanical arm. Average access times include 1–10 ms for arm movement and 5–10 ms for rotation, with transfer rates ranging from 50 MB/s to 160 MB/s.
+
+SSDs (Solid State Drives) store data in flash memory without moving parts, offering non-volatile storage like disks but faster access. Virtual memory allows programs larger than physical RAM by storing parts on disk and using RAM as a cache, with address translation handled by the MMU. Context switches in multiprogramming systems may require flushing caches and updating MMU mappings, which can be costly for performance.
+
 # Introduction of Linux
 
 **Linux** is a free and open-source operating system that powers everything from personal computers and smartphones to servers, supercomputers, routers, and embedded devices. At its core, Linux is known for its stability, security, flexibility, and developer-friendliness, making it a favorite among programmers, system administrators, and tech enthusiasts.
