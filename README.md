@@ -18,6 +18,7 @@ A comprehensive guide and resource hub for understanding Linux as an Operating S
 - [History of Operating Systems](#history-of-operating-systems)
   - [Multithreaded and Multicore Chips](#multithreaded-and-multicore-chips)
 - [Operating System Variants](#operating-system-variants)
+- [Operating Systems Concepts](#operating-systems-concepts)
 - [Review Questions](#review-questions)
 - [Computer Hardware](#computer-hardware)
 - [Introduction of Linux](#introduction)
@@ -308,6 +309,213 @@ Real-time operating systems (RTOS) prioritize meeting time-sensitive deadlines. 
 #### Smart Card Operating Systems
 
 Smart card operating systems run on tiny, credit-card-sized devices with severe CPU and memory constraints. Some handle a single function (e.g., payments), while others support Java applets, requiring multiprogramming, scheduling, and resource protection within a minimal OS.
+
+## Operating Systems Concepts
+
+#### Processes
+
+Processes are programs in execution, each with an address space (executable code, data, stack) and associated resources like registers, open files, and related processes. In multiprogramming systems, the OS switches between processes, saving their state so they can resume exactly where they left off. Most OSes store process information in a process table, while the address space is called the core image.
+
+Process-management system calls handle creation, termination, memory management, and waiting for child processes. Processes can form process trees, with parent and child processes cooperating via interprocess communication (IPC). Processes can also set timers or notifications to handle asynchronous events, such as network message timeouts.
+
+Signals are software interrupts (like timers or hardware traps). When a signal arrives the OS saves the process’s state, runs a signal handler (e.g., to retransmit a message), then restores the process.
+Users and protection: each user has a UID (and belongs to groups with GIDs). Processes inherit the UID of their creator. One special UID — the superuser/Administrator — can bypass many protection rules.
+
+#### Address Spaces
+
+Main memory holds executing programs. Simple OSs run one program at a time, while sophisticated OSs allow multiple programs simultaneously, using hardware-enforced protection to prevent interference. Each process has its own address space, which may exceed physical memory. Virtual memory lets the OS keep part of a process in RAM and part on disk, creating the illusion of a large contiguous address space. Managing memory and address spaces is a core OS function.
+
+#### Files
+
+A file system is a core OS feature that provides a consistent, device-independent way to manage data. The OS offers system calls to create, remove, read, and write files. Files are organized into directories (folders) to group related files together. Additional system calls allow creating and deleting directories, as well as adding or removing files from them. Directories can contain both files and other directories.
+
+Both processes and files are organized hierarchically as trees, but they differ in depth, lifetime, and access control:
+
+Process trees are shallow (usually ≤3 levels), short-lived (minutes), and only parents can control/access child processes.
+
+File/directory trees are often deeper (4–5+ levels), long-lived (years), and can be accessed by a wider group beyond the owner.
+
+Files are identified by their path names:
+
+Absolute path: starts from the root directory / (e.g., /Faculty/Prof.Brown/Courses/CS101).
+
+Relative path: starts from the process’s current working directory (e.g., Courses/CS101 if the working directory is /Faculty/Prof.Brown).
+
+Processes can change their current working directory via a system call.
+
+File opening and permissions:
+
+Before a file can be read or written, it must be opened.
+
+The OS checks permissions; if allowed, it returns a file descriptor (a small integer) for subsequent operations.
+
+If access is denied, an error code is returned.
+
+Mounted file systems in UNIX:
+
+UNIX allows different file systems (e.g., hard disk, CD-ROM, USB drive) to be attached (“mounted”) into a single directory tree.
+
+Before mounting: separate file systems cannot be accessed together.
+
+After mounting: the external file system appears under a chosen directory in the root tree, allowing unified access (e.g., files on a CD-ROM mounted at /b can be accessed as /b/x and /b/y).
+
+Mounting usually occurs on empty directories, because existing files at the mount point become inaccessible while the external system is mounted.
+
+Multiple disks can all be mounted into a single tree, maintaining device independence.
+
+Special files in UNIX:
+
+UNIX treats I/O devices as files so they can be read/written with the same system calls as regular files.
+
+Two kinds of special files:
+
+Block special files – for devices with randomly addressable blocks (e.g., disks). Programs can read/write specific blocks directly.
+
+Character special files – for devices that handle character streams (e.g., printers, modems).
+
+Special files are conventionally located in the /dev directory (e.g., /dev/lp for the printer).
+
+Pipes:
+
+Pipes are pseudofiles used to connect processes for communication.
+
+One process writes to the pipe as if it were an output file; another reads from it like an input file.
+
+The implementation of pipes is similar to files, making interprocess communication look like ordinary file I/O.
+
+The only way to detect that a file is actually a pipe is via a special system call.
+
+#### Input/Output
+
+I/O in Computers and Operating Systems:
+
+All computers need input devices (keyboards, sensors, etc.) and output devices (monitors, printers, etc.) to interact with users.
+
+The operating system is responsible for managing these devices.
+
+Every OS includes an I/O subsystem to handle this management.
+
+Some I/O software is device-independent, meaning it works with many devices in the same way.
+
+Other parts, such as device drivers, are device-specific, tailored to control particular hardware.
+
+#### Protection
+
+Operating System Security
+
+Computers store sensitive information, such as emails, business plans, and tax returns.
+
+The operating system manages security to ensure that only authorized users can access files and resources.
+
+Example – UNIX File Permissions:
+
+Each file has a 9-bit protection code, divided into three 3-bit fields:
+
+Owner – permissions for the file’s owner
+
+Group – permissions for users in the owner’s group
+
+Others – permissions for everyone else
+
+Each 3-bit field uses the rwx convention:
+
+r = read
+
+w = write
+
+x = execute
+
+Example: rwxr-x--x
+
+Owner: read, write, execute
+
+Group: read, execute
+
+Others: execute only
+
+For directories, x means search permission, and - indicates the absence of a permission.
+
+Additional Security Considerations:
+
+Protecting the system from unauthorized users, viruses, and other threats is also a key responsibility of the operating system.
+
+#### The Shell
+
+The Operating System vs. Programs That Use It
+
+Operating system (OS): The code that executes system calls and manages hardware and resources.
+
+Programs like editors, compilers, linkers, and shells are not part of the OS, even though they heavily use OS features.
+
+Example – The UNIX Shell
+
+The shell (e.g., sh, csh, ksh, bash) is a command interpreter that serves as the main interface between the user and the OS (unless using a GUI).
+
+When a user logs in:
+
+The shell starts with the terminal as standard input and output.
+
+It displays a prompt (e.g., $) to signal it is ready for commands.
+
+When the user types a command, e.g., date:
+
+The shell creates a child process to run the program.
+
+The shell waits for the child process to finish.
+
+Once finished, the shell displays the prompt again for the next command.
+
+1. Redirection of Input and Output
+
+Standard output (stdout) redirection:
+
+```bash
+date > file
+```
+
+ends the output of the date command into the file file instead of the terminal.
+
+Standard input (stdin) redirection:
+
+```bash
+sort < file1 > file2
+```
+
+Reads input from file1, sorts it, and writes the output to file2.
+
+2. Pipes
+
+Using output from one program as input to another:
+
+```bash
+cat file1 file2 file3 | sort > /dev/lp
+```
+
+cat concatenates three files.
+
+sort organizes all lines alphabetically.
+
+Output is sent to /dev/lp, usually the printer.
+
+3. Background Execution
+
+Ampersand (&) runs a command in the background:
+
+```bash
+cat file1 file2 file3 | sort > /dev/lp &
+```
+
+The shell immediately returns a prompt.
+
+User can continue other work while the command runs.
+
+4. Graphical User Interfaces (GUIs)
+
+GUI is just a program running on top of the OS, similar to a shell.
+
+Linux: Users can choose GUIs like Gnome or KDE, or even run no GUI (terminal only).
+
+Windows: The default GUI (Explorer) can be replaced by another program, though few users do this.
 
 # Introduction of Linux
 
