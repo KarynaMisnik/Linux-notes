@@ -24,6 +24,7 @@ A comprehensive guide and resource hub for understanding Linux as an Operating S
 - [Operating System Structure](#operating-system-structure)
   - [Monotholic Systems](#monotholic-systems)
   - [Layered Systems](#layered-systems)
+- [Virtual Machines](#virtual-machines)
 - [Review Questions](#review-questions)
 - [Computer Hardware](#computer-hardware)
 - [Introduction of Linux](#introduction)
@@ -1275,6 +1276,108 @@ Networked Machines:
       Machine                        Machine
 
 ```
+
+## Virtual Machines
+
+The initial OS/360 was a batch system, but users wanted interactive terminals. IBM’s official timesharing system, TSS/360, arrived late, was large and slow, and was eventually abandoned. Meanwhile, IBM’s Cambridge group created VM/370 (originally CP/CMS), later evolving into z/VM, widely used on IBM mainframes.
+
+VM/370 separates multiprogramming from providing a convenient interface. Its virtual machine monitor runs on the bare hardware, offering multiple virtual machines that are exact copies of the physical machine, including kernel/user modes, I/O, and interrupts.
+
+Each VM/370 virtual machine is identical to the real hardware, so it can run any OS that runs on the physical machine. Different VMs often run different OSes; originally, some ran OS/360 while others ran CMS (Conversational Monitor System) for interactive timesharing.
+
+When a CMS program makes a system call, it is handled by the OS in its VM, not by VM/370. The OS then issues normal hardware I/O instructions, which are trapped by VM/370 and executed as part of the virtual hardware simulation.
+
+This separation of multiprogramming and extended machine functions makes each component simpler, flexible, and easier to maintain. Modern z/VM runs multiple full OSes simultaneously, such as Linux alongside traditional IBM systems.
+
+Although IBM and some other companies have offered virtual-machine products for decades, virtualization in PCs was largely ignored until recently. New needs and technologies have made it popular:
+
+Server consolidation: Companies can run multiple servers (mail, web, FTP, etc.) on a single machine without one crash affecting the others.
+
+Web hosting: Virtual machines allow hosting providers to offer each customer a full “virtual server” on a shared physical machine. This gives flexibility like a dedicated server at the cost of shared hosting.
+
+Virtualization for End Users:
+
+Users can run multiple OSes simultaneously (e.g., Windows and Linux) on one machine.
+
+Type 1 hypervisor (formerly “virtual machine monitor”) manages the virtual machines.
+
+Challenge: CPUs must be virtualizable. Early x86 CPUs ignored privileged instructions in user mode, making virtualization inefficient.
+
+Solution: Academic projects like Disco (Stanford) and Xen (Cambridge) solved these problems.
+
+Modern hypervisors: VMware Workstation, Xen, KVM (Linux), VirtualBox (Oracle), Hyper-V (Microsoft).
+
+Improving Virtual Machine Performance:
+
+Binary Translation / Machine Simulators
+
+Early research projects improved interpreters (e.g., Bochs) by translating blocks of code on the fly and caching them.
+
+Performance improved, but still insufficient for commercial use.
+
+Hybrid Approach / Type 2 Hypervisors
+
+Add a kernel module to handle heavy tasks (e.g., VMware Workstation).
+
+Use the host OS and file system to create virtual disks and processes.
+
+Guest OS runs as if on real hardware, with GUI and background processes.
+
+Type 1 vs. Type 2 Hypervisors
+
+Type 1: No host OS, manages storage and processes directly.
+
+Type 2: Relies on a host OS for storage, process creation, and file management.
+
+Paravirtualization
+
+Modifies the guest OS to remove privileged instructions.
+
+Not true virtualization, but improves performance in certain setups.
+
+Java Virtual Machine (JVM):
+
+Purpose:
+
+JVM is a virtual machine architecture designed to run Java programs anywhere.
+
+How it works:
+
+Java source code → compiled into JVM bytecode → executed by a software JVM interpreter.
+
+JVM abstracts away the underlying hardware, making Java programs portable.
+
+Advantages:
+
+Platform independence: Same JVM bytecode can run on any machine with a JVM interpreter.
+
+Safety & security: Properly implemented JVM interpreters can check incoming programs and execute them in a protected environment.
+
+Simplicity: Easier to interpret than producing native binaries for multiple architectures.
+
+#### Exokernels
+
+Concept:
+
+Instead of fully emulating hardware like traditional virtual machines, an exokernel partitions resources and allocates them to user-level virtual machines.
+
+How it works:
+
+Runs in kernel mode.
+
+Allocates CPU, memory, and disk blocks to each virtual machine.
+
+Checks that each VM only uses its assigned resources.
+
+User-level VMs can run their own operating systems.
+
+Advantages:
+
+Less overhead: No need for address remapping for virtualized resources.
+
+Separation of concerns: Multiprogramming handled by exokernel; OS code runs in user space.
+
+Efficiency: Each VM accesses resources directly within its allocation.
 
 #### History of Linux
 
