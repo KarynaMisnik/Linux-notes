@@ -22,6 +22,8 @@ A comprehensive guide and resource hub for understanding Linux as an Operating S
   - [Ontogeny Recapitulates Phylogeny](#ontogeny-recapitulates-phylogeny)
 - [System Calls](#system-calls)
 - [Operating System Structure](#operating-system-structure)
+  - [Monotholic Systems](#monotholic-systems)
+  - [Layered Systems](#layered-systems)
 - [Review Questions](#review-questions)
 - [Computer Hardware](#computer-hardware)
 - [Introduction of Linux](#introduction)
@@ -1101,6 +1103,113 @@ Trap instruction ensures safety by switching to kernel mode.
 Monolithic OS can still be modular internally, with service procedures and utility routines.
 
 Loadable extensions provide flexibility without redesigning or rebooting the kernel.
+
+#### Layered Systems
+
+**Concept of Layered OS**
+
+A layered operating system is structured as a hierarchy of layers, each built upon the layer below it:
+
+Lowest layer: Handles the most fundamental functions, usually very close to the hardware.
+
+Higher layers: Use services provided by the layers below, adding more sophisticated functionality.
+
+Each layer only interacts directly with the layer immediately beneath it.
+
+Advantages:
+
+Easier to understand, design, and debug, since each layer is relatively independent.
+
+Crashes or bugs in higher layers are less likely to corrupt lower layers.
+
+Clear information hiding: higher layers do not need to know the internal workings of lower layers.
+
+Disadvantages:
+
+Slightly less efficient than monolithic systems, because service calls may have to pass through multiple layers.
+
+**The THE System**
+
+Developed by E. W. Dijkstra (1968) at Technische Hogeschool Eindhoven.
+
+Implemented on an Electrologica X8 computer with 32K of 27-bit words.
+
+It was a simple batch system, but very influential for OS design.
+
+Layer Structure of THE System
+
+The THE system had 6 layers:
+
+Layer 0 – CPU Scheduling and Multiprogramming
+
+Allocates the processor among processes.
+
+Handles interrupts and timer expiration.
+
+Provides basic multiprogramming, so that higher layers can run sequential processes without worrying about concurrent execution.
+
+Layers 1–5 – Higher-Level Services
+
+Sequential processes built on top of layer 0.
+
+Each layer provided more sophisticated services, such as:
+
+File management
+
+I/O device management
+
+Interprocess communication
+
+User interface and job control
+
+Each layer only interacts with the layer immediately below it.
+
+Layered design ensures modularity, abstraction, and a clear separation of concerns.
+
+**Key Takeaways**
+
+Layered OSes generalize the idea of modularity in monolithic systems.
+
+Each layer offers a well-defined interface to the layer above.
+
+THE system demonstrated that complex OS functionality could be structured in layers, simplifying development and debugging.
+
+Modern OS designs often combine monolithic kernels with layered concepts to balance efficiency and modularity.
+
+```bash
+Layer 5: User-level job control and batch processing
+        - Provides interface for submitting and controlling jobs
+        - Uses services from lower layers for I/O and file access
+
+Layer 4: I/O management
+        - Handles input/output devices
+        - Provides abstraction to upper layers
+
+Layer 3: Interprocess communication
+        - Manages communication between processes
+        - Ensures synchronization and data transfer
+
+Layer 2: Memory management
+        - Allocates and protects memory for processes
+        - Provides virtual memory abstractions
+
+Layer 1: Device drivers and low-level routines
+        - Provides basic access to hardware devices
+        - Called by higher-level services
+
+Layer 0: CPU scheduling and multiprogramming
+        - Allocates CPU to processes
+        - Handles interrupts and timer events
+        - Provides basic multiprogramming capabilities
+```
+
+**How it works:**
+
+Each layer uses only the services of the layer directly below it.
+
+Layer 0 is closest to the hardware; Layer 5 is closest to the user.
+
+This design provides modularity, abstraction, and better maintainability compared to a purely monolithic system.
 
 #### History of Linux
 
