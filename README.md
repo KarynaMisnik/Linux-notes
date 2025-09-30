@@ -19,6 +19,8 @@ A comprehensive guide and resource hub for understanding Linux as an Operating S
   - [Multithreaded and Multicore Chips](#multithreaded-and-multicore-chips)
 - [Operating System Variants](#operating-system-variants)
 - [Operating Systems Concepts](#operating-systems-concepts)
+  - [Ontogeny Recapitulates Phylogeny](#ontogeny-recapitulates-phylogeny)
+- [System Calls](#system-calls)
 - [Review Questions](#review-questions)
 - [Computer Hardware](#computer-hardware)
 - [Introduction of Linux](#introduction)
@@ -516,6 +518,380 @@ GUI is just a program running on top of the OS, similar to a shell.
 Linux: Users can choose GUIs like Gnome or KDE, or even run no GUI (terminal only).
 
 Windows: The default GUI (Explorer) can be replaced by another program, though few users do this.
+
+#### Ontogeny Recapitulates Phylogeny
+
+Key Ideas:
+
+Haeckel’s concept:
+
+Ontogeny recapitulates phylogeny → Embryo development (ontogeny) mirrors the evolutionary stages of the species (phylogeny).
+
+Example (simplified/incorrect for humans): a human embryo passes through “fish” and “pig” stages before becoming human.
+
+Analogy to computers:
+
+Each new class of computers (mainframe → minicomputer → personal computer → handheld → embedded → smart card) seems to repeat stages its ancestors went through, in both hardware and software.
+
+Innovations build on what came before, much like evolution.
+
+Technology drives adoption:
+
+Just as the Romans lacked cars because the technology didn’t exist, computers exist because we can now build them cheaply, not because there was a long-standing human desire.
+
+Technological capability shapes what systems appear and how they evolve.
+
+Takeaway:
+The evolution of computing isn’t just market demand—it’s largely technology-driven, and each new type of system often retraces steps its predecessors took, incorporating lessons and limitations along the way.
+
+Key Points:
+
+Technology can make ideas obsolete, then revive them:
+
+Unlike biology, where extinction is permanent, in computing an “extinct” idea may reappear if technological conditions change.
+
+Example: Cache memory appeared when CPUs became faster than memory, might vanish if memory surpasses CPU, then reappear if CPU speeds outpace memory again.
+
+Obsolete concepts still matter:
+
+Understanding why an idea became obsolete helps predict if it might become useful again in the future.
+
+Execution paradigms illustrate the pendulum effect:
+
+Early computers: hardwired instruction sets → fastest but inflexible.
+
+Microprogramming (IBM 360): interpreted “hardware instructions” → flexible, made hardwired execution obsolete.
+
+RISC computers: direct execution faster → microprogramming becomes obsolete.
+
+Modern interpretation (Java applets): network delays make execution speed less critical → interpretation resurges.
+
+Takeaway:
+Computing ideas are not permanently extinct; they resurface depending on relative performance trade-offs in hardware and software. Understanding the “why” behind obsolescence is crucial to predicting future relevance.
+
+#### Large Memories
+
+Key Points:
+
+Memory constraints drove low-level programming:
+
+IBM 7090/7094 (late 1950s–1964): ~128 KB memory → assembly language for both programs and operating systems to conserve memory.
+
+High-level languages emerged when resources improved:
+
+FORTRAN, COBOL compilers became good → assembly language declined.
+
+Minicomputers (e.g., PDP-1, 4 KB memory) → assembly language resurged due to tight memory.
+
+Microcomputers and embedded systems repeated this pattern:
+
+Early 1980s microcomputers: 4 KB memory → assembly language dominant.
+
+Embedded computers (same CPUs as microcomputers) → assembly used initially.
+
+Modern trend toward high-level languages as resources grow:
+
+Personal computers: abundant memory → C, C++, Java, etc.
+
+Smart cards: small memory → sometimes Java interpreted, not compiled.
+
+Takeaway:
+The hardware limits of memory and CPU power repeatedly dictate the software approach. When resources are scarce, low-level programming dominates; when resources expand, high-level languages flourish. This cyclical pattern mirrors the earlier discussion about obsolescence and revival of ideas.
+
+#### Protection Hardware
+
+Key Points:
+
+Early mainframes (IBM 7090/7094):
+
+No protection hardware → monoprogramming only.
+
+A buggy program could crash the OS or entire machine.
+
+IBM 360:
+
+Introduced primitive protection hardware → allowed multiprogramming (multiple programs in memory, taking turns running).
+
+Monoprogramming became obsolete… temporarily.
+
+Early minicomputers (PDP-1, PDP-8):
+
+No protection hardware → back to monoprogramming.
+
+Later, PDP-11 added protection hardware → multiprogramming and eventually UNIX.
+
+Early microcomputers (Intel 8080):
+
+Again, no protection hardware → single-program operation.
+
+Multiprogramming possible only with Intel 80286 and newer CPUs.
+
+Embedded systems today:
+
+Often lack protection hardware, so typically run only one program at a time.
+
+Takeaway:
+
+Just like the earlier memory constraints affecting programming languages, the presence or absence of hardware protection repeatedly dictated whether multiprogramming could be supported. Concepts like multiprogramming become “obsolete” and then resurface depending on hardware evolution.
+
+Key Points:
+
+Mainframes:
+
+Initially: No protection hardware → single-program operation, simple OS.
+
+Later: Added protection hardware → multiprogramming → full timesharing.
+
+Minicomputers:
+
+Initially: No protection hardware → ran one program at a time.
+
+Later: Gained protection hardware → ran multiple programs.
+
+Microcomputers (early PCs):
+
+Initially: Very small memory (≈4 KB) → could not support high-level languages or multiprogramming.
+
+Later: Memory and hardware improvements → multiprogramming, modern OS features.
+
+Handhelds and smart cards:
+
+Followed the same pattern → started simple, gradually gained more advanced OS capabilities as hardware improved.
+
+Underlying Principle:
+
+Software development is dictated by technology.
+
+Limitations in memory or protection hardware forced simpler OS design; improvements enabled more complex functionality.
+
+Takeaway:
+
+The evolution of operating systems is cyclical and technology-driven. Hardware dictates what software can do, and as hardware evolves, software features like multiprogramming, high-level languages, and timesharing are reincarnated across generations of computing devices.
+
+#### Disks
+
+Key Points:
+
+Early Mainframes (1950s–1960s):
+
+Primarily magnetic-tape based: programs read from tape, compiled, run, and results written back to tape.
+
+No disks, no file system initially.
+
+IBM RAMAC (1956): First hard disk, 5 million 7-bit characters (~medium-res photo), occupied ~4 m², very expensive (~$35,000/year).
+
+Led to primitive file systems.
+
+CDC 6600 (1964):
+
+Fastest computer of its time.
+
+Allowed “permanent files” with user-assigned names, creating a single-level directory.
+
+Mainframes eventually evolved to complex hierarchical file systems, e.g., MULTICS.
+
+Minicomputers (e.g., PDP-11, 1970):
+
+Standard disk: RK05, 2.5 MB, compact compared to RAMAC.
+
+Initially had single-level directories.
+
+Microcomputers (early PCs, CP/M):
+
+Floppy disks, single-level directory system.
+
+File system concepts were still simple, mirroring early minicomputers.
+
+Takeaway:
+
+File systems evolved alongside storage technology: from no disks → single-level directories → hierarchical directories.
+
+Early computers were constrained by capacity and cost, limiting the complexity of storage management.
+
+#### Virtual memory
+
+Key Points:
+
+Virtual Memory:
+
+Allows programs larger than physical RAM to run by swapping pages between RAM and disk.
+
+First appeared on mainframes, then adopted by minicomputers and later microcomputers.
+
+Enabled dynamic linking: programs could load libraries at runtime instead of compiling them in.
+
+MULTICS was the first system to support this feature.
+
+Recycling of Ideas:
+
+Many concepts originate in one context, become obsolete, then reappear in new contexts:
+
+Assembly language → revived in early microcomputers
+
+Monoprogramming → reappears in tiny embedded systems
+
+Single-level directories → reused in early PCs
+
+This demonstrates the technological pendulum: ideas are dependent on hardware capabilities and system requirements.
+
+Broader Insight:
+
+Studying older concepts and algorithms is valuable because they may resurface in modern contexts like embedded systems or smart cards.
+
+Essentially, virtual memory is an example of a concept that started in high-end systems and trickled down over time, while older “obsolete” ideas often re-emerge in constrained environments.
+
+## System Calls
+
+1. What Are System Calls?
+
+A system call (syscall) is a controlled entry point into the operating system kernel. It allows a user program to request a service from the OS that cannot be performed in user mode, such as accessing hardware, creating processes, or performing I/O.
+
+Key idea: User programs cannot directly access hardware for safety and protection; they must go through the OS using system calls.
+
+2. Why System Calls Exist
+
+Protection: Prevents user programs from crashing the system or accessing other processes’ memory.
+
+Abstraction: Hides hardware complexity (e.g., disk layout, device registers) behind clean APIs.
+
+Resource management: Allows the OS to manage CPU, memory, and I/O devices efficiently.
+
+3. How System Calls Work
+
+User program executes a library function (e.g., open(), read())
+
+Library code triggers a software interrupt or trap
+
+CPU switches to kernel mode
+
+OS executes the requested service
+
+Result is returned to the user program
+
+CPU switches back to user mode
+
+Think of it as a door between user mode and kernel mode, controlled and secure.
+
+4. Categories of System Calls
+
+System calls can be broadly classified into several categories:
+
+a. Process Control
+
+Purpose: Manage processes (creation, execution, termination, scheduling).
+
+Examples:
+
+fork() → create a new process
+
+exec() → replace process memory with a new program
+
+exit() → terminate a process
+
+wait() → wait for a child process to finish
+
+b. File Management
+
+Purpose: Access, create, manipulate files and directories.
+
+Examples:
+
+open(), close() → open/close a file
+
+read(), write() → read from/write to a file
+
+unlink() → delete a file
+
+mkdir(), rmdir() → create/remove directories
+
+c. Device Management
+
+Purpose: Communicate with I/O devices through device drivers.
+
+Examples:
+
+ioctl() → device-specific operations
+
+read(), write() → on special files representing devices
+
+d. Information Maintenance
+
+Purpose: Obtain system or process information, or modify it.
+
+Examples:
+
+getpid() → get process ID
+
+alarm() → set a timer
+
+time() → get current time
+
+e. Communication
+
+Purpose: Enable interprocess communication (IPC).
+
+Examples:
+
+pipe() → create a pipe between processes
+
+shmget() → allocate shared memory
+
+msgget() → create message queues
+
+socket() → network communication
+
+5. Mechanism Details
+
+System Call Invocation: Usually via a software interrupt, trap, or a special CPU instruction (syscall in x86-64).
+
+Kernel Mode: System calls execute in privileged kernel mode, which can directly access hardware.
+
+Return Values: Typically indicate success or failure, with -1 or an error code on failure.
+
+Libraries: C standard library (libc) often wraps system calls for easier usage (e.g., printf() calls write() internally).
+
+6. Examples
+
+```c
+#include <stdio.h>
+#include <unistd.h>
+#include <fcntl.h>
+
+int main() {
+    int fd = open("file.txt", O_RDONLY);  // system call
+    if (fd == -1) {
+        perror("open failed");
+        return 1;
+    }
+
+    char buffer[100];
+    ssize_t n = read(fd, buffer, 100);   // system call
+    write(1, buffer, n);                 // system call (stdout)
+    close(fd);                            // system call
+
+    return 0;
+}
+```
+
+Here, open(), read(), write(), close() are direct system calls handled by the kernel.
+
+7. Important Concepts Related to System Calls
+
+Blocking vs Non-blocking: Some system calls may block the process until completion (e.g., read()), others return immediately (e.g., fcntl() with O_NONBLOCK).
+
+Signals and Interrupts: Certain system calls can be interrupted by signals (e.g., timers, I/O events).
+
+File Descriptors: Numeric handles returned by the OS to identify files, sockets, or devices.
+
+Context Switching: When a syscall occurs, CPU switches from user to kernel mode, saving the process state.
+
+8. Practical Considerations
+
+System calls are slower than library functions because of the user-to-kernel mode switch.
+
+Minimizing syscalls in performance-critical applications is often desirable.
+
+Security: Only kernel can enforce access permissions, so system calls are the gatekeepers for protected resources.
 
 # Introduction of Linux
 
