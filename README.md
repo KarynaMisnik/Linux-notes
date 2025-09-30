@@ -21,6 +21,7 @@ A comprehensive guide and resource hub for understanding Linux as an Operating S
 - [Operating Systems Concepts](#operating-systems-concepts)
   - [Ontogeny Recapitulates Phylogeny](#ontogeny-recapitulates-phylogeny)
 - [System Calls](#system-calls)
+- [Operating System Structure](#operating-system-structure)
 - [Review Questions](#review-questions)
 - [Computer Hardware](#computer-hardware)
 - [Introduction of Linux](#introduction)
@@ -914,6 +915,192 @@ Popular Linux distributions include:
 </ul>
 
 Studying Linux is more than learning an OS — it’s about understanding how computers work at a deeper level.
+
+## Operating System Structure
+
+#### Monotholic Systems
+
+1. Definition
+
+A monolithic OS is one in which the entire operating system runs as a single program in kernel mode. All the services—process management, memory management, file systems, device drivers, and system calls—are compiled into one large executable.
+
+Key idea: Everything lives in kernel space and can directly call any other part of the OS.
+
+2. Structure and Organization
+
+The OS is a collection of procedures (functions or modules).
+
+Each procedure can freely call any other procedure if needed.
+
+No inherent restrictions on access or communication between procedures.
+
+Implication:
+
+Efficiency: Calls are simple and fast since they are just normal function calls within the same address space.
+
+Complexity: Thousands of procedures calling each other can make the system hard to understand, maintain, or extend.
+
+3. Compilation and Linking
+
+Compile each procedure (or file) into object code.
+
+Link all object files into a single kernel executable.
+
+The OS now runs as one big binary in kernel mode.
+
+Note: Unlike modular or microkernel approaches, there’s no strict encapsulation; every function can access all data and functions of the OS.
+
+4. Pros of Monolithic Design
+
+High performance: Direct function calls within a single address space are faster than inter-process communication.
+
+Simple execution model: Only one program (the OS kernel) is running in kernel mode.
+
+Full access to hardware: Since everything is in kernel mode, all procedures can manipulate hardware or resources directly.
+
+5. Cons of Monolithic Design
+
+Reliability: A bug in any procedure can crash the entire OS.
+
+Maintainability: Hard to isolate, modify, or debug parts of the OS.
+
+Lack of information hiding: All procedures can access all other procedures and internal data structures.
+
+6. Examples
+
+UNIX (traditional versions like early BSD)
+
+Linux kernel
+
+MS-DOS (early versions)
+
+Summary Table
+
+<table>
+  <thead>
+    <tr>
+      <th>Aspect</th>
+      <th>Details</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Definition</td>
+      <td>Entire OS runs as a single program in kernel mode, with all services compiled into one executable.</td>
+    </tr>
+    <tr>
+      <td>Structure</td>
+      <td>Procedures can freely call each other without restrictions, leading to high efficiency but complexity.</td>
+    </tr>
+    <tr>
+      <td>Advantages</td>
+      <td>High performance, simple execution model, full hardware access.</td>
+    </tr>
+    <tr>
+      <td>Disadvantages</td>
+      <td>Low reliability, difficult to maintain, lack of modularity.</td>
+    </tr>
+    <tr>
+      <td>Examples</td>
+      <td>UNIX, Linux kernel, MS-DOS.</td>
+    </tr>
+  </tbody>
+</table>
+
+Key Insight: The monolithic design trades safety and modularity for speed and simplicity. Modern operating systems (like Linux) mitigate some of the risks with modular kernels, where some components can be loaded/unloaded dynamically, but the basic monolithic principle still applies.
+
+**System Calls in Monolithic Systems**
+
+Even in a monolithic OS, there is structure behind how user programs access OS services.
+
+**How a system call works**
+
+User program sets up parameters for the system call (usually on the stack or in registers).
+
+Trap instruction is executed.
+
+This switches the CPU from user mode to kernel mode.
+
+It also transfers control to a predefined entry point in the OS.
+
+Operating system fetches parameters and identifies which system call was requested.
+
+System call table lookup:
+
+The OS has a table of pointers, where each entry corresponds to a system call.
+
+Slot k points to the procedure that implements system call k.
+
+The service procedure executes, performs the operation, and returns control to the user program.
+
+> This mechanism provides a controlled way for user programs to access
+> privileged OS functions safely, even in a monolithic kernel.
+
+Suggested OS Structure
+
+Even though the kernel is monolithic, it can be organized into layers or components:
+
+Main program / dispatcher
+
+Receives requests (system calls) and invokes the correct service procedure.
+
+Service procedures
+
+One for each system call.
+
+Example: read(), write(), fork(), exec() in UNIX.
+
+Utility procedures
+
+Helper routines used by many service procedures.
+
+Example: routines for copying data between user and kernel memory, managing common data structures, or validating parameters.
+
+Diagrammatically:
+
+```bash
+User Program
+      |
+  Trap Instruction
+      |
+  Main OS Dispatcher
+      |
+ -------------------
+| Service Procedures |
+ -------------------
+      |
+ -------------------
+| Utility Procedures |
+ -------------------
+```
+
+**Loadable Extensions**
+
+Many monolithic OSes still support dynamically loadable modules, which lets you extend functionality without rebooting the OS:
+
+UNIX/Linux: Shared libraries (.so files)
+
+Windows: Dynamic-Link Libraries (.dll files)
+
+These often include:
+
+Device drivers
+
+File system modules
+
+Network protocols
+
+Example: C:\Windows\system32 on Windows contains thousands of .dll files that the OS and programs can use dynamically.
+
+**Key Points to Remember**
+
+System calls are the interface between user programs and kernel services.
+
+Trap instruction ensures safety by switching to kernel mode.
+
+Monolithic OS can still be modular internally, with service procedures and utility routines.
+
+Loadable extensions provide flexibility without redesigning or rebooting the kernel.
 
 #### History of Linux
 
