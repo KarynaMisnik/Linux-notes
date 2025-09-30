@@ -1379,6 +1379,43 @@ Separation of concerns: Multiprogramming handled by exokernel; OS code runs in u
 
 Efficiency: Each VM accesses resources directly within its allocation.
 
+Here’s a simple diagram comparing traditional virtual machines and the exokernel approach:
+
+```bash
+Traditional Virtual Machines (VM/370, Type 1 Hypervisor)
+--------------------------------------------------------
+          User OS (Guest 1)
+          ----------------
+          User OS (Guest 2)
+          ----------------
+        Virtual Machine Monitor / Hypervisor
+        -----------------------------
+        Physical Hardware (CPU, Memory, Disk, I/O)
+
+Notes:
+- Each guest OS thinks it has the full machine.
+- Hypervisor remaps all resources (CPU, memory, disk) to avoid conflicts.
+- Full emulation overhead.
+
+--------------------------------------------------------
+
+Exokernel
+---------
+          User-level OS / VM (1)
+          ----------------------
+          User-level OS / VM (2)
+          ----------------------
+                   Exokernel
+                   -------------
+                   Physical Hardware (CPU, Memory, Disk, I/O)
+
+Notes:
+- Exokernel only allocates resources and enforces protection.
+- No emulation or remapping of resources.
+- OS runs in user space directly on allocated resources.
+- Lower overhead, more efficient.
+```
+
 #### History of Linux
 
 The history of Unix dates back to the **mid-1960s**, when the Massachusetts Institute of Technology (MIT), AT&T Bell Labs, and General Electric collaborated on an ambitious project called <a href="https://en.wikipedia.org/wiki/Multics">MULTICS</a> — the Multiplexed Information and Computing Service. The goal was to create a sophisticated, multi-user, time-sharing operating system.
