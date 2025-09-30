@@ -1211,6 +1211,71 @@ Layer 0 is closest to the hardware; Layer 5 is closest to the user.
 
 This design provides modularity, abstraction, and better maintainability compared to a purely monolithic system.
 
+#### Client-Server Model
+
+The client-server model distinguishes between servers, which provide services, and clients, which use them. Clients request services by sending messages, and servers respond. This works whether the processes run on the same machine or on different machines connected via a network. Many modern systems, including the Web, use this model: a PC (client) requests a webpage from a server, which then sends it back.
+
+1. Message Passing
+
+Communication between clients and servers usually occurs via message passing, not direct procedure calls.
+
+Messages contain requests and may include parameters; responses carry the results or status.
+
+Message passing allows the location transparency: clients don’t need to know if the server is local or remote.
+
+2. Synchronous vs Asynchronous Communication
+
+Synchronous: the client waits for the server to respond (blocking).
+
+Asynchronous: the client sends a request and continues processing; the server responds later (non-blocking).
+
+3. Advantages of the Model
+
+Modularity: Services are encapsulated in servers, making maintenance easier.
+
+Scalability: Multiple clients can access a server simultaneously.
+
+Network transparency: The same model works for single machines or distributed systems.
+
+Flexibility: Servers can be upgraded or replaced independently of clients.
+
+4. Disadvantages / Challenges
+
+Performance overhead: Message passing is slower than direct function calls.
+
+Reliability: Server failures affect all clients relying on that service.
+
+Complexity: Handling network delays, concurrency, and failures adds complexity.
+
+5. Examples
+
+Web browsing: Browser (client) ↔ Web server.
+
+Email: Email client ↔ Mail server.
+
+Databases: Application ↔ Database server.
+
+Microkernels: Core OS services as servers; user processes as clients.
+
+```bash
+Single Machine:
+   +---------+          +---------+
+   | Client  | <----->  | Server  |
+   +---------+          +---------+
+       |                     |
+       |   Message Passing    |
+       +---------------------+
+
+Networked Machines:
+   +---------+                 +---------+
+   | Client  |  ----Message-->  | Server  |
+   +---------+  <---Reply----   +---------+
+       |                             |
+   Local/Remote                     Local/Remote
+      Machine                        Machine
+
+```
+
 #### History of Linux
 
 The history of Unix dates back to the **mid-1960s**, when the Massachusetts Institute of Technology (MIT), AT&T Bell Labs, and General Electric collaborated on an ambitious project called <a href="https://en.wikipedia.org/wiki/Multics">MULTICS</a> — the Multiplexed Information and Computing Service. The goal was to create a sophisticated, multi-user, time-sharing operating system.
