@@ -1507,6 +1507,152 @@ CPU fetches instruction 3, executes STORE → Z = Accumulator.
 
 Instruction 4 halts program.
 
+5. Why it Matters
+
+Foundation of all modern computers (PCs, laptops, smartphones all follow this model).
+
+Introduced stored programs → programs are just data, so computers can load & run new software easily.
+
+Limitations:
+
+Von Neumann bottleneck = CPU speed limited by memory bandwidth (fetching instructions/data one at a time).
+
+But still forms the backbone of computer science.
+
+Most common commands:
+
+<!-- Von Neumann / Simple Machine Commands — Cheatsheet -->
+<section>
+  <h2>Von Neumann — Simple Machine Commands (Cheatsheet)</h2>
+
+  <p><strong>Registers (common)</strong>: <code>PC</code> (Program Counter), <code>IR</code> (Instruction Register),
+  <code>ACC</code> (Accumulator), <code>SP</code> (Stack Pointer), general registers <code>R0..Rn</code>.</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Command</th>
+        <th>Meaning</th>
+        <th>Example / Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>LOAD X</code></td>
+        <td>Load value at memory address <code>X</code> into <code>ACC</code> (or a register)</td>
+        <td><code>ACC ← M[X]</code></td>
+      </tr>
+      <tr>
+        <td><code>STORE X</code></td>
+        <td>Store value from <code>ACC</code> (or a register) into memory address <code>X</code></td>
+        <td><code>M[X] ← ACC</code></td>
+      </tr>
+      <tr>
+        <td><code>MOVE R1, R2</code></td>
+        <td>Copy value from <code>R2</code> to <code>R1</code></td>
+        <td>Register-to-register transfer</td>
+      </tr>
+      <tr>
+        <td><code>ADD X</code></td>
+        <td>Add value at <code>X</code> to <code>ACC</code></td>
+        <td><code>ACC ← ACC + M[X]</code></td>
+      </tr>
+      <tr>
+        <td><code>SUB X</code></td>
+        <td>Subtract value at <code>X</code> from <code>ACC</code></td>
+        <td><code>ACC ← ACC - M[X]</code></td>
+      </tr>
+      <tr>
+        <td><code>MUL X</code></td>
+        <td>Multiply <code>ACC</code> by value at <code>X</code></td>
+        <td><code>ACC ← ACC * M[X]</code></td>
+      </tr>
+      <tr>
+        <td><code>DIV X</code></td>
+        <td>Divide <code>ACC</code> by value at <code>X</code></td>
+        <td>Be careful of divide-by-zero</td>
+      </tr>
+      <tr>
+        <td><code>INC R</code></td>
+        <td>Increment register <code>R</code> by 1</td>
+        <td><code>R ← R + 1</code></td>
+      </tr>
+      <tr>
+        <td><code>DEC R</code></td>
+        <td>Decrement register <code>R</code> by 1</td>
+        <td><code>R ← R - 1</code></td>
+      </tr>
+      <tr>
+        <td><code>JMP LABEL</code></td>
+        <td>Unconditional jump — set <code>PC</code> to <code>LABEL</code></td>
+        <td>Flow control</td>
+      </tr>
+      <tr>
+        <td><code>JZ LABEL</code></td>
+        <td>Jump if zero — jump when <code>ACC</code> == 0</td>
+        <td>Conditional branch</td>
+      </tr>
+      <tr>
+        <td><code>JNZ LABEL</code></td>
+        <td>Jump if not zero — jump when <code>ACC</code> ≠ 0</td>
+        <td>Conditional branch</td>
+      </tr>
+      <tr>
+        <td><code>CALL LABEL</code></td>
+        <td>Call subroutine — push return address, set <code>PC</code> to <code>LABEL</code></td>
+        <td>Use <code>RET</code> to return</td>
+      </tr>
+      <tr>
+        <td><code>RET</code></td>
+        <td>Return from subroutine — pop return address into <code>PC</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>PUSH R</code></td>
+        <td>Push register <code>R</code> onto stack</td>
+        <td><code>SP ← SP - 1; M[SP] ← R</code></td>
+      </tr>
+      <tr>
+        <td><code>POP R</code></td>
+        <td>Pop top of stack into register <code>R</code></td>
+        <td><code>R ← M[SP]; SP ← SP + 1</code></td>
+      </tr>
+      <tr>
+        <td><code>IN</code></td>
+        <td>Read a value from an input device into <code>ACC</code></td>
+        <td>Device I/O (simplified)</td>
+      </tr>
+      <tr>
+        <td><code>OUT</code></td>
+        <td>Write <code>ACC</code> (or register) to an output device</td>
+        <td>Device I/O</td>
+      </tr>
+      <tr>
+        <td><code>NOP</code></td>
+        <td>No operation — does nothing for one cycle</td>
+        <td>Useful for timing / alignment</td>
+      </tr>
+      <tr>
+        <td><code>HALT</code></td>
+        <td>Stop program execution</td>
+        <td>End of program</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>Tiny example: Z = X + Y</h3>
+  <pre><code>
+    ; assume X, Y, Z are memory addresses
+    LOAD X    ; ACC = M[X]
+    ADD  Y    ; ACC = ACC + M[Y]
+    STORE Z   ; M[Z] = ACC
+    HALT
+  </code></pre>
+
+  <p><em>Tip:</em> On a real instruction set you’ll have addressing modes (immediate, direct, indirect, register),
+  and system calls or traps for privileged actions (I/O, process control).</p>
+</section>
+
 #### History of Linux
 
 The history of Unix dates back to the **mid-1960s**, when the Massachusetts Institute of Technology (MIT), AT&T Bell Labs, and General Electric collaborated on an ambitious project called <a href="https://en.wikipedia.org/wiki/Multics">MULTICS</a> — the Multiplexed Information and Computing Service. The goal was to create a sophisticated, multi-user, time-sharing operating system.
