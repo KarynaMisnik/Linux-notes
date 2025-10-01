@@ -118,13 +118,7 @@ The OS or a separate program then feeds the data to the device at its own pace.
 
 🔹 Advanced multiprocessing, file systems, and security features.
 
-**Examples:**
-
-Microsoft DOS, Windows 3.x
-
-Apple Macintosh System Software
-
-UNIX variants (BSD, System V)
+**Examples:** Microsoft DOS, Windows 3.x, Apple Macintosh System Software, UNIX variants (BSD, System V)
 
 5️⃣ Fifth Generation (**1990s – Present**) – <ins>Modern Computing</ins>
 
@@ -140,15 +134,7 @@ UNIX variants (BSD, System V)
 
 🔹 Security, scalability, and real-time capabilities are emphasized.
 
-**Examples:**
-
-Windows 10/11
-
-macOS
-
-Linux distributions (Ubuntu, Fedora)
-
-Android, iOS (for mobile platforms)
+**Examples:** Windows 10/11, macOS, Linux distributions (Ubuntu, Fedora), Android, iOS (for mobile platforms)
 
 ## Review Questions
 
@@ -158,7 +144,7 @@ Android, iOS (for mobile platforms)
 
 🔹 An Operating System (OS) manages the computer’s resources: CPU, memory, storage, I/O devices, etc.
 
-I🔹 n a multi-tasking environment, multiple programs run **concurrently**.
+🔹 In a multi-tasking environment, multiple programs run **concurrently**.
 
 🔹 The OS allocates resources fairly, prevents conflicts, and ensures each application can access the hardware safely.
 
@@ -166,17 +152,17 @@ This is why we call the OS a resource manager.
 
 ❓ What is POSIX?
 
-POSIX (Portable Operating System Interface) is a set of standards defined by IEEE.
+**POSIX (Portable Operating System Interface)** is a set of standards defined by IEEE.
 
 <ins>Its goal:</ins> make programs portable across different UNIX-like operating systems.
 
 POSIX defines:
 
-🔹 APIs (system calls)
+🔹 APIs (system calls);
 
-🔹 Command-line shells and utilities
+🔹 Command-line shells and utilities;
 
-🔹 File system behavior, process control, signals, etc.
+🔹 File system behavior, process control, signals, etc.;
 
 > POSIX is the IEEE standard that defines a portable UNIX interface.
 
