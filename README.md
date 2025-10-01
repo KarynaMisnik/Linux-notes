@@ -1466,6 +1466,47 @@ Registers: tiny, very fast storage inside CPU (e.g., accumulator, instruction re
 
 Input/Output: communication with outside world.
 
+3. The Von Neumann Cycle (Fetch–Decode–Execute)
+
+Every program runs in this endless loop:
+
+Fetch: Control Unit fetches the next instruction from memory (address stored in the Program Counter).
+
+Decode: Instruction is interpreted (e.g., ADD, LOAD, STORE).
+
+Execute: ALU or I/O unit carries out the instruction.
+
+Update PC: Program Counter moves to the next instruction.
+
+This is the instruction cycle.
+
+4. Simple Example in Von Neumann "code"
+
+Let’s say you want to compute:
+
+```bash
+Z = X + Y
+```
+
+In pseudo-machine code:
+
+```bash
+1. LOAD X        ; load value of X into Accumulator
+2. ADD Y         ; add value of Y to Accumulator
+3. STORE Z       ; store result into memory location Z
+4. HALT          ; stop program
+```
+
+What happens:
+
+CPU fetches instruction 1, decodes it (LOAD), executes it → Accumulator = X.
+
+CPU fetches instruction 2, executes ADD → Accumulator = X+Y.
+
+CPU fetches instruction 3, executes STORE → Z = Accumulator.
+
+Instruction 4 halts program.
+
 #### History of Linux
 
 The history of Unix dates back to the **mid-1960s**, when the Massachusetts Institute of Technology (MIT), AT&T Bell Labs, and General Electric collaborated on an ambitious project called <a href="https://en.wikipedia.org/wiki/Multics">MULTICS</a> — the Multiplexed Information and Computing Service. The goal was to create a sophisticated, multi-user, time-sharing operating system.
