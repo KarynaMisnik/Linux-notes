@@ -27,6 +27,7 @@ A comprehensive guide and resource hub for understanding Linux as an Operating S
 - [Virtual Machines](#virtual-machines)
 - [Review Questions](#review-questions)
 - [Computer Hardware](#computer-hardware)
+- [Von Neumann Machine](#von-neumann-machine)
 - [Introduction of Linux](#introduction)
   - [What is Linux](#what-is-Linux)
   - [History of Linux](#history-of-linux)
@@ -1408,13 +1409,62 @@ Exokernel
                    Exokernel
                    -------------
                    Physical Hardware (CPU, Memory, Disk, I/O)
+```
 
 Notes:
+
 - Exokernel only allocates resources and enforces protection.
 - No emulation or remapping of resources.
 - OS runs in user space directly on allocated resources.
 - Lower overhead, more efficient.
+
+## Von Neumann Machine
+
+1. The Von Neumann architecture (1945, John von Neumann) is the basic design model of almost all modern computers.
+
+It defines how a computer system should be organized:
+
+One memory stores both instructions (programs) and data.
+
+A CPU (Central Processing Unit) fetches instructions, decodes them, and executes them.
+
+Input/output devices let the user interact with the machine.
+
+It’s also called the stored-program concept → programs are stored in memory just like data.
+
+2. The Components
+
+Here’s the basic structure:
+
+```bash
+           +-------------------+
+Input ---> |                   |
+           |                   | ---> Output
+           |   Memory          |
+           | (data+programs)   |
+           +---------+---------+
+                     |
+            +--------+--------+
+            |                 |
+            |   CPU           |
+            |                 |
+   +--------+--------+  +-----+-----+
+   | Control Unit    |  | Arithmetic|
+   | (fetch/decode)  |  | Logic Unit|
+   +-----------------+  +-----------+
 ```
+
+Key parts:
+
+Memory: stores instructions & data.
+
+Control Unit (CU): fetches an instruction, decodes it, and tells ALU what to do.
+
+Arithmetic Logic Unit (ALU): performs calculations and logical operations.
+
+Registers: tiny, very fast storage inside CPU (e.g., accumulator, instruction register, program counter).
+
+Input/Output: communication with outside world.
 
 #### History of Linux
 
