@@ -359,37 +359,23 @@ Handheld computers—including tablets, smartphones, and PDAs—feature multicor
 
 #### Embedded Operating Systems
 
-Embedded systems run on the computers that control devices that are not gen-
-erally thought of as computers and which do not accept user-installed software.
+Embedded systems run on the computers that control devices that are not generally thought of as computers and which do not accept user-installed software.
 Typical examples are microwave ovens, TV sets, cars, DVD recorders, traditional
-phones, and MP3 players. The main property which distinguishes embedded sys-
-tems from handhelds is the certainty that no untrusted software will ever run on it.
-You cannot download new applications to your microwave oven—all the software
+phones, and MP3 players.
+
+The main property which distinguishes embedded systems from handhelds is the certainty that no untrusted software will ever run on it. You cannot download new applications to your microwave oven — all the software
 is in ROM. This means that there is no need for protection between applications,
-leading to design simplification. Systems such as Embedded Linux, QNX and
-VxWorks are popular in this domain.
+leading to design simplification. Systems such as Embedded Linux, QNX and VxWorks are popular in this domain.
 
 #### Sensor-Node Operating Systems
 
-Networks of tiny sensor nodes are being deployed for numerous purposes.
-These nodes are tiny computers that communicate with each other and with a base
-station using wireless communication. Sensor networks are used to protect the
-perimeters of buildings, guard national borders, detect fires in forests, measure
-temperature and precipitation for weather forecasting, glean information about
+Networks of tiny sensor nodes are being deployed for numerous purposes. These nodes are tiny computers that communicate with each other and with a base station using wireless communication. Sensor networks are used to protect the perimeters of buildings, guard national borders, detect fires in forests, measure temperature and precipitation for weather forecasting, glean information about
 enemy movements on battlefields, and much more.
-The sensors are small battery-powered computers with built-in radios. They
-have limited power and must work for long periods of time unattended outdoors,
-frequently in environmentally harsh conditions. The network must be robust
-enough to tolerate failures of individual nodes, which happen with ever-increasing
-frequency as the batteries begin to run down.
-Each sensor node is a real computer, with a CPU, RAM, ROM, and one or
-more environmental sensors. It runs a small, but real operating system, usually one
-that is event driven, responding to external events or making measurements period-
-ically based on an internal clock. The operating system has to be small and simple
-because the nodes have little RAM and battery lifetime is a major issue. Also, as
-with embedded systems, all the programs are loaded in advance; users do not sud-
-denly start programs they downloaded from the Internet, which makes the design
-much simpler. TinyOS is a well-known operating system for a sensor node.
+
+The sensors are small battery-powered computers with built-in radios. They have limited power and must work for long periods of time unattended outdoors, frequently in environmentally harsh conditions. The network must be robust enough to tolerate failures of individual nodes, which happen with ever-increasing frequency as the batteries begin to run down.
+
+Each sensor node is a real computer, with a CPU, RAM, ROM, and one or more environmental sensors. It runs a small, but real operating system, usually one that is event driven, responding to external events or making measurements periodically based on an internal clock. The operating system has to be small and simple
+because the nodes have little RAM and battery lifetime is a major issue. Also, as with embedded systems, all the programs are loaded in advance; users do not suddenly start programs they downloaded from the Internet, which makes the design much simpler. TinyOS is a well-known operating system for a sensor node.
 
 #### Real-time Operating Systems
 
@@ -410,29 +396,44 @@ Process-management system calls handle creation, termination, memory management,
 Signals are software interrupts (like timers or hardware traps). When a signal arrives the OS saves the process’s state, runs a signal handler (e.g., to retransmit a message), then restores the process.
 Users and protection: each user has a UID (and belongs to groups with GIDs). Processes inherit the UID of their creator. One special UID — the superuser/Administrator — can bypass many protection rules.
 
+> A UID (User Identifier) is a unique number assigned to each user on a Linux
+> or UNIX system. It is used by the operating system to identify users
+> and manage permissions, ownership of files, and access control. The root
+> user always has UID 0, while regular users have UIDs starting from 1000
+> (or 500 on older systems). UIDs are essential for system security and
+> user management.
+
 #### Address Spaces
 
 Main memory holds executing programs. Simple OSs run one program at a time, while sophisticated OSs allow multiple programs simultaneously, using hardware-enforced protection to prevent interference. Each process has its own address space, which may exceed physical memory. Virtual memory lets the OS keep part of a process in RAM and part on disk, creating the illusion of a large contiguous address space. Managing memory and address spaces is a core OS function.
 
 #### Files
 
-A file system is a core OS feature that provides a consistent, device-independent way to manage data. The OS offers system calls to create, remove, read, and write files. Files are organized into directories (folders) to group related files together. Additional system calls allow creating and deleting directories, as well as adding or removing files from them. Directories can contain both files and other directories.
+A file system is a <ins>core</ins> OS feature that provides a consistent, device-independent way to manage data. The OS offers system calls to **create**, **remove**, **read**, and **write** files. Files are organized into directories (folders) to group related files together. Additional system calls allow creating and deleting directories, as well as adding or removing files from them. Directories can contain both files and other directories.
 
 Both processes and files are organized hierarchically as trees, but they differ in depth, lifetime, and access control:
 
-Process trees are shallow (usually ≤3 levels), short-lived (minutes), and only parents can control/access child processes.
+🔸 Process trees are shallow (usually ≤3 levels), short-lived (minutes), and only parents can control/access child processes.
 
-File/directory trees are often deeper (4–5+ levels), long-lived (years), and can be accessed by a wider group beyond the owner.
+🔸 File/directory trees are often deeper (4–5+ levels), long-lived (years), and can be accessed by a wider group beyond the owner.
 
-Files are identified by their path names:
+**Files are identified by their path names:**
 
-Absolute path: starts from the root directory / (e.g., /Faculty/Prof.Brown/Courses/CS101).
+🔸 Absolute path: starts from the root directory <code>/</code>
 
-Relative path: starts from the process’s current working directory (e.g., Courses/CS101 if the working directory is /Faculty/Prof.Brown).
+```bash
+/Faculty/Prof.Brown/Courses/CS101
+```
 
-Processes can change their current working directory via a system call.
+🔸 Relative path: starts from the process’s current working directory
 
-File opening and permissions:
+```bash
+Courses/CS101 if the working directory is /Faculty/Prof.Brown
+```
+
+Processes can change their current working directory via a **system call**.
+
+**File opening and permissions:**
 
 Before a file can be read or written, it must be opened.
 
@@ -440,7 +441,7 @@ The OS checks permissions; if allowed, it returns a file descriptor (a small int
 
 If access is denied, an error code is returned.
 
-Mounted file systems in UNIX:
+**Mounted file systems in UNIX:**
 
 UNIX allows different file systems (e.g., hard disk, CD-ROM, USB drive) to be attached (“mounted”) into a single directory tree.
 
@@ -452,7 +453,7 @@ Mounting usually occurs on empty directories, because existing files at the moun
 
 Multiple disks can all be mounted into a single tree, maintaining device independence.
 
-Special files in UNIX:
+**Special files in UNIX:**
 
 UNIX treats I/O devices as files so they can be read/written with the same system calls as regular files.
 
@@ -462,9 +463,13 @@ Block special files – for devices with randomly addressable blocks (e.g., disk
 
 Character special files – for devices that handle character streams (e.g., printers, modems).
 
-Special files are conventionally located in the /dev directory (e.g., /dev/lp for the printer).
+Special files are conventionally located in the <code>/dev directory</code
 
-Pipes:
+```bash
+/dev/lp for the printer
+```
+
+**Pipes:**
 
 Pipes are pseudofiles used to connect processes for communication.
 
