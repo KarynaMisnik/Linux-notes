@@ -545,17 +545,18 @@ Operating system (OS): The code that executes system calls and manages hardware 
 
 Programs like editors, compilers, linkers, and shells are not part of the OS, even though they heavily use OS features.
 
-Example – The UNIX Shell
+**Example** – The UNIX Shell
 
-The shell (e.g., sh, csh, ksh, bash) is a command interpreter that serves as the main interface between the user and the OS (unless using a GUI).
+The shell (e.g., <code>sh</code>, <code>csh</code>, <code>ksh</code>, <code>bash</code>) is a command interpreter that serves as the main
+interface between the user and the OS (unless using a GUI).
 
-When a user logs in:
+**When a user logs in:**
 
 The shell starts with the terminal as standard input and output.
 
-It displays a prompt (e.g., $) to signal it is ready for commands.
+It displays a prompt (e.g., <code>$</code>) to signal it is ready for commands.
 
-When the user types a command, e.g., date:
+When the user types a command, e.g., <code>date:</code>
 
 The shell creates a child process to run the program.
 
@@ -571,7 +572,7 @@ Standard output (stdout) redirection:
 date > file
 ```
 
-ends the output of the date command into the file file instead of the terminal.
+ends the output of the date command into the file instead of the terminal.
 
 Standard input (stdin) redirection:
 
@@ -579,7 +580,7 @@ Standard input (stdin) redirection:
 sort < file1 > file2
 ```
 
-Reads input from file1, sorts it, and writes the output to file2.
+Reads input from <code>file1</code>, sorts it, and writes the output to <code>file2</code>.
 
 2. Pipes
 
@@ -589,15 +590,15 @@ Using output from one program as input to another:
 cat file1 file2 file3 | sort > /dev/lp
 ```
 
-cat concatenates three files.
+<code>cat</code> concatenates three files.
 
-sort organizes all lines alphabetically.
+<code>sort</code> organizes all lines alphabetically.
 
-Output is sent to /dev/lp, usually the printer.
+Output is sent to <code>/dev/lp</code>, usually the printer.
 
 3. Background Execution
 
-Ampersand (&) runs a command in the background:
+Ampersand (**&**) runs a command in the background:
 
 ```bash
 cat file1 file2 file3 | sort > /dev/lp &
@@ -617,42 +618,52 @@ Windows: The default GUI (Explorer) can be replaced by another program, though f
 
 #### Ontogeny Recapitulates Phylogeny
 
-Key Ideas:
+**Key Ideas:**
 
 Haeckel’s concept:
 
-Ontogeny recapitulates phylogeny → Embryo development (ontogeny) mirrors the evolutionary stages of the species (phylogeny).
+Ontogeny recapitulates phylogeny → Embryo development (ontogeny) mirrors the evolutionary
+stages of the species (phylogeny).
 
-Example (simplified/incorrect for humans): a human embryo passes through “fish” and “pig” stages before becoming human.
+**Example** (simplified/incorrect for humans): a human embryo passes through
+“fish” and “pig” stages before becoming human.
 
-Analogy to computers:
+**Analogy to computers:**
 
-Each new class of computers (mainframe → minicomputer → personal computer → handheld → embedded → smart card) seems to repeat stages its ancestors went through, in both hardware and software.
+Each new class of computers (mainframe → minicomputer → personal computer → handheld → embedded → smart card)
+seems to repeat stages its ancestors went through, in both hardware and software.
 
 Innovations build on what came before, much like evolution.
 
-Technology drives adoption:
+**Technology drives adoption:**
 
-Just as the Romans lacked cars because the technology didn’t exist, computers exist because we can now build them cheaply, not because there was a long-standing human desire.
+Just as the Romans lacked cars because the technology didn’t exist,
+computers exist because we can now build them cheaply, not because there was a
+long-standing human desire.
 
 Technological capability shapes what systems appear and how they evolve.
 
-Takeaway:
-The evolution of computing isn’t just market demand—it’s largely technology-driven, and each new type of system often retraces steps its predecessors took, incorporating lessons and limitations along the way.
+**Takeaway:**
 
-Key Points:
+The evolution of computing isn’t just market demand—it’s largely technology-driven,
+and each new type of system often retraces steps its predecessors took,
+incorporating lessons and limitations along the way.
+
+**Key Points:**
 
 Technology can make ideas obsolete, then revive them:
 
-Unlike biology, where extinction is permanent, in computing an “extinct” idea may reappear if technological conditions change.
+Unlike biology, where extinction is permanent, in computing an “extinct” idea may
+reappear if technological conditions change.
 
-Example: Cache memory appeared when CPUs became faster than memory, might vanish if memory surpasses CPU, then reappear if CPU speeds outpace memory again.
+**Example:** Cache memory appeared when CPUs became faster than memory,
+might vanish if memory surpasses CPU, then reappear if CPU speeds outpace memory again.
 
-Obsolete concepts still matter:
+**Obsolete concepts still matter:**
 
 Understanding why an idea became obsolete helps predict if it might become useful again in the future.
 
-Execution paradigms illustrate the pendulum effect:
+Execution paradigms illustrate the **pendulum effect**:
 
 Early computers: hardwired instruction sets → fastest but inflexible.
 
@@ -665,9 +676,15 @@ Modern interpretation (Java applets): network delays make execution speed less c
 Takeaway:
 Computing ideas are not permanently extinct; they resurface depending on relative performance trade-offs in hardware and software. Understanding the “why” behind obsolescence is crucial to predicting future relevance.
 
+> RISC stands for **Reduced Instruction Set Computer**, a type of computer architecture that focuses on
+> a simplified set of instructions. The primary goal of RISC architecture is to execute instructions quickly by using a smaller,
+> highly optimized set of instructions that can be executed in a single clock cycle. This contrasts with **CISC** (Complex Instruction Set Computer) architectures, which use a larger set of more complex instructions.
+> The design philosophy behind RISC is to streamline the hardware by reducing the complexity of the instruction set. This allows for faster instruction execution, simpler hardware design, and improved performance for certain types of workloads. RISC architectures typically rely on software (compilers) to handle complex operations by breaking them down into multiple simpler instructions.
+> Examples of RISC-based processors include ARM, MIPS, and RISC-V. These architectures are widely used in embedded systems, mobile devices, and other performance-critical applications due to their efficiency and power-saving capabilities.
+
 #### Large Memories
 
-Key Points:
+**Key Points:**
 
 Memory constraints drove low-level programming:
 
@@ -692,13 +709,14 @@ Personal computers: abundant memory → C, C++, Java, etc.
 Smart cards: small memory → sometimes Java interpreted, not compiled.
 
 Takeaway:
-The hardware limits of memory and CPU power repeatedly dictate the software approach. When resources are scarce, low-level programming dominates; when resources expand, high-level languages flourish. This cyclical pattern mirrors the earlier discussion about obsolescence and revival of ideas.
+The hardware limits of memory and CPU power repeatedly dictate the software approach. When resources are limited, low-level programming dominates;
+when resources expand, high-level languages flourish. This cyclical pattern mirrors the earlier discussion about obsolescence and revival of ideas.
 
 #### Protection Hardware
 
-Key Points:
+**Key Points:**
 
-Early mainframes (IBM 7090/7094):
+<ins>Early mainframes (IBM 7090/7094):</ins>
 
 No protection hardware → monoprogramming only.
 
@@ -716,59 +734,63 @@ No protection hardware → back to monoprogramming.
 
 Later, PDP-11 added protection hardware → multiprogramming and eventually UNIX.
 
-Early microcomputers (Intel 8080):
+<ins>Early microcomputers (Intel 8080):</ins>
 
 Again, no protection hardware → single-program operation.
 
 Multiprogramming possible only with Intel 80286 and newer CPUs.
 
-Embedded systems today:
+<ins>Embedded systems today:</ins>
 
 Often lack protection hardware, so typically run only one program at a time.
 
 Takeaway:
 
-Just like the earlier memory constraints affecting programming languages, the presence or absence of hardware protection repeatedly dictated whether multiprogramming could be supported. Concepts like multiprogramming become “obsolete” and then resurface depending on hardware evolution.
+Just like the earlier memory constraints affecting programming languages, the presence or
+absence of hardware protection repeatedly dictated whether multiprogramming could be supported.
+Concepts like multiprogramming become “obsolete” and then resurface depending on hardware evolution.
 
-Key Points:
+**Key Points:**
 
-Mainframes:
+<ins>Mainframes:</ins>
 
 Initially: No protection hardware → single-program operation, simple OS.
 
 Later: Added protection hardware → multiprogramming → full timesharing.
 
-Minicomputers:
+<ins>Minicomputers:</ins>
 
 Initially: No protection hardware → ran one program at a time.
 
 Later: Gained protection hardware → ran multiple programs.
 
-Microcomputers (early PCs):
+<ins>Microcomputers (early PCs):</ins>
 
 Initially: Very small memory (≈4 KB) → could not support high-level languages or multiprogramming.
 
 Later: Memory and hardware improvements → multiprogramming, modern OS features.
 
-Handhelds and smart cards:
+<ins>Handhelds and smart cards:</ins>
 
 Followed the same pattern → started simple, gradually gained more advanced OS capabilities as hardware improved.
 
-Underlying Principle:
+<ins>Underlying Principle:</ins>
 
 Software development is dictated by technology.
 
 Limitations in memory or protection hardware forced simpler OS design; improvements enabled more complex functionality.
 
-Takeaway:
+**Takeaway:**
 
-The evolution of operating systems is cyclical and technology-driven. Hardware dictates what software can do, and as hardware evolves, software features like multiprogramming, high-level languages, and timesharing are reincarnated across generations of computing devices.
+The evolution of operating systems is cyclical and technology-driven. Hardware dictates what software can do,
+and as hardware evolves, software features like multiprogramming, high-level languages,
+and timesharing are reincarnated across generations of computing devices.
 
 #### Disks
 
-Key Points:
+**Key Points:**
 
-Early Mainframes (1950s–1960s):
+<ins>Early Mainframes (1950s–1960s):</ins>
 
 Primarily magnetic-tape based: programs read from tape, compiled, run, and results written back to tape.
 
@@ -786,7 +808,7 @@ Allowed “permanent files” with user-assigned names, creating a single-level 
 
 Mainframes eventually evolved to complex hierarchical file systems, e.g., MULTICS.
 
-Minicomputers (e.g., PDP-11, 1970):
+<ins>Minicomputers (e.g., PDP-11, 1970):</ins>
 
 Standard disk: RK05, 2.5 MB, compact compared to RAMAC.
 
@@ -798,7 +820,7 @@ Floppy disks, single-level directory system.
 
 File system concepts were still simple, mirroring early minicomputers.
 
-Takeaway:
+**Takeaway:**
 
 File systems evolved alongside storage technology: from no disks → single-level directories → hierarchical directories.
 
@@ -806,9 +828,9 @@ Early computers were constrained by capacity and cost, limiting the complexity o
 
 #### Virtual memory
 
-Key Points:
+**Key Points:**
 
-Virtual Memory:
+<ins>Virtual Memory:</ins>
 
 Allows programs larger than physical RAM to run by swapping pages between RAM and disk.
 
@@ -818,7 +840,7 @@ Enabled dynamic linking: programs could load libraries at runtime instead of com
 
 MULTICS was the first system to support this feature.
 
-Recycling of Ideas:
+<ins>Recycling of Ideas:</ins>
 
 Many concepts originate in one context, become obsolete, then reappear in new contexts:
 
@@ -830,7 +852,7 @@ Single-level directories → reused in early PCs
 
 This demonstrates the technological pendulum: ideas are dependent on hardware capabilities and system requirements.
 
-Broader Insight:
+**Broader Insight:**
 
 Studying older concepts and algorithms is valuable because they may resurface in modern contexts like embedded systems or smart cards.
 
