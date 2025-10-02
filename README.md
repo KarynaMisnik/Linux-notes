@@ -1011,28 +1011,6 @@ Minimizing syscalls in performance-critical applications is often desirable.
 
 Security: Only kernel can enforce access permissions, so system calls are the gatekeepers for protected resources.
 
-# Introduction of Linux
-
-**Linux** is a free and open-source operating system that powers everything from personal computers and smartphones to servers, supercomputers, routers, and embedded devices. At its core, Linux is known for its stability, security, flexibility, and developer-friendliness, making it a favorite among programmers, system administrators, and tech enthusiasts.
-
-### What is Linux
-
-Linux refers to the **kernel** — the central part of the operating system that directly interacts with the hardware and manages system resources like memory, CPU, devices, and processes.
-However, when people say "Linux," they often mean a Linux distribution (distro), which is the kernel plus essential tools, libraries, and a user interface — forming a complete operating system.
-But to understand Linux we have to start from Unix.
-
-Popular Linux distributions include:
-
-<ul>
-  <li>Ubuntu, Debian (user-friendly, general-purpose)</li>
-   <li>Fedora, Red Hat Enterprise Linux (enterprise environments)</li>
-   <li>Arch, Gentoo (customization-focused)</li>
-   <li>Kali Linux (security and penetration testing)</li>
-   <li>Android (yes, it's based on the Linux kernel!)</li>
-</ul>
-
-Studying Linux is more than learning an OS — it’s about understanding how computers work at a deeper level.
-
 ## Operating System Structure ❗
 
 #### Monotholic Systems
@@ -1765,6 +1743,28 @@ Most common commands:
   <p><em>Tip:</em> On a real instruction set you’ll have addressing modes (immediate, direct, indirect, register),
   and system calls or traps for privileged actions (I/O, process control).</p>
 </section>
+
+# Introduction of Linux
+
+**Linux** is a free and open-source operating system that powers everything from personal computers and smartphones to servers, supercomputers, routers, and embedded devices. At its core, Linux is known for its stability, security, flexibility, and developer-friendliness, making it a favorite among programmers, system administrators, and tech enthusiasts.
+
+### What is Linux
+
+Linux refers to the **kernel** — the central part of the operating system that directly interacts with the hardware and manages system resources like memory, CPU, devices, and processes.
+However, when people say "Linux," they often mean a Linux distribution (distro), which is the kernel plus essential tools, libraries, and a user interface — forming a complete operating system.
+But to understand Linux we have to start from Unix.
+
+Popular Linux distributions include:
+
+<ul>
+  <li>Ubuntu, Debian (user-friendly, general-purpose)</li>
+   <li>Fedora, Red Hat Enterprise Linux (enterprise environments)</li>
+   <li>Arch, Gentoo (customization-focused)</li>
+   <li>Kali Linux (security and penetration testing)</li>
+   <li>Android (yes, it's based on the Linux kernel!)</li>
+</ul>
+
+Studying Linux is more than learning an OS — it’s about understanding how computers work at a deeper level.
 
 #### History of Linux
 
