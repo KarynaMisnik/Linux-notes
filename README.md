@@ -501,25 +501,29 @@ Computers store sensitive information, such as emails, business plans, and tax r
 
 The operating system manages security to ensure that only authorized users can access files and resources.
 
-Example – UNIX File Permissions:
+**Example – UNIX File Permissions:**
 
 Each file has a 9-bit protection code, divided into three 3-bit fields:
 
-Owner – permissions for the file’s owner
+**Owner** – permissions for the file’s owner
 
-Group – permissions for users in the owner’s group
+**Group** – permissions for users in the owner’s group
 
-Others – permissions for everyone else
+**Others** – permissions for everyone else
 
 Each 3-bit field uses the rwx convention:
 
-r = read
+🟡 <code>r</code> = read
 
-w = write
+🔵 <code>w</code> = write
 
-x = execute
+🟣 <code>x</code> = execute
 
-Example: rwxr-x--x
+Example:
+
+```bash
+rwxr-x--x
+```
 
 Owner: read, write, execute
 
@@ -527,9 +531,9 @@ Group: read, execute
 
 Others: execute only
 
-For directories, x means search permission, and - indicates the absence of a permission.
+For directories, <code>x</code> means search permission, and - indicates the absence of a permission.
 
-Additional Security Considerations:
+**Additional Security Considerations:**
 
 Protecting the system from unauthorized users, viruses, and other threats is also a key responsibility of the operating system.
 
