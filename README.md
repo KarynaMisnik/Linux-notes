@@ -1013,7 +1013,7 @@ Security: Only kernel can enforce access permissions, so system calls are the ga
 
 ## Operating System Structure ❗
 
-#### Monotholic Systems
+#### Monolithic Systems
 
 1. Definition
 
@@ -1124,14 +1124,14 @@ System call table lookup:
 
 The OS has a table of pointers, where each entry corresponds to a system call.
 
-Slot k points to the procedure that implements system call k.
+Slot **k** points to the procedure that implements system call **k**.
 
 The service procedure executes, performs the operation, and returns control to the user program.
 
 > This mechanism provides a controlled way for user programs to access
 > privileged OS functions safely, even in a monolithic kernel.
 
-Suggested OS Structure
+<ins>Suggested OS Structure</ins>
 
 Even though the kernel is monolithic, it can be organized into layers or components:
 
@@ -1143,7 +1143,7 @@ Service procedures
 
 One for each system call.
 
-Example: read(), write(), fork(), exec() in UNIX.
+Example: <code>read()</code>, <code>write()</code>, <code>fork()</code>, <code>exec()</code> in UNIX.
 
 Utility procedures
 
@@ -1185,7 +1185,7 @@ File system modules
 
 Network protocols
 
-Example: C:\Windows\system32 on Windows contains thousands of .dll files that the OS and programs can use dynamically.
+**Example:** <code>C:\Windows\system32</code> on Windows contains thousands of <code>.dll</code> files that the OS and programs can use dynamically.
 
 **Key Points to Remember**
 
@@ -1203,13 +1203,13 @@ Loadable extensions provide flexibility without redesigning or rebooting the ker
 
 A layered operating system is structured as a hierarchy of layers, each built upon the layer below it:
 
-Lowest layer: Handles the most fundamental functions, usually very close to the hardware.
+<ins>Lowest layer:</ins> Handles the most fundamental functions, usually very close to the hardware.
 
-Higher layers: Use services provided by the layers below, adding more sophisticated functionality.
+<ins>Higher layers:</ins> Use services provided by the layers below, adding more sophisticated functionality.
 
 Each layer only interacts directly with the layer immediately beneath it.
 
-Advantages:
+**Advantages:**
 
 Easier to understand, design, and debug, since each layer is relatively independent.
 
@@ -1217,23 +1217,23 @@ Crashes or bugs in higher layers are less likely to corrupt lower layers.
 
 Clear information hiding: higher layers do not need to know the internal workings of lower layers.
 
-Disadvantages:
+**Disadvantages:**
 
 Slightly less efficient than monolithic systems, because service calls may have to pass through multiple layers.
 
 **The THE System**
 
-Developed by E. W. Dijkstra (1968) at Technische Hogeschool Eindhoven.
+Developed by **E. W. Dijkstra (1968)** at Technische Hogeschool Eindhoven.
 
 Implemented on an Electrologica X8 computer with 32K of 27-bit words.
 
 It was a simple batch system, but very influential for OS design.
 
-Layer Structure of THE System
+<ins>Layer Structure of THE System</ins>
 
 The THE system had 6 layers:
 
-Layer 0 – CPU Scheduling and Multiprogramming
+**Layer 0** – CPU Scheduling and Multiprogramming
 
 Allocates the processor among processes.
 
@@ -1241,7 +1241,7 @@ Handles interrupts and timer expiration.
 
 Provides basic multiprogramming, so that higher layers can run sequential processes without worrying about concurrent execution.
 
-Layers 1–5 – Higher-Level Services
+**Layers 1–5** – Higher-Level Services
 
 Sequential processes built on top of layer 0.
 
