@@ -32,6 +32,7 @@ A comprehensive guide and resource hub for understanding Linux as an Operating S
 - [Hypervisors](#hypervisors)
 - [Processor Architecture](#processor-architecture)
 - [Kernel](#kernel)
+- [Memory Management](#memory-management)
 - [Introduction of Linux](#introduction)
   - [What is Linux](#what-is-Linux)
   - [History of Linux](#history-of-linux)
@@ -1979,6 +1980,36 @@ Monolithic kernels → all-in-one, fast, less secure.
 Microkernels → minimal, modular, secure, slower.
 Hybrid kernels → compromise: extendable, reasonably fast, common in modern OS.
 Exokernels → extremely minimal, flexible, research-oriented.
+
+## Memory Management
+
+🧠 What Is Memory Management?
+
+Memory management is the process by which an operating system (OS) controls and coordinates computer memory, assigning portions called memory blocks to various running programs (processes) to optimize performance.
+
+The OS ensures:
+
+Each process has enough memory to execute safely.
+Processes do not interfere with each other’s memory space.
+Memory is used efficiently (no big wasted chunks).
+Data is moved between RAM and disk (when physical memory is limited).
+
+⚙️ Core Responsibilities of Memory Management
+
+Tracking memory usage
+OS keeps records of which parts of memory are in use, and by which processes.
+
+Allocation and deallocation
+When a process starts, the OS allocates memory; when it ends, the OS reclaims it.
+
+Protection and isolation
+Each process has its own address space, preventing one process from reading or writing another’s memory.
+
+Virtual memory management
+Enables programs larger than physical RAM to run, by using part of the disk as memory (swap space).
+
+Sharing and communication
+Sometimes, processes need to share memory for efficiency — the OS allows controlled sharing.
 
 ## Introduction of Linux
 
