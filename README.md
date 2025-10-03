@@ -1017,9 +1017,11 @@ Security: Only kernel can enforce access permissions, so system calls are the ga
 
 1. Definition
 
-A monolithic OS is one in which the entire operating system runs as a single program in kernel mode. All the services—process management, memory management, file systems, device drivers, and system calls—are compiled into one large executable.
+A monolithic OS is one in which the entire operating system runs as a single program in kernel mode.
+All the services—process management, memory management, file systems, device drivers, and system calls—
+are compiled into one large executable.
 
-Key idea: Everything lives in kernel space and can directly call any other part of the OS.
+**Key idea:** Everything lives in kernel space and can directly call any other part of the OS.
 
 2. Structure and Organization
 
@@ -1029,11 +1031,11 @@ Each procedure can freely call any other procedure if needed.
 
 No inherent restrictions on access or communication between procedures.
 
-Implication:
+<code>Implication:</code>
 
-Efficiency: Calls are simple and fast since they are just normal function calls within the same address space.
+**Efficiency:** Calls are simple and fast since they are just normal function calls within the same address space.
 
-Complexity: Thousands of procedures calling each other can make the system hard to understand, maintain, or extend.
+**Complexity:** Thousands of procedures calling each other can make the system hard to understand, maintain, or extend.
 
 3. Compilation and Linking
 
