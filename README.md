@@ -30,6 +30,7 @@ A comprehensive guide and resource hub for understanding Linux as an Operating S
 - [Computer Hardware](#computer-hardware)
 - [Von Neumann Machine](#von-neumann-machine)
 - [Hypervisors](#hypervisors)
+- [Processor Architecture](#processor-architecture)
 - [Introduction of Linux](#introduction)
   - [What is Linux](#what-is-Linux)
   - [History of Linux](#history-of-linux)
@@ -1790,6 +1791,78 @@ though containers are lighter and share the same OS kernel.
 - Type 2 hypervisors are better suited for personal use, development, and testing.
 - Paravirtualization and exokernels are niche solutions for specific performance or research needs.
 - Type 1.5 hypervisors offer a balance between flexibility and performance.
+
+## Processor Architecture
+
+1️⃣ What is Processor Architecture?
+
+Processor architecture (or CPU architecture) is the design and organization of the central processing unit — how it executes instructions, accesses memory, and interacts with I/O.
+
+It determines:
+
+Instruction set (what instructions the CPU can execute)
+Number and types of registers
+Memory addressing modes
+Control logic and pipelines
+Interaction with caches, main memory, and peripherals
+In OS terms, it affects how processes run, how memory is accessed, and how fast system calls execute.
+
+2️⃣ Main Components of a Processor
+
+| Component                       | Role                                                                           |
+| ------------------------------- | ------------------------------------------------------------------------------ |
+| **ALU (Arithmetic Logic Unit)** | Performs arithmetic and logic operations (add, subtract, AND, OR, comparisons) |
+| **Registers**                   | Very fast storage inside CPU for immediate data and instructions               |
+| **Control Unit (CU)**           | Interprets instructions and directs ALU, memory, and I/O                       |
+| **Cache**                       | Small, fast memory to reduce access time to main memory                        |
+| **Buses**                       | Paths for data, addresses, and control signals to memory and peripherals       |
+
+3️⃣ Processor Models / Architectures
+3.1 Von Neumann Architecture
+
+Single memory for instructions and data
+CPU fetches instructions and data from the same bus → can cause Von Neumann bottleneck
+Simple, flexible, most general-purpose CPUs historically follow this model
+OS implication: sequential instruction execution, caching helps reduce memory contention
+
+3.2 Harvard Architecture
+
+Separate memories for instructions and data
+CPU can fetch instructions and data simultaneously → faster execution
+Often used in embedded systems, DSPs, and microcontrollers
+OS implication: memory management differs; less shared memory contention
+
+3.3 RISC (Reduced Instruction Set Computing)
+
+Small, simple set of instructions
+Load/Store architecture: only load/store instructions access memory; arithmetic uses registers
+Easier pipelining → faster execution per instruction
+OS implication: simpler scheduling, predictable memory access, easier to implement virtual memory efficiently
+3.4 CISC (Complex Instruction Set Computing)
+
+Large set of instructions, some complex and multi-step
+Instructions may directly access memory
+Pros: smaller program size
+
+Cons: slower per instruction, more complex control logic
+OS implication: context switching can be slightly more complex; caches need to handle variable-length instructions
+
+4️⃣ CPU Interaction with OS
+
+Processes: CPU executes process instructions in sequence; OS schedules which process runs
+Memory: CPU registers and caches interact with RAM; virtual memory managed by OS
+I/O: CPU communicates with devices via memory-mapped I/O or device drivers
+Interrupts & System Calls: CPU switches between user mode and kernel mode when processes request OS services
+
+5️⃣ Special CPU Features in Modern OS Context
+
+| Feature                     | Purpose in OS                                              |
+| --------------------------- | ---------------------------------------------------------- |
+| **Multiple cores**          | True parallel execution of processes/threads               |
+| **Pipelining**              | Overlap instruction stages to speed up execution           |
+| **Superscalar**             | Execute multiple instructions per clock cycle              |
+| **Hardware virtualization** | Enables hypervisors / virtual machines                     |
+| **Privilege levels**        | Kernel vs. user mode, critical for protection and security |
 
 ## Introduction of Linux
 
