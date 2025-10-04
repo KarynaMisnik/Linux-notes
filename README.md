@@ -2011,6 +2011,16 @@ Enables programs larger than physical RAM to run, by using part of the disk as m
 Sharing and communication
 Sometimes, processes need to share memory for efficiency — the OS allows controlled sharing.
 
+🧩 Types of Memory in a Process
+
+Each process has its own memory address space, usually divided into regions:
+| Region | Purpose |
+| --------------- | ----------------------------------------------------------------------------- |
+| **Text (code)** | The program’s executable instructions. |
+| **Data** | Global and static variables. |
+| **Heap** | Dynamically allocated memory (e.g., from `malloc()` or `new`). Grows upward. |
+| **Stack** | Stores local variables, return addresses, and function calls. Grows downward. |
+
 ## Introduction of Linux
 
 **Linux** is a free and open-source operating system that powers everything from personal computers and smartphones to servers, supercomputers, routers, and embedded devices. At its core, Linux is known for its stability, security, flexibility, and developer-friendliness, making it a favorite among programmers, system administrators, and tech enthusiasts.
