@@ -2021,6 +2021,47 @@ Each process has its own memory address space, usually divided into regions:
 | **Heap** | Dynamically allocated memory (e.g., from `malloc()` or `new`). Grows upward. |
 | **Stack** | Stores local variables, return addresses, and function calls. Grows downward. |
 
+```bash
++------------------+  <-- High Address
+|     Stack        |
+| (local vars)     |
++------------------+
+|     Heap         |
+| (dynamic memory) |
++------------------+
+| Initialized Data |
+| Uninitialized Data|
++------------------+
+| Program Code     |
++------------------+  <-- Low Address
+```
+
+📦 Memory Management Techniques
+1️⃣ Single Contiguous Allocation
+
+Old/simple systems: only one program in memory at a time.
+No protection needed.
+Used in early computers.
+
+2️⃣ Partitioned Allocation
+
+Memory divided into fixed or variable partitions.
+Each process fits into one partition.
+Problem: fragmentation (unused memory holes).
+
+3️⃣ Paging
+
+Physical memory divided into frames (fixed-size chunks).
+Logical memory divided into pages.
+OS maintains a page table mapping virtual pages → physical frames.
+
+Advantages:
+Eliminates external fragmentation.
+Allows non-contiguous memory allocation.
+
+Disadvantage:
+Slightly slower due to address translation overhead.
+
 ## Introduction of Linux
 
 **Linux** is a free and open-source operating system that powers everything from personal computers and smartphones to servers, supercomputers, routers, and embedded devices. At its core, Linux is known for its stability, security, flexibility, and developer-friendliness, making it a favorite among programmers, system administrators, and tech enthusiasts.
