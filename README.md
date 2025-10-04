@@ -29,6 +29,7 @@ A comprehensive guide and resource hub for understanding Linux as an Operating S
 - [Review Questions](#review-questions)
 - [Computer Hardware](#computer-hardware)
 - [Von Neumann Machine](#von-neumann-machine)
+- [Hypervisors](#hypervisors)
 - [Introduction of Linux](#introduction)
   - [What is Linux](#what-is-Linux)
   - [History of Linux](#history-of-linux)
@@ -1113,21 +1114,15 @@ Even in a monolithic OS, there is structure behind how user programs access OS s
 **How a system call works**
 
 User program sets up parameters for the system call (usually on the stack or in registers).
-
 Trap instruction is executed.
-
 This switches the CPU from user mode to kernel mode.
-
 It also transfers control to a predefined entry point in the OS.
-
 Operating system fetches parameters and identifies which system call was requested.
 
 System call table lookup:
 
 The OS has a table of pointers, where each entry corresponds to a system call.
-
 Slot **k** points to the procedure that implements system call **k**.
-
 The service procedure executes, performs the operation, and returns control to the user program.
 
 > This mechanism provides a controlled way for user programs to access
@@ -1136,21 +1131,15 @@ The service procedure executes, performs the operation, and returns control to t
 <ins>Suggested OS Structure</ins>
 
 Even though the kernel is monolithic, it can be organized into layers or components:
-
 Main program / dispatcher
-
 Receives requests (system calls) and invokes the correct service procedure.
-
 Service procedures
-
 One for each system call.
 
 Example: <code>read()</code>, <code>write()</code>, <code>fork()</code>, <code>exec()</code> in UNIX.
 
 Utility procedures
-
 Helper routines used by many service procedures.
-
 Example: routines for copying data between user and kernel memory, managing common data structures, or validating parameters.
 
 Diagrammatically:
@@ -1174,17 +1163,12 @@ User Program
 **Loadable Extensions**
 
 Many monolithic OSes still support dynamically loadable modules, which lets you extend functionality without rebooting the OS:
-
 UNIX/Linux: Shared libraries (.so files)
-
 Windows: Dynamic-Link Libraries (.dll files)
 
 These often include:
-
 Device drivers
-
 File system modules
-
 Network protocols
 
 **Example:** <code>C:\Windows\system32</code> on Windows contains thousands of <code>.dll</code> files that the OS and programs can use dynamically.
@@ -1192,11 +1176,8 @@ Network protocols
 **Key Points to Remember**
 
 System calls are the interface between user programs and kernel services.
-
 Trap instruction ensures safety by switching to kernel mode.
-
 Monolithic OS can still be modular internally, with service procedures and utility routines.
-
 Loadable extensions provide flexibility without redesigning or rebooting the kernel.
 
 #### Layered Systems
@@ -1206,17 +1187,13 @@ Loadable extensions provide flexibility without redesigning or rebooting the ker
 A layered operating system is structured as a hierarchy of layers, each built upon the layer below it:
 
 <ins>Lowest layer:</ins> Handles the most fundamental functions, usually very close to the hardware.
-
 <ins>Higher layers:</ins> Use services provided by the layers below, adding more sophisticated functionality.
-
 Each layer only interacts directly with the layer immediately beneath it.
 
 **Advantages:**
 
 Easier to understand, design, and debug, since each layer is relatively independent.
-
 Crashes or bugs in higher layers are less likely to corrupt lower layers.
-
 Clear information hiding: higher layers do not need to know the internal workings of lower layers.
 
 **Disadvantages:**
@@ -1226,9 +1203,7 @@ Slightly less efficient than monolithic systems, because service calls may have 
 **The THE System**
 
 Developed by **E. W. Dijkstra (1968)** at Technische Hogeschool Eindhoven.
-
 Implemented on an Electrologica X8 computer with 32K of 27-bit words.
-
 It was a simple batch system, but very influential for OS design.
 
 <ins>Layer Structure of THE System</ins>
@@ -1238,9 +1213,7 @@ The THE system had 6 layers:
 **Layer 0** – CPU Scheduling and Multiprogramming
 
 Allocates the processor among processes.
-
 Handles interrupts and timer expiration.
-
 Provides basic multiprogramming, so that higher layers can run sequential processes without worrying about concurrent execution.
 
 **Layers 1–5** – Higher-Level Services
@@ -1250,25 +1223,17 @@ Sequential processes built on top of layer 0.
 Each layer provided more sophisticated services, such as:
 
 File management
-
 I/O device management
-
 Interprocess communication
-
 User interface and job control
-
 Each layer only interacts with the layer immediately below it.
-
 Layered design ensures modularity, abstraction, and a clear separation of concerns.
 
 **Key Takeaways**
 
 Layered OSes generalize the idea of modularity in monolithic systems.
-
 Each layer offers a well-defined interface to the layer above.
-
 THE system demonstrated that complex OS functionality could be structured in layers, simplifying development and debugging.
-
 Modern OS designs often combine monolithic kernels with layered concepts to balance efficiency and modularity.
 
 ```bash
@@ -1301,9 +1266,7 @@ Layer 0: CPU scheduling and multiprogramming
 **How it works:**
 
 Each layer uses only the services of the layer directly below it.
-
 Layer 0 is closest to the hardware; Layer 5 is closest to the user.
-
 This design provides modularity, abstraction, and better maintainability compared to a purely monolithic system.
 
 #### Client-Server Model
@@ -1313,43 +1276,32 @@ The client-server model distinguishes between servers, which provide services, a
 1. Message Passing
 
 Communication between clients and servers usually occurs via message passing, not direct procedure calls.
-
 Messages contain requests and may include parameters; responses carry the results or status.
-
 Message passing allows the location transparency: clients don’t need to know if the server is local or remote.
 
 2. Synchronous vs Asynchronous Communication
 
 Synchronous: the client waits for the server to respond (blocking).
-
 Asynchronous: the client sends a request and continues processing; the server responds later (non-blocking).
 
 3. Advantages of the Model
 
 Modularity: Services are encapsulated in servers, making maintenance easier.
-
 Scalability: Multiple clients can access a server simultaneously.
-
 Network transparency: The same model works for single machines or distributed systems.
-
 Flexibility: Servers can be upgraded or replaced independently of clients.
 
 4. Disadvantages / Challenges
 
 Performance overhead: Message passing is slower than direct function calls.
-
 Reliability: Server failures affect all clients relying on that service.
-
 Complexity: Handling network delays, concurrency, and failures adds complexity.
 
 5. Examples
 
 Web browsing: Browser (client) ↔ Web server.
-
 Email: Email client ↔ Mail server.
-
 Databases: Application ↔ Database server.
-
 Microkernels: Core OS services as servers; user processes as clients.
 
 ```bash
@@ -1434,21 +1386,15 @@ Performance improved, but still insufficient for commercial use.
 **Hybrid Approach / Type 2 Hypervisors**
 
 Add a kernel module to handle heavy tasks (e.g., VMware Workstation).
-
 Use the host OS and file system to create virtual disks and processes.
-
 Guest OS runs as if on real hardware, with GUI and background processes.
-
 Type 1 vs. Type 2 Hypervisors
-
 Type 1: No host OS, manages storage and processes directly.
-
 Type 2: Relies on a host OS for storage, process creation, and file management.
 
 **Paravirtualization**
 
 Modifies the guest OS to remove privileged instructions.
-
 Not true virtualization, but improves performance in certain setups.
 
 #### Java Virtual Machine (JVM):
@@ -1460,16 +1406,13 @@ JVM is a virtual machine architecture designed to run Java programs anywhere.
 **How it works:**
 
 Java source code → compiled into JVM bytecode → executed by a software JVM interpreter.
-
 JVM abstracts away the underlying hardware, making Java programs portable.
 
 **Advantages:**
 
 Platform independence: Same JVM bytecode can run on any machine with a JVM interpreter.
-
 Safety & security: Properly implemented JVM interpreters can check incoming programs
 and execute them in a protected environment.
-
 Simplicity: Easier to interpret than producing native binaries for multiple architectures.
 
 #### Exokernels
@@ -1482,21 +1425,15 @@ an exokernel partitions resources and allocates them to user-level virtual machi
 <ins>How it works:</ins>
 
 Runs in kernel mode.
-
 Allocates CPU, memory, and disk blocks to each virtual machine.
-
 Checks that each VM only uses its assigned resources.
-
 User-level VMs can run their own operating systems.
 
 **Advantages:**
 
 Less overhead: No need for address remapping for virtualized resources.
-
 Separation of concerns: Multiprogramming handled by exokernel; OS code runs in user space.
-
 Efficiency: Each VM accesses resources directly within its allocation.
-
 Here’s a simple diagram comparing traditional virtual machines and the exokernel approach:
 
 ```bash
@@ -1538,15 +1475,11 @@ Notes:
 ## Von Neumann Machine
 
 1. The Von Neumann architecture (1945, John von Neumann) is the basic design model of almost all modern computers.
-
-It defines how a computer system should be organized:
+   It defines how a computer system should be organized:
 
 One memory stores both instructions (programs) and data.
-
 A CPU (Central Processing Unit) fetches instructions, decodes them, and executes them.
-
 Input/output devices let the user interact with the machine.
-
 It’s also called the stored-program concept → programs are stored in memory just like data.
 
 2. The Components
@@ -1574,27 +1507,18 @@ Input ---> |                   |
 Key parts:
 
 Memory: stores instructions & data.
-
 Control Unit (CU): fetches an instruction, decodes it, and tells ALU what to do.
-
 Arithmetic Logic Unit (ALU): performs calculations and logical operations.
-
 Registers: tiny, very fast storage inside CPU (e.g., accumulator, instruction register, program counter).
-
 Input/Output: communication with outside world.
 
 3. The Von Neumann Cycle (Fetch–Decode–Execute)
 
 Every program runs in this endless loop:
-
 Fetch: Control Unit fetches the next instruction from memory (address stored in the Program Counter).
-
 Decode: Instruction is interpreted (e.g., ADD, LOAD, STORE).
-
 Execute: ALU or I/O unit carries out the instruction.
-
 Update PC: Program Counter moves to the next instruction.
-
 This is the instruction cycle.
 
 4. Simple Example in Von Neumann "code"
@@ -1617,25 +1541,19 @@ In pseudo-machine code:
 What happens:
 
 CPU fetches instruction 1, decodes it (LOAD), executes it → Accumulator = X.
-
 CPU fetches instruction 2, executes ADD → Accumulator = X+Y.
-
 CPU fetches instruction 3, executes STORE → Z = Accumulator.
-
 Instruction 4 halts program.
 
 5. Why it Matters
 
 Foundation of all modern computers (PCs, laptops, smartphones all follow this model).
-
 Introduced stored programs → programs are just data, so computers can load & run new software easily.
 
 Limitations:
 
 Von Neumann bottleneck = CPU speed limited by memory bandwidth (fetching instructions/data one at a time).
-
 But still forms the backbone of computer science.
-
 Most common commands:
 
 <!-- Von Neumann / Simple Machine Commands — Cheatsheet -->
@@ -1770,7 +1688,110 @@ Most common commands:
   and system calls or traps for privileged actions (I/O, process control).</p>
 </section>
 
-# Introduction of Linux
+## Hypervisors
+
+🧩 Type 0 — Hardware or Firmware Hypervisor
+
+The lowest-level form of virtualization.
+Implemented in hardware (firmware layer) — below the OS.
+Manages OS instances directly, sometimes before any OS boots.
+Found in mainframes and enterprise servers.
+
+Examples:
+
+IBM PR/SM (Processor Resource/System Manager)
+HP Integrity VM
+Oracle LDOMs (Logical Domains)
+
+✅ Pros:
+
+Highest stability and performance (runs at firmware level)
+Very secure and isolated
+Used in mission-critical systems
+
+❌ Cons:
+
+Not flexible — specific to hardware vendor
+Hard to modify or extend
+
+⚙️ Type 1 — Bare-Metal Hypervisor
+
+Runs directly on the physical hardware.
+Provides virtual machines that each run a guest operating system.
+No host OS between hypervisor and hardware.
+
+Examples:
+
+VMware ESXi
+Microsoft Hyper-V (Server version)
+Xen / XCP-ng
+KVM (Kernel-based Virtual Machine)
+Proxmox VE
+
+✅ Pros:
+
+High performance (no host OS overhead)
+Strong isolation and security
+Reliable for servers and cloud environments
+
+❌ Cons:
+
+Requires dedicated hardware
+More complex to manage and install
+
+⚙️ Type 2 — Hosted Hypervisor
+
+Runs on top of a host operating system.
+The hypervisor behaves like an application inside the host OS.
+Ideal for development, testing, and desktop virtualization.
+
+Examples:
+
+VMware Workstation / Player
+Oracle VirtualBox
+Parallels Desktop (macOS)
+QEMU
+
+✅ Pros:
+
+Easy to install and use
+Great for personal computers and labs
+Uses host OS drivers for hardware compatibility
+
+❌ Cons:
+
+Lower performance (extra layer of host OS)
+Weaker security and stability
+Host OS failure affects all VMs
+
+### Hypervisor Comparison Table
+
+| **Type**               | **Description**                                                               | **Examples**                           | **Advantages**                                                            | **Disadvantages**                                                    |
+| ---------------------- | ----------------------------------------------------------------------------- | -------------------------------------- | ------------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| **Type 0**             | Hardware/Firmware hypervisor, runs below the OS.                              | IBM PR/SM, Oracle LDOMs                | High stability, performance, and security.                                | Vendor-specific, limited flexibility.                                |
+| **Type 1**             | Bare-metal hypervisor, runs directly on hardware.                             | VMware ESXi, Microsoft Hyper-V, Xen    | High performance, strong isolation, reliable for servers and cloud.       | Requires dedicated hardware, complex to manage.                      |
+| **Type 2**             | Hosted hypervisor, runs on top of a host OS.                                  | VMware Workstation, VirtualBox, QEMU   | Easy to install, great for development and testing, uses host OS drivers. | Lower performance, weaker security, host OS failure affects all VMs. |
+| **Paravirtualization** | Modified guest OS to improve performance by removing privileged instructions. | Xen (paravirtualized mode)             | Better performance than full virtualization in certain setups.            | Requires guest OS modification, not true virtualization.             |
+| **Exokernel**          | Allocates resources directly to user-level VMs without emulation.             | Research projects, experimental setups | Low overhead, efficient resource allocation.                              | Limited adoption, requires specialized design.                       |
+| **Type 1.5**           | Hybrid hypervisor, combines Type 1 and Type 2 features.                       | KVM, Proxmox VE                        | Flexibility of Type 2 with performance of Type 1.                         | May not achieve the same performance as pure Type 1 hypervisors.     |
+
+💡 Quick Facts
+
+🟡 Hypervisors enable virtualization — multiple OSes on one physical system.
+🟡 Provide resource isolation, so one VM can’t crash another.
+🟡 Common in cloud computing (AWS, Azure, Google Cloud).
+🟡 Support live migration — moving a running VM between servers without downtime.
+🟡 Virtualization underlies container technologies (like Docker),
+though containers are lighter and share the same OS kernel.
+
+**Key Takeaways:**
+
+- Type 0 and Type 1 hypervisors are ideal for enterprise and production environments.
+- Type 2 hypervisors are better suited for personal use, development, and testing.
+- Paravirtualization and exokernels are niche solutions for specific performance or research needs.
+- Type 1.5 hypervisors offer a balance between flexibility and performance.
+
+## Introduction of Linux
 
 **Linux** is a free and open-source operating system that powers everything from personal computers and smartphones to servers, supercomputers, routers, and embedded devices. At its core, Linux is known for its stability, security, flexibility, and developer-friendliness, making it a favorite among programmers, system administrators, and tech enthusiasts.
 
