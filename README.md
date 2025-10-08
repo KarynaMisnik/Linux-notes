@@ -332,6 +332,24 @@ Example:
 sudo apt update
 ```
 
+→ Executes the command as root.
+
+🔹 Why Use sudo Instead of Logging In as Root
+| `root` Login | `sudo` Command |
+| ------------------------ | --------------------------------------------- |
+| Full access all the time | Temporary, per-command access |
+| No activity logging | Every action logged in `/var/log/auth.log` |
+| Easy to break system | Safer — requires explicit privilege each time |
+
+🔹 Useful Related Commands
+
+```bash
+whoami        # show current username
+sudo whoami   # check if sudo privileges work
+sudo -i       # open root shell
+exit          # leave root shell
+```
+
 # 🧭 Linux Commands(basics)
 
 ### Directory
