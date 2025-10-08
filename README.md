@@ -20,6 +20,7 @@ A comprehensive guide and resource hub for understanding Linux as an Operating S
   - [History of Linux](#history-of-linux)
   - [Linux distros](#linux-distros)
   - [Linux System Architecture](#linux-system-architecture)
+  - [Root user and sudo](#root-user-and-sudo)
 - [Linux Commands(basics)](#linux-commands-basics)
   - [Directory](#directory)
   - [Advanced Navigation](#advanced-navigation)
@@ -297,6 +298,38 @@ Key Components:
 [ Device Drivers ]
         ↓
 [ Physical Hardware ]
+```
+
+# Root user and sudo
+
+🧑‍💻 Understanding the Root User and <code>sudo</code> in Linux
+🔹 What Is the Root User?
+
+The root user (also called superuser) is the administrator of a Linux system.
+It has unrestricted access to all files, commands, and system resources.
+The root user account: Has UID 0
+Home directory: <code>/root</code>
+Prompt symbol: <code>#</code> (instead of <code>$</code> for normal users)
+
+⚠️ Caution: Actions performed as root can change or even break the entire system — use it only when necessary.
+
+🔹 Normal User vs Root User
+| User Type | Example Prompt | Permissions | Typical Use |
+| ----------- | ---------------- | ------------------------ | ---------------------------------- |
+| Normal user | `alex@ubuntu:~$` | Limited (own files only) | Daily operations |
+| Root user | `root@ubuntu:~#` | Full control of system | System maintenance, administration |
+
+🔹 What Is <code>sudo</code?
+
+**sudo** stands for “superuser do”.
+It allows a normal user to run specific commands with <ins>root</ins> privileges.
+When using sudo, you are asked for your own password, not the root password.
+Only users listed in <code>/etc/sudoers</code> can use it.
+
+Example:
+
+```bash
+sudo apt update
 ```
 
 # 🧭 Linux Commands(basics)
