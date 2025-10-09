@@ -439,6 +439,57 @@ Common options:
 | `-s /bin/zsh` | Change default shell | `sudo usermod -s /bin/zsh alex` |
 | `-aG groupname` | Add to supplementary group | `sudo usermod -aG sudo alex` |
 
+❌ Delete a User
+
+```bash
+sudo deluser username
+```
+
+or (remove home too):
+
+```bash
+sudo deluser --remove-home username
+```
+
+👥 Managing Groups
+➕ Add a Group
+
+```bash
+sudo addgroup groupname
+```
+
+✏️ Modify a Group
+
+```bash
+sudo groupmod -n newgroup oldgroup
+```
+
+❌ Delete a Group
+
+```bash
+sudo delgroup groupname
+```
+
+➕ Add a User to a Group
+
+```bash
+sudo usermod -aG groupname username
+```
+
+🔎 Check User’s Groups
+
+```bash
+groups username
+```
+
+or for current user:
+
+```bash
+groups
+```
+
+🧩 Important Files
+
 # 🧭 Linux Commands(basics)
 
 ### Directory
