@@ -407,6 +407,38 @@ developers:x:1001:alex,jordan
 2. GID (Group ID): 1001
 3. Members: alex, jordan
 
+🧰 Managing Users
+➕ Add a New User
+
+```bash
+sudo adduser username
+```
+
+Creates:
+A new user account
+Home directory <code>/home/username</code>
+Default shell <code>/bin/bash</code>
+
+Set password:
+
+```bash
+sudo passwd username
+```
+
+✏️ Modify a User
+
+```bash
+sudo usermod [options] username
+```
+
+Common options:
+| Option | Description | Example |
+| ----------------- | -------------------------- | --------------------------------------- |
+| `-l newname` | Change username | `sudo usermod -l newalex alex` |
+| `-d /new/home -m` | Move home directory | `sudo usermod -d /home/newalex -m alex` |
+| `-s /bin/zsh` | Change default shell | `sudo usermod -s /bin/zsh alex` |
+| `-aG groupname` | Add to supplementary group | `sudo usermod -aG sudo alex` |
+
 # 🧭 Linux Commands(basics)
 
 ### Directory
