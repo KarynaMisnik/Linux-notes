@@ -489,6 +489,40 @@ groups
 ```
 
 🧩 Important Files
+| File | Description |
+| -------------- | ------------------------ |
+| `/etc/passwd` | List of user accounts |
+| `/etc/shadow` | Encrypted user passwords |
+| `/etc/group` | Group information |
+| `/etc/gshadow` | Secure group passwords |
+
+🔐 Password Management
+
+Change your own password:
+
+```bash
+passwd
+```
+
+Change another user’s password:
+
+```bash
+sudo passwd username
+```
+
+Lock / unlock a user account:
+
+```bash
+sudo usermod -L username   # lock
+sudo usermod -U username   # unlock
+```
+
+🧱 System vs Normal Users
+| Type | UID Range | Description |
+| ------------- | --------- | -------------------------------------------------- |
+| System users | 0–999 | Used by system services (e.g., `daemon`, `syslog`) |
+| Regular users | 1000+ | Real people (e.g., `alex`, `student`) |
+| Root user | 0 | Full administrative privileges |
 
 # 🧭 Linux Commands(basics)
 
