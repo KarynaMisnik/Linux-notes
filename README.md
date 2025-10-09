@@ -21,6 +21,7 @@ A comprehensive guide and resource hub for understanding Linux as an Operating S
   - [Linux distros](#linux-distros)
   - [Linux System Architecture](#linux-system-architecture)
   - [Root user and sudo](#root-user-and-sudo)
+  - [Users and user groups](#users-and-user-groups)
 - [Linux Commands(basics)](#linux-commands-basics)
   - [Directory](#directory)
   - [Advanced Navigation](#advanced-navigation)
@@ -349,6 +350,21 @@ sudo whoami   # check if sudo privileges work
 sudo -i       # open root shell
 exit          # leave root shell
 ```
+
+# 👥 Users and user groups
+
+Linux is a **multi-user** operating system, meaning multiple users can access the same system simultaneously — each with their own permissions, files, and privileges.
+
+🔹 What Is a User?
+
+A user is an account that represents a person, service, or process using the system.
+Each user has:
+Username → unique login name
+UID (User ID) → numeric ID assigned by the system
+Home directory → user’s personal working directory (e.g., <code>/home/alex</code>)
+Shell → command interpreter (e.g., <code>/bin/bash</code>)
+
+You can view all users in the file:
 
 # 🧭 Linux Commands(basics)
 
