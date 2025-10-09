@@ -366,6 +366,47 @@ Shell → command interpreter (e.g., <code>/bin/bash</code>)
 
 You can view all users in the file:
 
+```bash
+cat /etc/passwd
+```
+
+Example otput:
+
+```bash
+alex:x:1000:1000:Alex Smith:/home/alex:/bin/bash
+```
+
+Fields (separated by <code>:</code>):
+
+1. Username
+2. Password placeholder (<code>x</code>) — actual password stored in /etc/shadow
+3. UID (user ID)
+4. GID (primary group ID)
+5. Comment (user’s full name or description)
+6. Home directory
+7. Default shell
+
+🔹 What Is a Group?
+
+A group is a collection of users that share access permissions.
+Groups simplify administration — instead of assigning permissions to individual users, you assign them to a group.
+
+View all groups:
+
+```bash
+cat /etc/group
+```
+
+Example output:
+
+```bash
+developers:x:1001:alex,jordan
+```
+
+1. Group name: developers
+2. GID (Group ID): 1001
+3. Members: alex, jordan
+
 # 🧭 Linux Commands(basics)
 
 ### Directory
