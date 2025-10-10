@@ -425,6 +425,21 @@ Set password:
 sudo passwd username
 ```
 
+Or add a new user with these parameters:
+
+```bash
+useradd -d homedir -g groupname -m -s shell -u userid accountname
+```
+
+| Option         | Description                                              |
+| -------------- | -------------------------------------------------------- |
+| `-d homedir`   | Specify the user’s **home directory** path.              |
+| `-g groupname` | Set the user’s **primary group**.                        |
+| `-m`           | **Create the home directory** if it doesn’t exist.       |
+| `-s shell`     | Define the user’s **default shell** (e.g., `/bin/bash`). |
+| `-u userid`    | Assign a specific **User ID (UID)**.                     |
+| `accountname`  | The **username** (login name) of the new account.        |
+
 ✏️ Modify a User
 
 ```bash
