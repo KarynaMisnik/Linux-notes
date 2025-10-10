@@ -453,10 +453,24 @@ sudo deluser --remove-home username
 
 👥 Managing Groups
 ➕ Add a Group
+Following example creates a group with default values:
 
 ```bash
 sudo addgroup groupname
 ```
+
+To create a new group account with following parameters:
+
+```bash
+groupadd [-g gid [-o]] [-r] [-f] groupname
+```
+
+| Option   | Description                                                             |
+| -------- | ----------------------------------------------------------------------- |
+| `-g gid` | Specify a custom **Group ID (GID)** for the new group.                  |
+| `-o`     | Allow creating a group with a **duplicate GID** (used with `-g`).       |
+| `-r`     | Create a **system group** (GID < 1000).                                 |
+| `-f`     | **Do not fail** if the group already exists; exit successfully instead. |
 
 ✏️ Modify a Group
 
