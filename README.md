@@ -1327,7 +1327,6 @@ Searches for <code>firefox</code> in repositories.
 ```bash
 pacman -Qi neofetch
 ```
-
 Shows detailed information about the <code>neofetch</code> package.
 
 Summary
