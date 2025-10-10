@@ -943,19 +943,15 @@ Set **read (r)**, **write (w)**, and **execute (x)** permissions for user, group
 ```bash
 chmod u+x script.sh
 ```
-
 Adds execute <code>(x)</code> permission to the user (owner) on <code>script.sh</code>.
-
 ```bash
 chmod go-w file.txt
 ```
-
 Removes <code>write (w)</code> permission for group and others.
 
 ```bash
 chmod u=rwx,g=rx,o= file.txt
 ```
-
 Sets:
 user = rwx, group = rx, others = none.
 
@@ -972,37 +968,30 @@ user = rwx, group = rx, others = none.
 ```bash
 chmod 755 script.sh
 ```
-
 Sets:
 user=rwx, group=rx, others=rx
-
 ```bash
 chmod 644 file.txt
 ```
-
 Sets:
 user=rw-, group=r--, others=r--
 
 🐧 <code>chown</code> — Change owner and/or group of a file
-
 ```bash
 chown alice file.txt
 ```
 
 Changes owner of <code>file.txt</code> to user alice.
-
 ```bash
 chown alice:developers file.txt
 ```
 
 Changes owner to <code>alice</code> and group to <code>developers</code>.
-
 ```bash
 chown :developers file.txt
 ```
 
 Changes only <code>group</code> to <code>developers</code>.
-
 ```bash
 chown -R alice: /home/alice/
 ```
@@ -1012,13 +1001,11 @@ Recursively changes owner of all files in <code>/home/alice/</code> to <code>ali
 🐧 <code>umask</code> — Set default permissions for new files and directories
 
 <code>umask</code> defines which permission bits to turn off by default.
-
 ```bash
 umask
 ```
 
 Outputs e.g. 0022 (default for many distros)
-
 ```bash
 umask 0027
 ```
@@ -1043,7 +1030,6 @@ Creates (or overwrites) <code>output.txt</code> with <code>"Hello World"</code>.
 🐧 <code>>></code> – Redirect Output (Append)
 
 Appends the output to the end of a file instead of overwriting it.
-
 ```bash
 echo "New line" >> output.txt
 ```
@@ -1053,11 +1039,9 @@ Adds <code>"New line"</code> to the end of <code>output.txt</code> without remov
 🐧 <code><</code> – Redirect Input
 
 Takes input from a file instead of the keyboard.
-
 ```bash
 wc -l < file.txt
 ```
-
 Counts lines in file.txt by feeding its content as input to wc.
 
 🐧 <code>|</code> – Pipe
@@ -1067,13 +1051,10 @@ Sends the output of one command as input to another.
 ```bash
 ls -l | grep ".txt"
 ```
-
 Lists files in long format and filters only <code>.txt</code> files.
-
 ```bash
 dmesg | less
 ```
-
 Sends kernel log output into <code>less</code> for scrollable viewing.
 
 🐧 <code>tee</code> – Output to Screen and File
@@ -1083,13 +1064,10 @@ Reads from standard input and writes both to the screen and a file.
 ```bash
 echo "Log entry" | tee log.txt
 ```
-
 Displays <code>Log entry</code> on the screen and saves it to <code>log.txt</code>.
-
 ```bash
 echo "Another entry" | tee -a log.txt
 ```
-
 Appends to <code>log.txt</code> (<code>-a</code> means append) while still showing it.
 
 🐧 Usage Together
@@ -1099,7 +1077,6 @@ Redirects and pipes are often combined:
 ```bash
 cat access.log | grep "ERROR" | tee errors.log
 ```
-
 Filters only lines with <code>"ERROR"</code> and saves them to <code>errors.log</code>, while displaying them live.
 
 ### Disk usage
@@ -1107,29 +1084,22 @@ Filters only lines with <code>"ERROR"</code> and saves them to <code>errors.log<
 🐧 <code>du</code> — Disk Usage
 
 Shows the disk space used by files and directories.
-
 ```bash
 du
 ```
-
 Displays disk usage of the current directory and its subdirectories.
-
 ```bash
 du -h
 ```
-
 Human-readable format (KB, MB, GB).
-
 ```bash
 du -sh /var/log
 ```
-
 Shows total size of <code>/var/log</code> directory in a human-readable format.
 
 ```bash
 du -ah --max-depth=1
 ```
-
 Displays size of all files/directories at one level deep.
 
 🐧 <code>df</code> — Disk Free Space
@@ -1139,41 +1109,33 @@ Reports available and used space on mounted filesystems.
 ```bash
 df
 ```
-
 Displays disk usage in blocks.
 
 ```bash
 df -h
 ```
-
 Human-readable format (more common).
 
 ```bash
 df -T
 ```
-
 Shows filesystem type (e.g., ext4, xfs).
 
 🐧 <code>mount</code> — Mount Filesystems
 
 Mounts a filesystem (e.g., external drive, ISO, partition) to a directory.
-
 ```bash
 sudo mount /dev/sdb1 /mnt
 ```
-
 Mounts the partition <code>/dev/sdb1</code> to <code>/mnt</code>.
-
 ```bash
 mount | grep sdb1
 ```
-
 Checks if <code>/dev/sdb1</code> is mounted.
 
 ```bash
 sudo mount -o ro /dev/sr0 /mnt/cdrom
 ```
-
 Mounts a device as read-only.
 
 🐧 <code>umount</code> — Unmount Filesystems
@@ -1183,145 +1145,113 @@ Unmounts a previously mounted filesystem.
 ```bash
 sudo umount /mnt
 ```
-
 Unmounts the device mounted at <code>/mnt</code>.
 
 ```bash
 sudo umount /dev/sdb1
 ```
-
 Unmounts by specifying the device instead of the directory.
 
 Typical Workflow
 
 1. Check connected devices:
-
 ```bash
 lsblk
 ```
-
 2. Mount a device:
-
 ```bash
 sudo mount /dev/sdb1 /mnt
 ```
-
 3. Check disk usage:
-
 ```bash
 df -h /mnt
 ```
-
 4. Unmount when done:
-
 ```bash
 sudo umount /mnt
 ```
-
 ### Package managers
 
 Package managers are tools that help you install, update, remove, and manage software packages on your system. Different distributions use different package managers.
 
 🐧 APT (Advanced Package Tool)
-
 > Note: Used by: Debian, Ubuntu, Linux Mint
 
 ```bash
 sudo apt update
 ```
-
 Updates the package list (metadata from repositories).
 
 ```bash
 sudo apt upgrade
 ```
-
 Upgrades all installed packages to their latest versions.
-
 ```bash
 sudo apt install vim
 ```
-
 Installs the <code>vim</code> package.
-
 ```bash
 sudo apt remove vim
 ```
-
 Removes the <code>vim</code> package (config files may remain).
-
 ```bash
 sudo apt purge vim
 ```
-
 Removes the <code>vim</code> package and its configuration files.
 
 ```bash
 apt search nginx
 ```
-
 Searches for the <code>nginx</code> package.
 
 🐧 DNF (Dandified YUM)
-
 > Note: Used by: Fedora, Red Hat Enterprise Linux (RHEL), CentOS (8+)
 
 ```bash
 sudo dnf check-update
 ```
-
 Checks for available updates.
 
 ```bash
 sudo dnf update
 ```
-
 Updates all packages.
 
 ```bash
 sudo dnf install git
 ```
-
 Installs the <code>git</code> package.
 
 ```bash
 sudo dnf remove git
 ```
-
 Removes the <code>git</code> package.
 
 ```bash
 dnf search httpd
 ```
-
 Searches for the <code>httpd</code> package.
 
 🐧 Pacman
-
 > Note: Used by: Arch Linux, Manjaro
 
 ```bash
 sudo pacman -Syu
 ```
-
 Synchronizes packages and updates the system.
 
 ```bash
 sudo pacman -S neofetch
 ```
-
 Installs the <code>neofetch</code> package.
 
 ```bash
 sudo pacman -R neofetch
 ```
-
 Removes the <code>neofetch</code> package.
-
 ```bash
 pacman -Ss firefox
 ```
-
 Searches for <code>firefox</code> in repositories.
 
 ```bash
