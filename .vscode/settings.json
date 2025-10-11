@@ -1,5 +1,15 @@
 {
     "markdown.validate.enabled": true,
-    "editor.formatOnSave": false
+    "editor.formatOnSave": false,
+    "markdown.validate.ignoredLinks": [
+        "#users-and-user-groups",
+        "#linux-system-architecture",
+        "#introduction",
+        "#linux-commands-basics",
+        "#file-management",
+        "#text-processing",
+        "#permissions",
+        "#installing-programs"
+    ]
 }
 

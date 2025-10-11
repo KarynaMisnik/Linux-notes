@@ -16,12 +16,14 @@ A comprehensive guide and resource hub for understanding Linux as an Operating S
 ## Menu
 
 - [Introduction of Linux](#introduction)
-  - [What is Linux](#what-is-Linux)
-  - [History of Linux](#history-of-linux)
-  - [Linux distros](#linux-distros)
-  - [Linux System Architecture](#linux-system-architecture)
-  - [Root user and sudo](#root-user-and-sudo)
-  - [Users and user groups](#users-and-user-groups)
+ - [What is Linux](#what-is-Linux)
+ - [History of Linux](#history-of-linux)
+- [Linux distros](#linux-distros)
+- [Linux System Architecture](#linux-system-architecture)
+- [Root user and sudo](#root-user-and-sudo)
+- [Users and user groups](#users-and-user-groups)
+- [Installing programs](#installing-programs)
+
 - [Linux Commands(basics)](#linux-commands-basics)
   - [Directory](#directory)
   - [Advanced Navigation](#advanced-navigation)
@@ -74,7 +76,7 @@ Since then, the Linux kernel has evolved into a massive, modular, and highly por
 
 Today, it’s one of the largest and most actively developed open-source projects in the world.
 
-#### Linux distros
+## Linux distros
 
 🧷 What is a Linux Distribution (Distro)?
 
@@ -188,7 +190,7 @@ Understanding distro families helps you choose wisely and recognize compatibilit
 
    Alpine Linux (musl libc, minimal, used in containers)
 
-#### 🏗️ Linux System Architecture
+## 🏗️ Linux System Architecture
 
 The Linux system architecture’s main levels are:
 
@@ -301,7 +303,7 @@ Key Components:
 [ Physical Hardware ]
 ```
 
-# Root user and sudo
+## Root user and sudo
 
 🧑‍💻 Understanding the Root User and <code>sudo</code> in Linux
 🔹 What Is the Root User?
@@ -351,7 +353,7 @@ sudo -i       # open root shell
 exit          # leave root shell
 ```
 
-# 👥 Users and user groups
+## 👥 Users and user groups
 
 Linux is a **multi-user** operating system, meaning multiple users can access the same system simultaneously — each with their own permissions, files, and privileges.
 
@@ -532,13 +534,11 @@ Change your own password:
 ```bash
 passwd
 ```
-
 Change another user’s password:
 
 ```bash
 sudo passwd username
 ```
-
 Lock / unlock a user account:
 
 ```bash
@@ -553,9 +553,11 @@ sudo usermod -U username   # unlock
 | Regular users | 1000+ | Real people (e.g., `alex`, `student`) |
 | Root user | 0 | Full administrative privileges |
 
-# 🧭 Linux Commands(basics)
+## Installing programs
 
-### Directory
+## 🧭 Linux Commands(basics)
+
+#### Directory
 
 The command line lets you move around the filesystem, inspect directories, and execute actions. Here are the essential commands and concepts for navigating in Linux.
 
