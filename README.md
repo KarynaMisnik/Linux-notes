@@ -555,6 +555,29 @@ sudo usermod -U username   # unlock
 
 ## Installing programs
 
+🧭 1️⃣ Using the Graphical Interface (GUI)
+🟢 Ubuntu Software Center (App Store)
+
+Easiest way for beginners.
+GUI tool that installs software from official repositories and Snap Store.
+
+Steps:
+Open Ubuntu Software (orange shopping bag icon).
+Search for the app (e.g., “GIMP”).
+
+Click Install.
+
+👉 Behind the scenes, this uses Snap or APT packages.
+
+🧭 2️⃣ Using the APT Package Manager (from Repositories)
+🟩 Install from official repos
+
+```bash
+sudo apt update
+sudo apt install package_name
+```
+APT installs <code>.deb</code> packages and handles dependencies automatically.
+
 ## 🧭 Linux Commands(basics)
 
 #### Directory
