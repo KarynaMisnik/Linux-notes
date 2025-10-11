@@ -578,6 +578,19 @@ sudo apt install package_name
 ```
 APT installs <code>.deb</code> packages and handles dependencies automatically.
 
+🧭 3️⃣ Using .DEB Packages (manually downloaded)
+🟦 Install downloaded <code>.deb</code> file
+
+You can download apps directly from official websites.
+```bash
+sudo dpkg -i package_name.deb
+sudo apt -f install   # fix missing dependencies
+```
+or, using APT for simplicity:
+```bash
+sudo apt install ./package_name.deb
+```
+
 ## 🧭 Linux Commands(basics)
 
 #### Directory
