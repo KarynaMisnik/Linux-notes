@@ -590,6 +590,19 @@ or, using APT for simplicity:
 ```bash
 sudo apt install ./package_name.deb
 ```
+🧭 4️⃣ Using Snap Packages
+🟪 Snap (containerized apps)
+
+Snaps are self-contained apps maintained by Canonical.
+```bash
+sudo snap install package_name
+```
+To list or remove snaps:
+```bash
+snap list
+sudo snap remove package_name
+```
+
 
 ## 🧭 Linux Commands(basics)
 
