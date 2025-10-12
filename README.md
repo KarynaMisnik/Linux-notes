@@ -602,7 +602,36 @@ To list or remove snaps:
 snap list
 sudo snap remove package_name
 ```
+🧭 5️⃣ Using Flatpak
+🟨 Alternative universal package system
 
+Needs to be installed first:
+```bash
+sudo apt install flatpak
+sudo apt install gnome-software-plugin-flatpak
+```
+Then add the Flathub repo and install:
+```bash
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+flatpak install flathub org.gimp.GIMP
+```
+🧭 6️⃣ Using Source Code (Manual Compilation)
+🟧 Advanced users & developers
+
+1. Download the source code (often <code>.tar.gz</code>)
+
+2. Extract it:
+```bash
+tar -xvf package.tar.gz
+cd package
+```
+3. Build and install:
+```bash
+./configure
+make
+sudo make install
+```
+⚠️ Requires build tools (<code>sudo apt install build-essential</code>).
 
 ## 🧭 Linux Commands(basics)
 
