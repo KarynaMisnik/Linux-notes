@@ -557,6 +557,7 @@ sudo usermod -U username   # unlock
 
 🧭 1️⃣ Using the Graphical Interface (GUI)
 🟢 Ubuntu Software Center (App Store)
+
 Easiest way for beginners.
 GUI tool that installs software from official repositories and Snap Store.
 Steps:
@@ -616,14 +617,14 @@ flatpak install flathub org.gimp.GIMP
 🧭 6️⃣ Using Source Code (Manual Compilation)
 🟧 Advanced users & developers
 
-1. Download the source code (often <code>.tar.gz</code>)
+1.Download the source code (often <code>.tar.gz</code>)
 
-2. Extract it:
+2.Extract it:
 ```bash
 tar -xvf package.tar.gz
 cd package
 ```
-3. Build and install:
+3.Build and install:
 ```bash
 ./configure
 make
@@ -634,13 +635,13 @@ sudo make install
 🧭 7️⃣ Using AppImage
 🟫 Portable, standalone applications
 
-1. Download <code>.AppImage</code>
+1.Download <code>.AppImage</code>
 
 Make it executable:
 ```bash
 chmod +x appname.AppImage
 ```
-3. Run it:
+3.Run it:
 ```bash
 ./appname.AppImage
 ```
