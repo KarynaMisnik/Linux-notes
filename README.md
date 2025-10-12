@@ -557,10 +557,8 @@ sudo usermod -U username   # unlock
 
 🧭 1️⃣ Using the Graphical Interface (GUI)
 🟢 Ubuntu Software Center (App Store)
-
 Easiest way for beginners.
 GUI tool that installs software from official repositories and Snap Store.
-
 Steps:
 Open Ubuntu Software (orange shopping bag icon).
 Search for the app (e.g., “GIMP”).
