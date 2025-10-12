@@ -633,6 +633,33 @@ sudo make install
 ```
 ⚠️ Requires build tools (<code>sudo apt install build-essential</code>).
 
+🧭 7️⃣ Using AppImage
+🟫 Portable, standalone applications
+
+1. Download <code>.AppImage</code>
+
+Make it executable:
+```bash
+chmod +x appname.AppImage
+```
+3. Run it:
+```bash
+./appname.AppImage
+```
+No installation needed — runs directly.
+
+✅ Summary Table
+| Method          | Type            | Command / Tool                             | Notes                        |
+| --------------- | --------------- | ------------------------------------------ | ---------------------------- |
+| **GUI**         | Graphical       | Ubuntu Software                            | Beginner-friendly            |
+| **APT**         | Repo-based      | `sudo apt install pkg`                     | Standard method              |
+| **.DEB**        | Manual package  | `sudo apt install ./pkg.deb`               | For external .deb files      |
+| **Snap**        | Containerized   | `sudo snap install pkg`                    | Canonical’s format           |
+| **Flatpak**     | Universal       | `flatpak install flathub ...`              | Alternative universal system |
+| **Source code** | Manual build    | `./configure && make && sudo make install` | Developer-style install      |
+| **AppImage**    | Portable binary | `chmod +x` + `./appname.AppImage`          | Runs standalone, no install  |
+
+
 ## 🧭 Linux Commands(basics)
 
 #### Directory
