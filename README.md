@@ -22,7 +22,7 @@ A comprehensive guide and resource hub for understanding Linux as an Operating S
 - [Linux System Architecture](#linux-system-architecture)
 - [Root user and sudo](#root-user-and-sudo)
 - [Users and user groups](#users-and-user-groups)
--[Repository](#repository)
+- [Repository](#repository)
 - [Installing programs](#installing-programs)
 - [Personal Package Archive](#personal-package-archive)
 
@@ -572,6 +572,44 @@ They contain stable and tested software.</p>
 <li>multiverse – Software restricted by copyright/licensing</li>
 </ul>
 </p></div>
+
+<p>You can see them listed in:</p>
+
+```bash
+/etc/apt/sources.list
+
+//and
+
+/etc/apt/sources.list.d/
+```
+
+2️⃣ Third-Party Repositories
+
+<div> <p>
+Maintained by external developers or organizations that provide software not included in the official ones.</p>
+
+Examples:
+<ul><li>Google Chrome</li>
+<li>Visual Studio Code</li>
+<li>Docker</li>
+<li>PPAs (Personal Package Archives) on Ubuntu</li>
+</ul>
+</div>
+
+They are added manually, for example:
+```bash
+sudo add-apt-repository ppa:graphics-drivers/ppa
+```
+
+3️⃣ Local Repositories
+<div><p>
+Created by users or system administrators within a local network (e.g., a company or lab).</p>
+They are useful for:
+<ul><li>Managing internal software</li>
+<li>Reducing internet bandwidth</li>
+<li>Providing controlled updates</li>
+</ul>
+</div>
 
 ## Installing programs
 
