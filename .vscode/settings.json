@@ -9,7 +9,8 @@
         "#file-management",
         "#text-processing",
         "#permissions",
-        "#installing-programs"
+        "#installing-programs",
+        "#personal-package-archive"
     ]
 }
 
