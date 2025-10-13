@@ -22,6 +22,7 @@ A comprehensive guide and resource hub for understanding Linux as an Operating S
 - [Linux System Architecture](#linux-system-architecture)
 - [Root user and sudo](#root-user-and-sudo)
 - [Users and user groups](#users-and-user-groups)
+-[Repository](#repository)
 - [Installing programs](#installing-programs)
 - [Personal Package Archive](#personal-package-archive)
 
@@ -553,6 +554,24 @@ sudo usermod -U username   # unlock
 | System users | 0–999 | Used by system services (e.g., `daemon`, `syslog`) |
 | Regular users | 1000+ | Real people (e.g., `alex`, `student`) |
 | Root user | 0 | Full administrative privileges |
+
+## Repository
+
+<p>A <strong>repository</strong> (or repo) is a central storage location that contains software packages and metadata describing them.</p>
+<p>Think of it as an app store for your Linux distribution — it provides the packages (software) that your system can download, install, and update using a package manager (like <code>apt</code>, <code>dnf</code>, or <coed>zypper</code>).</p>
+
+🧩 Types of Repositories
+1️⃣ Official Repositories
+<p>Provided and maintained by the distribution’s maintainers (e.g., Ubuntu, Fedora).
+They contain stable and tested software.</p>
+
+<div><p>Example (Ubuntu):
+<ul><li>main – Officially supported free software</li>
+<li>universe – Community-maintained free software</li>
+<li>restricted – Proprietary drivers (like NVIDIA)</li>
+<li>multiverse – Software restricted by copyright/licensing</li>
+</ul>
+</p></div>
 
 ## Installing programs
 

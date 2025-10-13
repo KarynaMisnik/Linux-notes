@@ -10,7 +10,8 @@
         "#text-processing",
         "#permissions",
         "#installing-programs",
-        "#personal-package-archive"
+        "#personal-package-archive",
+        "#repository"
     ]
 }
 
