@@ -617,6 +617,7 @@ When you run:
 ```bash
 sudo apt update
 ```
+
 <div>
 your system:
 
@@ -637,6 +638,13 @@ APT:
 <li>Downloads the <code>.deb</code> package and its dependencies.</li>
 <li>Installs and configures them automatically.</li>
 </ul>
+
+<div><p>Shortly:
+When you run <code>sudo apt update</code>, <strong>APT</strong> checks the repositories and caches package information and versions.
+Then, <code>sudo apt install package_name</code> uses that cached data to download the package from the repository URL.
+If a package isn’t found in any listed repository, you’ll get an <code>“Unable to locate package”</code> error.
+</p>
+</div>
 
 📦 Repository Components
 | Component         | Description                                                        |
