@@ -611,6 +611,33 @@ They are useful for:
 </ul>
 </div>
 
+⚙️ How Repositories Work
+
+When you run:
+```bash
+sudo apt update
+```
+<div>
+your system:
+
+1.Reads the list of repositories.
+
+2.Downloads updated package indexes (metadata files with package names, versions, dependencies, etc.).
+
+3.Stores them locally in <code>/var/lib/apt/lists/</code>.
+</div>
+
+When you run:
+```bash
+sudo apt install firefox
+```
+APT:
+<ul><li>Searches the metadata for “firefox”.</li>
+<li>Finds the best version.</li>
+<li>Downloads the <code>.deb</code> package and its dependencies.</li>
+<li>Installs and configures them automatically.</li>
+</ul>
+
 ## Installing programs
 
 🧭 1️⃣ Using the Graphical Interface (GUI)
