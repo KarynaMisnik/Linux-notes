@@ -26,6 +26,8 @@ A comprehensive guide and resource hub for understanding Linux as an Operating S
 - [Installing programs](#installing-programs)
 - [Personal Package Archive](#personal-package-archive)
 - [GUI of Ubuntu](#gui-of-ubuntu)
+- [Mount](#mount)
+  - [Drive Naming in Linux](#drive-naming-in-linux)
 
 - [Linux Commands(basics)](#linux-commands-basics)
   - [Directory](#directory)
@@ -847,6 +849,57 @@ This disables the PPA and reinstalls the official package versions.
 | Which is the default program is used for editing/managing images?| Shotwell           |
 | Which program is used to play videos on Ubuntu?                  | Totem              |
 | What is the default file manager on Ubuntu?                      | Nautilus           |
+
+# Mount
+
+## Drive Naming in Linux
+
+Linux uses a specific naming system for storage devices.
+Originally, Linux distinguished between IDE and SCSI drives. With the introduction of SATA (around 2007), naming became unified, and modern systems use the same naming format for all hard drives. CD/DVD drives are treated similarly.
+
+**Old IDE Names**
+
+IDE drives used the format /dev/hda to /dev/hdd.
+
+**/dev/hda** = first drive (primary master)
+**/dev/hdb** = primary slave
+**/dev/hdc** = secondary master
+**/dev/hdd** = secondary slave
+
+Most PCs supported up to four IDE devices, though additional controllers could add more. Drives didn’t need to be installed in sequence.
+
+**New Hard Drive Names**
+
+Modern systems use the SCSI-style naming: **/dev/sda**, **/dev/sdb**, etc.
+Drive order depends on how the motherboard or controller enumerates devices.
+
+Flash storage usually connects through other interfaces (USB, etc.) and receives different names, as documented in the kernel.
+
+Some applications still reference older low-level SCSI-style device names (e.g., wodim for CD burning).
+
+```bash
+  wodim --scanbus
+scsibus1:
+        1,0,0   100) *
+        1,1,0   101) 'TSSTcorp' 'CD/DVDW TS-L632D' 'ac00' Removable CD-ROM
+        1,2,0   102) *
+        1,3,0   103) *
+        1,4,0   104) *
+        1,5,0   105) *
+        1,6,0   106) *
+        1,7,0   107) *
+```
+You may sometimes need to use a SCSI-style notation like SCSI:1,1,0 to access a CD-ROM. Avoid this whenever possible—it’s prone to errors and generally meant for developers. It’s mentioned here only because in rare cases it can’t be avoided.
+
+If you do "cat /dev/ | more", you can see:
+```bash
+ lrwxrwxrwx  1 root root             3 mars  9 07:56 scd0 -> sr0
+(...)
+crw-r-----  1 root disk       21,   0 mars  9 07:56 sg0
+crw-rw----+ 1 root disk       21,   1 mars  9 07:56 sg1
+```
+
+
 
 
 ## 🧭 Linux Commands(basics)
