@@ -14,7 +14,8 @@
         "#repository",
         "#gui-of-ubuntu",
         "#most-common-commands",
-        "#mount"
+        "#mount",
+        "#devices"
     ]
 }
 

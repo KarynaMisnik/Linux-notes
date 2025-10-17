@@ -28,6 +28,7 @@ A comprehensive guide and resource hub for understanding Linux as an Operating S
 - [GUI of Ubuntu](#gui-of-ubuntu)
 - [Mount](#mount)
   - [Drive Naming in Linux](#drive-naming-in-linux)
+  - [Devices](#devices)
 
 - [Linux Commands(basics)](#linux-commands-basics)
   - [Directory](#directory)
@@ -852,7 +853,7 @@ This disables the PPA and reinstalls the official package versions.
 
 # Mount
 
-## Drive Naming in Linux
+### Drive Naming in Linux
 
 Linux uses a specific naming system for storage devices.
 Originally, Linux distinguished between IDE and SCSI drives. With the introduction of SATA (around 2007), naming became unified, and modern systems use the same naming format for all hard drives. CD/DVD drives are treated similarly.
@@ -899,8 +900,33 @@ crw-r-----  1 root disk       21,   0 mars  9 07:56 sg0
 crw-rw----+ 1 root disk       21,   1 mars  9 07:56 sg1
 ```
 
+### Devices
 
+**/dev** is a special directory in Linux containing device files, not normal files.
+Each entry represents hardware or a virtual device the system can use.
+Linux treats hardware “like files” so programs can read/write to devices easily.
 
+Items represent:
+
+Hard drives and partitions (**/dev/sda**, **/dev/sda1**)
+USB drives (**/dev/sdb**, **/dev/sdb1**)
+CD/DVD drives (**/dev/sr0**)
+Terminals and serial ports (**/dev/tty0**, **/dev/ttyUSB0**)
+Input devices (**/dev/input/event0**)
+Virtual devices (**/dev/null**, **/dev/random**, **/dev/loop0**)
+
+The exact list depends on hardware and system.
+
+<code>ls /dev/</code> lists all device files on your system.
+
+<ins>This shows:</ins>
+Which hardware Linux currently recognizes
+What names Linux assigned to disks, USB sticks, CD drives, terminals, etc.
+
+<ins>It's how you check:</ins>
+What drives exist
+What partitions are available
+What device names to use when mounting or troubleshooting
 
 ## 🧭 Linux Commands(basics)
 
