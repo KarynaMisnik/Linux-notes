@@ -29,6 +29,7 @@ A comprehensive guide and resource hub for understanding Linux as an Operating S
 - [Mount](#mount)
   - [Drive Naming in Linux](#drive-naming-in-linux)
   - [Devices](#devices)
+  - [Mounting](#mounting)
 
 - [Linux Commands(basics)](#linux-commands-basics)
   - [Directory](#directory)
@@ -927,6 +928,26 @@ What names Linux assigned to disks, USB sticks, CD drives, terminals, etc.
 What drives exist
 What partitions are available
 What device names to use when mounting or troubleshooting
+
+### Mounting
+
+Mounting is the process of making a storage device (hard drive, USB, SD card, CD/DVD) accessible to the Linux system.
+When you mount a device, Linux attaches it to a folder (mount point) so you can read and write files.
+
+```bash
+sudo mount /dev/sdb1 /mnt
+```
+<code>/dev/sdb1</code> → the device/partition
+
+<code>/mnt</code> → the folder where you access its files
+
+Why do we need it?
+
+Access files – Linux does not automatically give access to the contents of new drives; mounting connects the filesystem.
+
+Organize devices – Multiple drives can be mounted to different folders without changing the system’s main directory structure.
+Control usage – Mounting allows specifying options (read-only, permissions, etc.).
+Safety – Properly unmounting ensures all data is written before removing the device, preventing corruption.
 
 ## 🧭 Linux Commands(basics)
 
