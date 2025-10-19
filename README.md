@@ -949,6 +949,17 @@ Organize devices – Multiple drives can be mounted to different folders without
 Control usage – Mounting allows specifying options (read-only, permissions, etc.).
 Safety – Properly unmounting ensures all data is written before removing the device, preventing corruption.
 
+| **Command**       | **Example**                         | **What it does / Explanation**                                                                                  |
+| ----------------- | ----------------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| `mount`           | `sudo mount /dev/sdb1 /mnt`         | Mounts the device `/dev/sdb1` to the folder `/mnt`, making its files accessible.                                |
+| `umount`          | `sudo umount /mnt`                  | Unmounts the device from `/mnt`, ensuring all data is written and the device is safe to remove.                 |
+| `lsblk`           | `lsblk`                             | Lists all block devices (hard drives, USBs, NVMe, partitions) with mount points. Useful to see what is mounted. |
+| `df -h`           | `df -h`                             | Shows all mounted filesystems and their disk usage in human-readable format.                                    |
+| `mount -o ro`     | `sudo mount -o ro /dev/sdb1 /mnt`   | Mounts a device as **read-only**, preventing accidental changes.                                                |
+| `mount -t <type>` | `sudo mount -t vfat /dev/sdb1 /mnt` | Specifies the filesystem type explicitly (e.g., FAT32, NTFS, ext4). Useful if auto-detection fails.             |
+| `eject`           | `eject /dev/sdb`                    | Ejects a removable device (USB/CD). Usually performs unmount internally.                                        |
+
+
 ## 🧭 Linux Commands(basics)
 
 #### Directory
