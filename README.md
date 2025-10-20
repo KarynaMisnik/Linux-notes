@@ -30,6 +30,7 @@ A comprehensive guide and resource hub for understanding Linux as an Operating S
   - [Drive Naming in Linux](#drive-naming-in-linux)
   - [Devices](#devices)
   - [Mounting](#mounting)
+  - [Network Mounts](#network-mounts)
 
 - [Linux Commands(basics)](#linux-commands-basics)
   - [Directory](#directory)
@@ -959,6 +960,32 @@ Safety – Properly unmounting ensures all data is written before removing the d
 | `mount -t <type>` | `sudo mount -t vfat /dev/sdb1 /mnt` | Specifies the filesystem type explicitly (e.g., FAT32, NTFS, ext4). Useful if auto-detection fails.             |
 | `eject`           | `eject /dev/sdb`                    | Ejects a removable device (USB/CD). Usually performs unmount internally.                                        |
 
+### Network Mounts
+Linux attaches a remote filesystem to a local directory using protocols like:
+SSH (via SSHFS)
+NFS
+SMB/CIFS (Windows shares)
+
+This lets you browse, edit, and save files over the network just like a local disk.
+
+**SSH Mount (SSHFS)**
+
+SSHFS (SSH Filesystem) allows you to mount a remote directory over SSH.
+Mounting via SSH
+
+Why use SSH mounts?
+Works over the internet or LAN
+Uses secure encryption
+No special server setup — only SSH access is needed
+Very easy for quick file sharing between Linux machines
+
+| **Command**                                 | **What It Does**                                                           |
+| ------------------------------------------- | -------------------------------------------------------------------------- |
+| `sudo apt-get install sshfs`                | Installs SSHFS so you can mount remote directories over SSH.               |
+| `mkdir ~/u`                                 | Creates a mount point directory on your local system.                      |
+| `sshfs username@remote:/path/to/folder ~/u` | Mounts a remote directory over SSH into the local folder `~/u`.            |
+| `sudo umount ~/u`                           | Unmounts the SSHFS mount safely.                                           |
+| `sudo fusermount -u ~/u`                    | Alternative method to unmount SSHFS, often used when normal unmount fails. |
 
 ## 🧭 Linux Commands(basics)
 
