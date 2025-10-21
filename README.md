@@ -47,6 +47,18 @@ A comprehensive guide and resource hub for understanding Linux as an Operating S
 
 **Linux** is a free and open-source operating system that powers everything from personal computers and smartphones to servers, supercomputers, routers, and embedded devices. At its core, Linux is known for its stability, security, flexibility, and developer-friendliness, making it a favorite among programmers, system administrators, and tech enthusiasts.
 
+**Source Code Types**
+
+| **Type**                        | **Source Code Visible?** | **Modification Allowed?** | **Redistribution Allowed?** | **Typical Licenses / Examples** | **Notes**                                                               |
+| ------------------------------- | ------------------------ | ------------------------- | --------------------------- | ------------------------------- | ----------------------------------------------------------------------- |
+| **Open Source**                 | Yes                      | Yes                       | Yes                         | MIT, Apache, GPL                | Broad category; permissions depend on the specific license.             |
+| **Closed Source (Proprietary)** | No                       | No                        | No (except binaries)        | Windows, Photoshop              | Fully controlled by the owner; code is secret.                          |
+| **Source-Available**            | Yes                      | Sometimes (limited)       | Limited                     | Game engines, commercial SDKs   | Not open-source; viewing allowed but rights restricted.                 |
+| **Free Software (FSF)**         | Yes                      | Yes                       | Yes                         | GPL, LGPL                       | Focuses on user freedoms; similar to open source but philosophy-driven. |
+| **Copyleft**                    | Yes                      | Yes                       | Yes (must remain open)      | GPL                             | Any derived work must also be open source.                              |
+| **Permissive**                  | Yes                      | Yes                       | Yes                         | MIT, BSD, Apache 2.0            | Very few restrictions; can be used in closed-source products.           |
+
+
 ### What is Linux
 
 Linux refers to the **kernel** — the central part of the operating system that directly interacts with the hardware and manages system resources like memory, CPU, devices, and processes.
