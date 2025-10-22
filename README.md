@@ -211,6 +211,41 @@ Understanding distro families helps you choose wisely and recognize compatibilit
 
    Alpine Linux (musl libc, minimal, used in containers)
 
+**Ubuntu Release Cycle**
+
+In Ubuntu, the release cycle refers to the regular schedule on which new versions of the operating system are published. Ubuntu follows a predictable, time-based cycle.
+
+1. Standard Releases — Every 6 Months
+
+Ubuntu publishes a new version twice a year:
+April (xx.04)
+October (xx.10)
+
+These contain new features, updated software, and improvements.
+Support period: 9 months.
+
+2. LTS Releases — Every 2 Years
+
+LTS (Long-Term Support) versions come out every two years, always in April.
+
+Examples:
+
+22.04 LTS
+
+Support period:
+5 years standard
+Up to 10 years with Ubuntu Pro (optional)
+LTS releases are meant for stability and production environments.
+
+3. Development Cycle (Between Releases)
+
+Between releases, Ubuntu goes through phases:
+Feature development
+Freeze periods (feature freeze, UI freeze, kernel freeze)
+Beta testing
+Release candidate
+Final release
+
 ## 🏗️ Linux System Architecture
 
 The Linux system architecture’s main levels are:
