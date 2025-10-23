@@ -20,6 +20,7 @@ A comprehensive guide and resource hub for understanding Linux as an Operating S
  - [History of Linux](#history-of-linux)
 - [Linux distros](#linux-distros)
 - [Linux System Architecture](#linux-system-architecture)
+- [Using Terminal](#using-terminal)
 - [Root user and sudo](#root-user-and-sudo)
 - [Users and user groups](#users-and-user-groups)
 - [Repository](#repository)
@@ -358,6 +359,28 @@ Key Components:
         ↓
 [ Physical Hardware ]
 ```
+
+## Using Terminal
+
+| Shortcut         | Explanation                             |
+| ---------------- | --------------------------------------- |
+| **Ctrl + A**     | Go to **beginning** of the line         |
+| **Ctrl + E**     | Go to **end** of the line               |
+| **Ctrl + U**     | Clear text **from cursor to beginning** |
+| **Ctrl + K**     | Clear text **from cursor to end**       |
+| **Ctrl + W**     | Delete **previous word**                |
+| **Alt + D**      | Delete **next word**                    |
+| **Ctrl + L**     | Clear terminal screen                   |
+| **Ctrl + C**     | Cancel current command                  |
+| **Ctrl + D**     | Logout / close terminal OR send EOF     |
+| **Ctrl + R**     | Search command history (reverse search) |
+| **↑ / ↓ arrows** | Browse command history                  |
+| **Tab**          | Autocomplete filenames/commands         |
+| **Tab Tab**      | Show all autocomplete options           |
+| **Ctrl + Z**     | Suspend process (send to background)    |
+| **fg**           | Bring last suspended job to foreground  |
+| **bg**           | Resume suspended job in background      |
+
 
 ## Root user and sudo
 
