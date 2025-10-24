@@ -21,6 +21,7 @@ A comprehensive guide and resource hub for understanding Linux as an Operating S
 - [Linux distros](#linux-distros)
 - [Linux System Architecture](#linux-system-architecture)
 - [Using Terminal](#using-terminal)
+- [Filesystem Hierarchy Standard](#filesystem-hierarchy-standard)
 - [Root user and sudo](#root-user-and-sudo)
 - [Users and user groups](#users-and-user-groups)
 - [Repository](#repository)
@@ -380,6 +381,45 @@ Key Components:
 | **Ctrl + Z**     | Suspend process (send to background)    |
 | **fg**           | Bring last suspended job to foreground  |
 | **bg**           | Resume suspended job in background      |
+
+## Filesystem Hierarchy Standard 
+
+**Filesystem Hierarchy Standard (FHS)** defines how Linux systems organize files and directories.
+It ensures consistency across distributions, so software and administrators always know where to find:
+
+🔹 system binaries
+🔹 configuration files
+🔹 user data
+🔹 logs
+🔹 temporary files
+
+FHS helps keep Linux predictable, structured, and easier to maintain.
+
+| Directory      | Purpose (short)                                 |
+| -------------- | ----------------------------------------------- |
+| **/**          | Root of the filesystem; everything starts here  |
+| **/bin**       | Essential user commands (ls, cp, mv, cat…)      |
+| **/sbin**      | Essential system/admin commands (fsck, reboot…) |
+| **/usr**       | User applications + read-only program data      |
+| **/usr/bin**   | Most user-level programs                        |
+| **/usr/sbin**  | Non-essential system commands                   |
+| **/usr/local** | Locally installed software                      |
+| **/etc**       | System-wide configuration files                 |
+| **/home**      | User home directories                           |
+| **/root**      | Home directory of root user                     |
+| **/var**       | Variable data: logs, mail, print queues         |
+| **/var/log**   | System log files                                |
+| **/tmp**       | Temporary files (deleted at reboot)             |
+| **/boot**      | Bootloader + kernel files                       |
+| **/lib**       | Essential shared libraries for /bin and /sbin   |
+| **/usr/lib**   | Libraries for applications in /usr              |
+| **/media**     | Mount points for removable devices (USB, CD)    |
+| **/mnt**       | Temporary mount point used by admins            |
+| **/dev**       | Device files (disks, terminals, USB)            |
+| **/proc**      | Virtual filesystem for process and kernel info  |
+| **/sys**       | Kernel and hardware configuration interface     |
+| **/opt**       | Optional third-party software packages          |
+| **/run**       | Runtime data (PID files, sockets)               |
 
 
 ## Root user and sudo

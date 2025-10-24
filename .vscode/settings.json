@@ -16,7 +16,8 @@
         "#most-common-commands",
         "#mount",
         "#devices",
-        "#using-terminal"
+        "#using-terminal",
+        "#filesystem-hierarchy-standard"
     ]
 }
 
