@@ -568,12 +568,20 @@ sudo usermod [options] username
 ```
 
 Common options:
-| Option | Description | Example |
-| ----------------- | -------------------------- | --------------------------------------- |
-| `-l newname` | Change username | `sudo usermod -l newalex alex` |
-| `-d /new/home -m` | Move home directory | `sudo usermod -d /home/newalex -m alex` |
-| `-s /bin/zsh` | Change default shell | `sudo usermod -s /bin/zsh alex` |
-| `-aG groupname` | Add to supplementary group | `sudo usermod -aG sudo alex` |
+| **Option** | **Meaning**                              | **Example Command**                      | **What It Does**                                                |
+| ---------- | ---------------------------------------- | ---------------------------------------- | --------------------------------------------------------------- |
+| `-aG`      | Add user to an additional group (append) | `sudo usermod -aG sudo alice`            | Adds *alice* to *sudo* group (does not remove existing groups). |
+| `-G`       | Replace the user's group list            | `sudo usermod -G developers alice`       | Sets *alice* to ONLY be in group *developers*.                  |
+| `-d`       | Change home directory                    | `sudo usermod -d /home/newhome alice`    | Changes alice’s home folder path but does **not** move files.   |
+| `-m`       | Move home directory contents             | `sudo usermod -d /home/newhome -m alice` | Moves alice’s files to new home directory.                      |
+| `-s`       | Change login shell                       | `sudo usermod -s /bin/zsh alice`         | Sets alice’s default shell to Zsh.                              |
+| `-l`       | Change username                          | `sudo usermod -l newname oldname`        | Renames user *oldname* → *newname*.                             |
+| `-u`       | Change user ID (UID)                     | `sudo usermod -u 1050 alice`             | Sets alice’s UID to 1050.                                       |
+| `-g`       | Change primary group                     | `sudo usermod -g staff alice`            | Sets *staff* as alice’s main group.                             |
+| `-L`       | Lock account                             | `sudo usermod -L alice`                  | Disables alice’s login (locks password).                        |
+| `-U`       | Unlock account                           | `sudo usermod -U alice`                  | Unlocks alice’s account.                                        |
+| `-c`       | Set/change comment (GECOS field)         | `sudo usermod -c "Alice Cooper" alice`   | Sets full name / comment.                                       |
+
 
 ❌ Delete a User
 
