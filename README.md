@@ -1509,13 +1509,17 @@ user = rwx, group = rx, others = none.
 
 **Octal (numeric) mode**
 
-| Octal | Permission |
-| ----- | ---------- |
-| 7     | rwx        |
-| 6     | rw-        |
-| 5     | r-x        |
-| 4     | r--        |
-| 0     | ---        |
+| Symbolic | Meaning                | Numeric |
+| -------- | ---------------------- | ------- |
+| ---      | no permissions         | **0**   |
+| --x      | execute only           | **1**   |
+| -w-      | write only             | **2**   |
+| -wx      | write + execute        | **3**   |
+| r--      | read only              | **4**   |
+| r-x      | read + execute         | **5**   |
+| rw-      | read + write           | **6**   |
+| rwx      | read + write + execute | **7**   |
+
 
 ```bash
 chmod 755 script.sh
