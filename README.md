@@ -1568,7 +1568,7 @@ All three handle:
 
 # Most common commands
 
-| Command            | What it does                                               |
+| 🐧 Command         | What it does                                               |
 | -------------------| -----------------------------------------------------------|
 | nano file name     | nano will open two separate files: file and name           |
 | nano "my file.txt" | open a file named "my file.txt" using the Nano text editor |
