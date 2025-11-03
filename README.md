@@ -25,6 +25,7 @@ A comprehensive guide and resource hub for understanding Linux as an Operating S
 - [Repository](#repository)
 - [Installing programs](#installing-programs)
 - [Personal Package Archive](#personal-package-archive)
+- [GUI of Ubuntu](#gui-of-ubuntu)
 
 - [Linux Commands(basics)](#linux-commands-basics)
   - [Directory](#directory)
@@ -835,6 +836,16 @@ This disables the PPA and reinstalls the official package versions.
 | ⚠️ **Security**  | PPAs are maintained by individuals — not officially verified.                     |
 | 🧩 **Conflicts** | Can cause dependency conflicts or break system updates.                           |
 | 🔒 **Trust**     | Only add PPAs from **trusted developers** or reputable sources (Launchpad links). |
+
+# GUI of Ubuntu
+
+| Question                                                         | Answer             |
+|------------------------------------------------------------------|--------------------|
+| What is the default web browser on Ubuntu?                       | Firefox            |
+| What is the Word-equivalent program on Ubuntu?                   | LibreOffice Writer |   
+| Which is the default program is used for editing/managing images?| Shotwell           |
+| Which program is used to play videos on Ubuntu?                  | Totem              |
+| What is the default file manager on Ubuntu?                      | Nautilus           |
 
 
 ## 🧭 Linux Commands(basics)
