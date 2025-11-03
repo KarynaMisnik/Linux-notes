@@ -36,6 +36,7 @@ A comprehensive guide and resource hub for understanding Linux as an Operating S
   - [Redirects and pipes](#redirects-and-pipes)
   - [Disk usage](#disk-usage)
   - [Package managers](#package-managers)
+- [Most common commands](#most-common-commands)
 
 ## Introduction of Linux
 
